@@ -48,6 +48,16 @@
 body {
   overflow: hidden;
 }
+a {
+  color: rgb(212,90,50) !important;
+}
+button {
+  background-color: rgb(212,90,50) !important;
+  color: rgb(240,240,240) !important;
+}
+.icon:hover {
+  transform: scale(1.2);
+}
 .hero-head {
   margin-left: 1.5rem;
   margin-right: 1.5rem;
