@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>uFix</title>
+    <link rel="stylesheet" href="css/main.css">
+    <!-- <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us20.list-manage.com","uuid":"9563837399154f6ba1004ad4a","lid":"97ab7e4d5f","uniqueMethods":true}) })</script> -->
+
+
+  </head>
+
+  <body>
+    <section class="hero is-fullheight">
+      <div class="hero-body">
+        <div class="container"
+          <p> test </p>
+          <button id="open-popup">Newsletter</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- <script type="text/javascript" src="_javascript/require.js"></script> -->
+    <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
+    <script>
+    function showMailingPopUp() {
+      // require(
+        window.dojoRequire(["mojo/signup-forms/Loader"],
+        // ["mojo/signup-forms/Loader"],
+        function(L) {
+          L.start({"baseUrl":"mc.us20.list-manage.com","uuid":"9563837399154f6ba1004ad4a","lid":"97ab7e4d5f","uniqueMethods":true})
+        }
+      );
+
+      document.cookie = 'MCPopupClosed=;path=/;expires=Thu, 01 Jan 1970 00:00:00 UTC;';
+      document.cookie = 'MCPopupSubscribed=;path=/;expires=Thu, 01 Jan 1970 00:00:00 UTC;';
+    }
+
+    document.getElementById("open-popup").onclick = function() {showMailingPopUp()};
+    </script>
+    <!-- <script type="text/javascript" src="lib/main.js"></script> -->
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@6.0.3/dist/typeit.min.js"></script> -->
+  </body>
+
+  <footer>
+
+  </footer>
+
+</html>
