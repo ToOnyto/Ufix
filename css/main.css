@@ -4,8 +4,68 @@
 /*! bulma.io v0.7.5 | MIT License | github.com/jgthms/bulma */
 
 .title {
-  margin: 2rem 0 0 0 !important;
+  margin: 4rem 1rem 0 1rem !important;
 }
+
+.mouveLogo {
+  animation: animLogo 2s forwards;
+}
+.mouveName {
+  animation: animName 2s forwards;
+}
+.hideTxtIntro {
+  animation: animTxtIntro 0.5s forwards;
+}
+.dpNoneHead {
+  display: none;
+}
+.dpTimer {
+  animation: animTimer 2s forwards;
+}
+
+@keyframes animLogo {
+  0% {opacity: 1; top: 0;}
+  20% {opacity: 0;}
+  60% {opacity: 0;}
+  100% {opacity: 1; transform: scale(0.25) translateX(85%);}
+}
+@keyframes animName {
+  0% {opacity: 1;}
+  20% {opacity: 0;}
+  60% {opacity: 0;}
+  100% {opacity: 1; transform: scale(0.6) translate(55%,-62%);}
+}
+@keyframes animTxtIntro {
+  from {opacity: 1;}
+  to {opacity: 0;}
+}
+@keyframes animTimer {
+  0% {opacity: 0;}
+  60% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+body {
+  overflow: hidden;
+}
+.hero-head {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.sizeLogoOnDesktop {
+  width: 500px;
+  height: 500px;
+}
+.sizeLogoOnMobile {
+  width: 80%;
+  height: 80%;
+}
+.m-top-2 {
+  margin-top: 2rem !important;
+}
+
+/* ----- ----- */
 
 @keyframes spinAround {
   from {

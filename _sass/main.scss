@@ -3,7 +3,6 @@
 // Customization
 // Import fonts
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Cutive+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900&display=swap');
 
 // 1. Import the initial variables
@@ -12,16 +11,19 @@
 // 2. Set your own initial variables
 $white: rgb(240,240,240);
 $black: rgb(25,33,27);
+$orange: rgb(212,90,50);
 
 // Update the sans-serif font family
 $family-sans-serif: 'Source Sans Pro', sans-serif;
 
 // 3. Set the derived variables
-$primary: $white;
+$primary: $orange;
+
 $title-color: $black;
 $title-weight: $weight-light;
 
 // 4. Import the rest of Bulma
 @import "../node_modules/bulma/bulma";
+
 
 
