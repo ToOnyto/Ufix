@@ -14,7 +14,7 @@
   animation: animName 2s forwards;
 }
 .hideTxtIntro {
-  animation: animTxtIntro 0.5s forwards;
+  animation: animTxtIntro 1s forwards;
 }
 .dpNoneHead {
   display: none;
@@ -25,14 +25,14 @@
 
 @keyframes animLogo {
   0% {opacity: 1; top: 0;}
-  20% {opacity: 0;}
-  60% {opacity: 0;}
+  20% {opacity: 0; transform: scale(1) translateX(0);}
+  50% {opacity: 0; transform: scale(0) translateX(0);}
   100% {opacity: 1; transform: scale(0.25) translateX(85%);}
 }
 @keyframes animName {
   0% {opacity: 1;}
-  20% {opacity: 0;}
-  60% {opacity: 0;}
+  20% {opacity: 0; transform: scale(1) translate(0);}
+  50% {opacity: 0; transform: scale(0) translate(0);}
   100% {opacity: 1; transform: scale(0.6) translate(55%,-62%);}
 }
 @keyframes animTxtIntro {
@@ -41,7 +41,7 @@
 }
 @keyframes animTimer {
   0% {opacity: 0;}
-  60% {opacity: 0;}
+  50% {opacity: 0;}
   100% {opacity: 1;}
 }
 
@@ -61,8 +61,14 @@ body {
   width: 80%;
   height: 80%;
 }
+.m-top-1 {
+  margin-top: 1rem !important;
+}
 .m-top-2 {
   margin-top: 2rem !important;
+}
+.m-right-1 {
+  margin-right: 1rem !important;
 }
 
 /* ----- ----- */
