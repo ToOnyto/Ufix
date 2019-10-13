@@ -19,7 +19,7 @@
 
         <p id="timer" class="has-text-centered title is-size-4-mobile"></p>
         <p class="has-text-centered is-size-5-desktop is-5-mobile m-top-2">Suivez UFix sur les réseaux sociaux !</p>
-        
+
         <!-- Start Social Networks -->
         <div class="has-text-centered m-top-1">
           <a href="https://www.facebook.com/uFixFR/" class="m-right-1" title="Notre facebook" target="_blank">
@@ -59,22 +59,22 @@
               <p>La première te permet de poster une annonce de réparation. Un professionnel ou un particulier vérifié viendra ensuite te proposer son tarif
                 pour effectuer la réparation. Tu réccupereras bien évidement ton appareil par la suite.
               </p>
-            </div>  
+            </div>
             <div class="column is-half is-1-desktop is-offset-0-mobile">
               <span class="icon">
                 <i class="fas fa-tools fa-6x"></i>
               </span>
-            </div> 
-          </div>  
+            </div>
+          </div>
           <div class="columns is-centered m-top-1 is-vcentered">
             <div class="column is-half is-1-desktop is-offset-0-mobile">
               <span class="icon">
                 <i class="fas fa-comments-dollar fa-6x"></i>
               </span>
-            </div> 
+            </div>
             <div class="column is-half is-4-desktop is-offset-0-mobile">
               <p>La seconde te permet de mettre en vente un de tes appareils. Un autre utilisateur pourra alors décider de te l'acheter.</p>
-            </div>  
+            </div>
           </div>
         </div><!-- End Presentation -->
 
@@ -84,23 +84,15 @@
         <div class="columns is-centered m-top-1">
           <div class="column is-half is-3-desktop is-6-tablet is-offset-0-mobile">
 
-            <form action="https://mailchi.mp/[xxxxxx]/ok" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" 
-            class="validate" target="_blank" novalidate="novalidate">
-
-              <!-- <div style="position: absolute; left: -5000px;" aria-hidden="true"> <input type="text" name="b_f7fcffd059cde2df667ed71e0_b59497a580" 
-                tabindex="-1" value=""> </div> -->
 
               <div class="mc-field-group">
                 <div class="field has-addons">
                   <div class="control is-expanded">
-                    <input type="email" value="" name="EMAIL" class="required email input" id="mce-EMAIL" placeholder="Email">
                   </div>
                   <div class="control">
-                    <button class="button is-inverted is-outlined" type="submit">
-                      Valider
-                    </button>
+                    <button id="open-popup" class="button is-inverted is-outlined">Newsletter</button>
                   </div>
-                  
+
                 </div>
               </div>
 
@@ -109,7 +101,6 @@
                 <div class="response has-text-success" id="mce-success-response" style="display:none"></div>
               </div>
 
-            </form>
             <p>Dans un soucis de respect de l'environnement, nous nous engageons à envoyer un seul email à la sortie du site.</p>
           </div>
         </div><!-- Start NEWSLETTER MAILCHIMP -->
@@ -122,7 +113,7 @@
           <p id="txtRun" class="title has-text-centered is-size-4-mobile"></p>
 
           <div class="logoSVG has-text-centered">
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="logoSVG" class="sizeLogoOnDesktop" 
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="logoSVG" class="sizeLogoOnDesktop"
             viewbox="0 0 1133.86 1492.07">
               <defs>
                 <style>
@@ -159,7 +150,7 @@
                 <lineargradient id="Dégradé_sans_nom_51-2" x1="597.98" y1="256.04" x2="744.26" y2="509.4" xlink:href="#Dégradé_sans_nom_51"/>
                   <lineargradient id="Dégradé_sans_nom_5" x1="653.81" y1="199.44" x2="653.81" y2="590.74" gradientunits="userSpaceOnUse">
                     <stop offset="0" stop-color="#65c18d"/>
-                    <stop offset="0.22" stop-color="#68be8b"/> 
+                    <stop offset="0.22" stop-color="#68be8b"/>
                     <stop offset="0.39" stop-color="#70b483"/>
                     <stop offset="0.56" stop-color="#7fa276"/>
                     <stop offset="0.71" stop-color="#938a63"/>
@@ -179,7 +170,7 @@
               </g>
             </svg>
           </div>
-        </div><!-- End LOGO SVG -->     
+        </div><!-- End LOGO SVG -->
       </div><!-- End Body -->
 
       <div class="hero-footer">
@@ -191,6 +182,23 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@6.0.3/dist/typeit.min.js"></script>
     <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
     <script src="https://kit.fontawesome.com/76afd11d75.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
+    <script>
+    function showMailingPopUp() {
+      // require(
+        window.dojoRequire(["mojo/signup-forms/Loader"],
+        // ["mojo/signup-forms/Loader"],
+        function(L) {
+          L.start({"baseUrl":"mc.us20.list-manage.com","uuid":"9563837399154f6ba1004ad4a","lid":"97ab7e4d5f","uniqueMethods":true})
+        }
+      );
+
+      document.cookie = 'MCPopupClosed=;path=/;expires=Thu, 01 Jan 1970 00:00:00 UTC;';
+      document.cookie = 'MCPopupSubscribed=;path=/;expires=Thu, 01 Jan 1970 00:00:00 UTC;';
+    }
+
+    document.getElementById("open-popup").onclick = function() {showMailingPopUp()};
+    </script>
   </body>
 
 </html>
