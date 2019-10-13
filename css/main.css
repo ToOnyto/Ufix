@@ -55,9 +55,46 @@ button {
   background-color: rgb(212,90,50) !important;
   color: rgb(240,240,240) !important;
 }
-.icon:hover {
-  transform: scale(1.2);
+
+.icon i{
+  transition: 0.2s linear;
 }
+
+.icon:hover .fa-facebook-square{
+  transform: scale(1.2);
+  color: rgb(59, 89, 152);
+}
+
+.icon:hover .fa-twitter-square{
+  transform: scale(1.2);
+  color: rgb(0, 172, 238);
+}
+
+.icon::before{
+  transform: rotate(45deg);
+  left: -110%;
+  top: 90%;
+}
+
+.icon:hover::before{
+  animation: animIcon 0.7 1;
+}
+
+@keyframes animIcon{
+  0%{
+    left: 110%;
+    top: 90;
+  }
+  50%{
+    left: 10%;
+    top: -30%;
+  }
+  100%{
+    left: -10%;
+    top: -10%;
+  }
+}
+
 .hero-head {
   margin-left: 1.5rem;
   margin-right: 1.5rem;
