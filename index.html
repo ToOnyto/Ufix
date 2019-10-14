@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>uFix</title>
+    <title>uFix - Teaser</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="img/logo.png"/>
@@ -83,10 +83,10 @@
         </div>
         <!-- End LOGO SVG -->
 
-      <!-- Start Body -->
-      <div id="idBody" class="hero-body dpNone">
-        <!-- Texte pres -->
-        <div class="container has-text-centered m-top-2">
+        <!-- Start Body -->
+        <div id="idBody" class="hero-body dpNone">
+          <!-- Texte pres -->
+          <div class="container has-text-centered m-top-2">
             <div class="columns is-centered">
               <div class="column is-3">
                 <span class="icon is-extralarge">
@@ -138,45 +138,61 @@
 
         <!-- Start NEWSLETTER MAILCHIMP -->
         <div class="columns is-centered m-top-1">
-            <div class="column is-half is-3-desktop is-6-tablet is-offset-0-mobile">
-  
-              <form action="https://mailchi.mp/[xxxxxx]/ok" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="novalidate">
-  
-                <!-- <div style="position: absolute; left: -5000px;" aria-hidden="true"> <input type="text" name="b_f7fcffd059cde2df667ed71e0_b59497a580" tabindex="-1" value=""> </div> -->
-  
-                <div class="mc-field-group">
-                  <div class="field has-addons">
-                    <div class="control is-expanded">
-                      <input type="email" value="" name="EMAIL" class="required email input" id="mce-EMAIL" placeholder="Email">
-                    </div>
-                    <div class="control">
-                      <button class="button is-inverted is-outlined" type="submit">
-                        Valider
-                      </button>
-                    </div>
-  
-                  </div>
-                </div>
-  
-                <div id="mce-responses">
-                  <div class="response has-text-warning" id="mce-error-response" style="display:none"></div>
-                  <div class="response has-text-success" id="mce-success-response" style="display:none"></div>
-                </div>
-  
-              </form>
-              <p>Dans un soucis de respect de l'environnement, nous nous engageons à envoyer un seul email à la sortie du site.</p>
+          <div class="column is-half is-3-desktop is-6-tablet is-offset-0-mobile">
+
+            <div class="mc-field-group">
+              <!-- <div class="field has-addons"> -->
+
+              <div class="control has-text-centered">
+                <p>Sois averti lorsque le site web sera disponibe !</p>
+              </div>
+              <div class="control has-text-centered">
+                <button id="open-popup" class="button is-inverted is-outlined">M'avertir</button>
+              </div>
+
+              <!-- </div> -->
             </div>
+
+            <div id="mce-responses">
+              <div class="response has-text-warning" id="mce-error-response" style="display:none"></div>
+              <div class="response has-text-success" id="mce-success-response" style="display:none"></div>
+            </div>
+
+            <p>Dans un soucis de respect de l'environnement, nous nous engageons à envoyer un seul email à la sortie du site.</p>
           </div>
-          <!-- End NEWSLETTER MAILCHIMP -->
-
+        </div>
+        <!-- Start NEWSLETTER MAILCHIMP -->
       </div>
-    </section>
-    <!-- End Section -->
+      <!-- End S -->
 
-    <script type="text/javascript" src="lib/main.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@6.0.3/dist/typeit.min.js"></script>
-    <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
-    <script src="https://kit.fontawesome.com/76afd11d75.js" crossorigin="anonymous"></script>
-  </body>
+    </div>
+  </section>
+  <!-- End Section -->
+
+  <script type="text/javascript" src="lib/main.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@6.0.3/dist/typeit.min.js"></script>
+  <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+  <script src="https://kit.fontawesome.com/76afd11d75.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
+  <script>
+    function showMailingPopUp() {
+      // require(
+      window.dojoRequire(["mojo/signup-forms/Loader"],
+      // ["mojo/signup-forms/Loader"],
+      function (L) {
+        L.start({"baseUrl": "mc.us20.list-manage.com", "uuid": "9563837399154f6ba1004ad4a", "lid": "97ab7e4d5f", "uniqueMethods": true})
+      });
+
+      document.cookie = 'MCPopupClosed=;path=/;expires=Thu, 01 Jan 1970 00:00:00 UTC;';
+      document.cookie = 'MCPopupSubscribed=;path=/;expires=Thu, 01 Jan 1970 00:00:00 UTC;';
+    }
+
+    document
+      .getElementById("open-popup")
+      .onclick = function () {
+        showMailingPopUp()
+      };
+  </script>
+</body>
 
 </html>
