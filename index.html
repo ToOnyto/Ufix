@@ -8,14 +8,16 @@
     <title>uFix - Teaser</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="node_modules/bulma-divider/dist/css/bulma-divider.min.css"></link>
     <link rel="icon" type="image/png" href="img/logo.png"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
   </head>
 
   <body>
     <!-- Start Section -->
     <section class="hero is-fullheight">
       <!-- Start S -->
-      <div id="idHead" class="hero-head">
+      <div id="idHead" class="hero-head p-top-2">
 
         <p id="timer" class="has-text-centered title is-size-4-mobile dpNone"></p>
 
@@ -23,7 +25,7 @@
         <div class="container is-fluid">
           <p id="txtRun" class="title has-text-centered is-size-4-mobile"></p>
 
-          <div class="logoSVG has-text-centered m-top-1">
+          <div class="logoSVG has-text-centered m-top-1 animated bounceInDown">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="logoSVG" class="sizeLogoOnDesktop" viewbox="0 0 1133.86 1492.07">
               <defs>
                 <style>
@@ -82,86 +84,115 @@
           </div>
         </div>
         <!-- End LOGO SVG -->
+      </div>
 
-        <!-- Start Body -->
-        <div id="idBody" class="hero-body dpNone">
-          <!-- Texte pres -->
-          <div class="container has-text-centered m-top-2">
-            <div class="columns is-centered">
-              <div class="column is-3">
-                <span class="icon is-extralarge">
-                  <i class="fas fa-mobile-alt fa-6x"></i>
-                </span>
-                <h3 class="title is-spaced">Easy to Setup</h3>
-                <h4 class="subtitle is-6">Tu as chez toi un vieil appareil dont tu ne te sers plus, qui a un écran cassé ou bien encore un appareil qui fonctionne mal ?</h4>
+      <!-- Start Body -->
+      <div id="idBody" class="hero-body dpNone">
+        <!-- Texte pres -->
+        <div class="container has-text-centered m-top-2">
+          <div id="txtFunc" class="columns is-centered is-vcentered">
+            <div class="column is-4">
+              <div class="card">
+                <div class="card-image">
+                  <span class="icon is-extralarge">
+                    <i class="fas fa-mobile-alt fa-6x"></i>
+                  </span>
+                </div>
+                <div class="card-content">
+                  <div class="content has-text-justified">
+                    Tu as chez toi un vieil appareil dont tu ne te sers plus, qui a un écran cassé ou bien encore un appareil qui fonctionne mal ?
+                  </div>
+                </div>
               </div>
-              <div class="column is-3">
-                <span class="icon is-extralarge">
-                  <i class="fas fa-tools fa-6x"></i>
-                </span>
-                <h3 class="title is-spaced">Cross Platform</h3>
-                <h4 class="subtitle is-6">Ne les laisses plus trainner au fond d'un placard ! Ufix t'offre deux solutions !</h4>
-              </div>
-              <div class="column is-3">
-                <span class="icon is-extralarge">
-                  <i class="fas fa-comments-dollar fa-6x"></i>
-                </span>
-                <h3 class="title is-spaced">Dependency</h3>
-                <h4 class="subtitle is-6">La première te permet de poster une annonce de réparation. Un professionnel ou un particulier vérifié viendra ensuite te proposer son tarif pour effectuer la réparation. Tu réccupereras bien évidement ton appareil par la suite.</h4>
-              </div>
-              <!-- <div class="column is-3"> <span class="button is-huge is-text"> <span class="icon iconbg is-huge is-marginless"><svg class="fa icon-custom-modio-cog"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-custom-modio-cog"></use></svg></span> <span class="icon is-centered-text is-huge is-marginless"><svg class="fa icon-light-gamepad"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-light-gamepad"></use></svg></span> </span> <h3 class="title">Patronage</h3> <h4 class="subtitle is-6">Turn on trading &amp; patronage to support creators &amp; make mods a part of your <a href="https://docs.google.com/presentation/d/e/2PACX-1vTH26PH04kz7qPDApGUAN0Lkb_9EsbOoAFT4ZgoTtNAGqvuqS7XY60WlINFm4ub_uMazbGACg_sPMQA/embed?start=false&amp;loop=false&amp;delayms=60000" class="thickbox" rel="iframe=true;innerHeight=569;innerWidth=960">games success</a>.</h4> </div> -->
             </div>
+            <div class="column is-4">
+              <div class="card">
+                <div class="card-image">
+                  <span class="icon is-extralarge">
+                    <i class="fas fa-tools fa-6x"></i>
+                  </span>
+                </div>
+                <div class="card-content">
+                  <div class="content has-text-justified">
+                    Ne les laisses plus trainner au fond d'un placard ! Ufix t'offre deux solutions !
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="column is-4">
+              <div class="card">
+                <div class="card-image">
+                  <span class="icon is-extralarge">
+                    <i class="fas fa-comments-dollar fa-6x"></i>
+                  </span>
+                </div>
+                <div class="card-content">
+                  <div class="content has-text-justified">
+                    La première te permet de poster une annonce de réparation. Tu réccupereras bien évidement ton appareil par la suite.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="column is-3"> <span class="button is-huge is-text"> <span class="icon iconbg is-huge is-marginless"><svg class="fa icon-custom-modio-cog"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-custom-modio-cog"></use></svg></span> <span class="icon is-centered-text is-huge is-marginless"><svg class="fa icon-light-gamepad"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-light-gamepad"></use></svg></span> </span> <h3 class="title">Patronage</h3> <h4 class="subtitle is-6">Turn on trading &amp; patronage to support creators &amp; make mods a part of your <a href="https://docs.google.com/presentation/d/e/2PACX-1vTH26PH04kz7qPDApGUAN0Lkb_9EsbOoAFT4ZgoTtNAGqvuqS7XY60WlINFm4ub_uMazbGACg_sPMQA/embed?start=false&amp;loop=false&amp;delayms=60000" class="thickbox" rel="iframe=true;innerHeight=569;innerWidth=960">games success</a>.</h4> </div> -->
           </div>
         </div>
-        <!-- End Txt pres -->
       </div>
+
+      <!-- End Txt pres -->
+
       <!-- End Body -->
 
-      <div id="dpFooter2Phase" class="hero-footer dpNone">
+      <div id="dpFooter2Phase" class="hero-footer dpNone p-bot-2">
 
-        <!-- Start Social Networks -->
-        <p class="has-text-centered is-size-5-desktop is-5-mobile m-top-2">Suivez UFix sur les réseaux sociaux !</p>
-        <div class="has-text-centered m-top-1">
-          <a href="https://www.facebook.com/uFixFR/" class="m-right-1" title="Notre facebook" target="_blank">
-            <span class="icon">
-              <i class="fab fa-facebook-square fa-2x"></i>
-            </span>
-          </a>
-
-          <a href="https://twitter.com/UFixFR?lang=fr" title="Notre twitter" target="_blank">
-            <span class="icon">
-              <i class="fab fa-twitter-square fa-2x"></i>
-            </span>
-          </a>
-        </div>
-        <!-- End Social Networks -->
-
-        <!-- Start NEWSLETTER MAILCHIMP -->
-        <div class="columns is-centered m-top-1">
-          <div class="column is-half is-3-desktop is-6-tablet is-offset-0-mobile">
-
-            <div class="mc-field-group">
-              <!-- <div class="field has-addons"> -->
-
-              <div class="control has-text-centered">
-                <p>Sois averti lorsque le site web sera disponibe !</p>
+        <div class="container has-text-centered p-bot-2">
+          <div class="columns is-centered">
+            <div class="column is-4">
+              <div class="columns is-multiline">
+                <div class="column is-12">
+                  <p class="subtitle">Suivez UFix sur les réseaux sociaux !</p>
+                </div>
+                <div class="column is-6">
+                  <a class="rs is-pulled-right" href="https://www.facebook.com/uFixFR/" title="Notre facebook" target="_blank">
+                    <span class="icon">
+                      <i class="fab fa-facebook-square fa-2x"></i>
+                    </span>
+                  </a>
+                </div>
+                <div class="column is-6">
+                  <a class="rs is-pulled-left" href="https://twitter.com/UFixFR?lang=fr" title="Notre twitter" target="_blank">
+                    <span class="icon">
+                      <i class="fab fa-twitter-square fa-2x"></i>
+                    </span>
+                  </a>
+                </div>
               </div>
-              <div class="control has-text-centered">
-                <button id="open-popup" class="button is-inverted is-outlined">M'avertir</button>
+            </div>
+            <div class="column is-4">
+              <div class="columns is-multiline">
+                <div class="mc-field-group">
+                  <!-- <div class="field has-addons"> -->
+                  <div class="column is-12">
+                    <div class="control has-text-centered">
+                      <p class="subtitle">Sois averti lorsque le site web sera disponibe !</p>
+                    </div>
+                  </div>
+
+                  <div class="column is-12">
+                    <div class="control has-text-centered">
+                      <button id="open-popup" class="button is-inverted is-outlined animated infinite pulse delay-2s slow">M'avertir</button>
+                    </div>
+                  </div>
+
+                  <div id="mce-responses">
+                    <div class="response has-text-warning" id="mce-error-response" style="display:none"></div>
+                    <div class="response has-text-success" id="mce-success-response" style="display:none"></div>
+                  </div>
+                </div>
               </div>
-
-              <!-- </div> -->
             </div>
-
-            <div id="mce-responses">
-              <div class="response has-text-warning" id="mce-error-response" style="display:none"></div>
-              <div class="response has-text-success" id="mce-success-response" style="display:none"></div>
-            </div>
-
-            <p>Dans un soucis de respect de l'environnement, nous nous engageons à envoyer un seul email à la sortie du site.</p>
           </div>
         </div>
-        <!-- Start NEWSLETTER MAILCHIMP -->
+
       </div>
       <!-- End S -->
 

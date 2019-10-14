@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', function () {
   
   // Initialisation du texte de l'accueil s'écrivant tout seul
   new TypeIt('#txtRun', {
-    strings: ["Bonjour !", "Bienvenue sur notre site !"],
-    speed: 80,
+    strings: ["UFix", "Faites renaître vos appareils de leurs cendres !"],
+    speed: 40,
     breakLines: false,
     waitUntilVisible: true
   }).go();
@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   setTimeout( function() { 
     document.getElementById('txtRun').style.display = "none";
+    document.getElementById('logoSVG').setAttribute("viewBox","0 0 1133.86 300");
   }, 4800);
 
   setTimeout( function() { 
@@ -41,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
-    document.getElementById("timer").innerHTML = "Le site UFix sra disponible dans : " + days + " jours, " + hours + " heures et "
+    document.getElementById("timer").innerHTML = "Le site UFix sera disponible dans : " + days + " jours, " + hours + " heures et "
     + minutes + " minutes !";
     
     if (distance < 0) {
@@ -52,11 +53,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Resize logo on mobile
   var resolution = document.documentElement.clientWidth;
-  var permute = document.getElementById('logoSVG')
+  var permute = document.getElementById('logoSVG');
+  var logoPulledOut = document.getElementsByClassName('rs');
 
   if (resolution <= 769) {
       permute.classList.remove('sizeLogoOnDesktop');
       permute.classList.add('sizeLogoOnMobile');
+      logoPulledOut.classList.remove('is-pulled-left');
+      logoPulledOut.classList.remove('is-pulled-right');
   }
   if (resolution > 769) {
     permute.classList.remove('sizeLogoOnMobile');

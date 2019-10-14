@@ -4,16 +4,19 @@
 /*! bulma.io v0.7.5 | MIT License | github.com/jgthms/bulma */
 
 .title {
-  margin: 4rem 1rem 0 1rem !important;
+  margin: 3vw 1rem 0 1rem !important;
 }
 
 .mouveLogo {
+  -webkit-animation: animLogo 2s forwards;
   animation: animLogo 2s forwards;
 }
 .mouveName {
+  -webkit-animation: animName 2s forwards;
   animation: animName 2s forwards;
 }
 .hideTxtIntro {
+  -webkit-animation: animTxtIntro 1s forwards;
   animation: animTxtIntro 1s forwards;
 }
 .dpNone {
@@ -21,6 +24,7 @@
 }
 .dpFooter,
 .dpBody {
+  -webkit-animation: animFooter 2s forwards;
   animation: animFooter 2s forwards;
 }
 
@@ -30,17 +34,38 @@
   50% {opacity: 0; transform: scale(0) translateX(0);}
   100% {opacity: 1; transform: scale(0.25) translateX(85%);}
 }
+@-webkit-keyframes animLogo {
+  0% {opacity: 1; top: 0;}
+  20% {opacity: 0; transform: scale(1) translateX(0);}
+  50% {opacity: 0; transform: scale(0) translateX(0);}
+  100% {opacity: 1; transform: scale(0.25) translateX(85%);}
+}
 @keyframes animName {
   0% {opacity: 1;}
   20% {opacity: 0; transform: scale(1) translate(0);}
   50% {opacity: 0; transform: scale(0) translate(0);}
-  100% {opacity: 1; transform: scale(0.6) translate(55%,-62%);}
+  100% {opacity: 1; transform: scale(0.6) translate(55%,-308%);}
+}
+@-webkit-keyframes animName {
+  0% {opacity: 1;}
+  20% {opacity: 0; transform: scale(1) translate(0);}
+  50% {opacity: 0; transform: scale(0) translate(0);}
+  100% {opacity: 1; transform: scale(0.6) translate(55%,-308%);}
 }
 @keyframes animTxtIntro {
   from {opacity: 1;}
   to {opacity: 0;}
 }
+@-webkit-keyframes animTxtIntro {
+  from {opacity: 1;}
+  to {opacity: 0;}
+}
 @keyframes animFooter {
+  0% {opacity: 0;}
+  50% {opacity: 0;}
+  100% {opacity: 1;}
+}
+@-webkit-keyframes animFooter {
   0% {opacity: 0;}
   50% {opacity: 0;}
   100% {opacity: 1;}
@@ -50,10 +75,10 @@ body {
   overflow: hidden;
 }
 a {
-  color: rgb(212,90,50) !important;
+  color: rgb(231,135,68) !important;
 }
 button {
-  background-color: rgb(212,90,50) !important;
+  background-color: rgb(231,135,68) !important;
   color: rgb(240,240,240) !important;
 }
 .icon.is-extralarge {
@@ -62,26 +87,31 @@ button {
 }
 
 .icon i{
+  -webkit-transition: 0.2s linear;
   transition: 0.2s linear;
 }
 
 .icon:hover .fa-facebook-square{
+  -webkit-transform: scale(1.2);
   transform: scale(1.2);
   color: rgb(59, 89, 152);
 }
 
 .icon:hover .fa-twitter-square{
+  -webkit-transform: scale(1.2);
   transform: scale(1.2);
   color: rgb(0, 172, 238);
 }
 
 .icon::before{
+  -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
   left: -110%;
   top: 90%;
 }
 
 .icon:hover::before{
+  -webkit-animation: animIcon 0.7 1;
   animation: animIcon 0.7 1;
 }
 
@@ -107,11 +137,11 @@ button {
 
 .sizeLogoOnDesktop {
   width: 500px;
-  height: 500px;
+  height: auto;
 }
 .sizeLogoOnMobile {
-  width: 80%;
-  height: 80%;
+  width: auto;
+  height: auto;
 }
 .m-top-1 {
   margin-top: 1rem !important;
@@ -122,6 +152,42 @@ button {
 .m-right-1 {
   margin-right: 1rem !important;
 }
+.p-bot-2 {
+  padding-bottom: 3vw !important;
+}
+.p-top-2 {
+  padding-top: 3vw !important;
+}
+.m-bot-2 {
+  margin-bottom: 2rem !important;
+}
+.card {
+  background-color: rgb(231,135,68) !important;
+  color: white !important;
+  border-radius: 1rem !important;
+  /* border: 2px solid rgb(231,135,68); */
+  box-shadow: 0px 0px 12px white !important;
+  /* box-shadow: 1px 1px rgba(231,135,68, 0.4), 
+              3px 3px rgba(231,135,68, 0.35), 
+              5px 5px rgba(231,135,68, 0.30), 
+              7px 7px rgba(231,135,68, 0.25), 
+              9px 9px rgba(231,135,68, 0.2),
+              11px 11px rgba(231,135,68, 0.15), 
+              13px 13px rgba(231,135,68, 0.1),
+              15px 15px rgba(231,135,68, 0.05) !important; */
+}
+.card-image {
+  padding-top: 1.5rem !important;
+} 
+#txtFunc .column {
+  padding: 0 2rem 2rem 2rem !important;
+}
+#idBody {
+  background-color: rgb(231,135,68);
+  padding: 0 1.5rem 0 1.5rem;
+  margin: 2vw 0 4vw 0;
+}
+
 
 /* ----- ----- */
 
