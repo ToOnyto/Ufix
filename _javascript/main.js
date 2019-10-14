@@ -21,8 +21,12 @@ document.addEventListener('DOMContentLoaded', function () {
   }, 4800);
 
   setTimeout( function() { 
-    document.getElementById('dpHead2Phase').classList.remove("dpNoneHead");
-    document.getElementById('dpHead2Phase').classList.add("dpTimer"); 
+    document.getElementById('dpFooter2Phase').classList.remove("dpNone");
+    document.getElementById('dpFooter2Phase').classList.add("dpFooter"); 
+    document.getElementById('timer').classList.remove("dpNone");
+    document.getElementById('timer').classList.add("dpFooter"); 
+    document.getElementById('idBody').classList.remove("dpNone");
+    document.getElementById('idBody').classList.add("dpBody"); 
   }, 5500);
 
   // Création du timer 
@@ -37,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
-    document.getElementById("timer").innerHTML = "Le site UFix sra disponible dans : " + days + " jours, " + hours + " heures et"
+    document.getElementById("timer").innerHTML = "Le site UFix sra disponible dans : " + days + " jours, " + hours + " heures et "
     + minutes + " minutes !";
     
     if (distance < 0) {

@@ -16,11 +16,12 @@
 .hideTxtIntro {
   animation: animTxtIntro 1s forwards;
 }
-.dpNoneHead {
-  display: none;
+.dpNone {
+  display: none !important;
 }
-.dpTimer {
-  animation: animTimer 2s forwards;
+.dpFooter,
+.dpBody {
+  animation: animFooter 2s forwards;
 }
 
 @keyframes animLogo {
@@ -39,7 +40,7 @@
   from {opacity: 1;}
   to {opacity: 0;}
 }
-@keyframes animTimer {
+@keyframes animFooter {
   0% {opacity: 0;}
   50% {opacity: 0;}
   100% {opacity: 1;}
@@ -54,6 +55,10 @@ a {
 button {
   background-color: rgb(212,90,50) !important;
   color: rgb(240,240,240) !important;
+}
+.icon.is-extralarge {
+  height: 6rem;
+  width: 6rem;
 }
 
 .icon i{
