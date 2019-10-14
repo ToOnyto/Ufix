@@ -161,6 +161,12 @@ button {
 .m-bot-2 {
   margin-bottom: 2rem !important;
 }
+.p-right-1 {
+  padding-right: 1rem;
+}
+.p-left-1 {
+  padding-left: 1rem;
+}
 .card {
   background-color: rgb(231,135,68) !important;
   color: white !important;
