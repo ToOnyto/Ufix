@@ -9,12 +9,11 @@ document.addEventListener('DOMContentLoaded', function () {
   }).go();
 
   // Fonctions qui replace les éléments de la première phase pour faire apparaitre la seconde phase
-  function mouveAfterTimeout() {
+  setTimeout( function() { 
     document.getElementById('logo').classList.add("mouveLogo");
     document.getElementById('nom').classList.add("mouveName");
     document.getElementById('txtRun').classList.add("hideTxtIntro");
-  }
-  setTimeout(mouveAfterTimeout, 4500);
+  }, 4500);
 
   setTimeout( function() { 
     document.getElementById('txtRun').style.display = "none";
@@ -56,13 +55,14 @@ document.addEventListener('DOMContentLoaded', function () {
   // Resize logo on mobile
   var resolution = document.documentElement.clientWidth;
   var permute = document.getElementById('logoSVG');
-  var logoPulledOut = document.getElementsByClassName('rs');
+  var logoFb = document.getElementById('fb');
+  var logoTwit = document.getElementById('twit');
 
-  if (resolution <= 769) {
+  if (resolution < 768) {
       permute.classList.remove('sizeLogoOnDesktop');
       permute.classList.add('sizeLogoOnMobile');
-      logoPulledOut.classList.remove('is-pulled-left');
-      logoPulledOut.classList.remove('is-pulled-right');
+      logoFb.classList.remove('is-pulled-right');
+      logoTwit.classList.remove('is-pulled-left');
   }
   if (resolution > 769) {
     permute.classList.remove('sizeLogoOnMobile');
