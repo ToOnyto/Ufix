@@ -19,6 +19,8 @@ document.addEventListener('DOMContentLoaded', function () {
   setTimeout( function() { 
     document.getElementById('txtRun').style.display = "none";
     document.getElementById('logoSVG').setAttribute("viewBox","0 0 1133.86 300");
+    document.getElementById('idHead').classList.remove("p-top-4");
+    document.getElementById('idHead').classList.add("p-top-2"); 
   }, 4800);
 
   setTimeout( function() { 
