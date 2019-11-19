@@ -1,10 +1,9 @@
-{% extends 'base.html.twig' %}
-
+{% extends 'base.html.twig' %} 
 {% block navbar %}
-	{{ parent() }}
-	<div class="container-is-fluid extended">
-		<p class="is-size-3 has-text-centered">Déposer une annonce</p>
-	</div>
+{{ parent() }}
+<div class="container-is-fluid extended">
+  <p class="title has-text-centered">Déposer une annonce</p>
+</div>
 
 {% endblock %}
 
@@ -12,42 +11,85 @@
 
 	<div class="container">
 		<div class="tile is-ancestor box">
-			<div class="tile is-parent is-vertical is-6 box">
-				<article class="tile is-child">
-					<p class="title">Hello World</p>
-					<p class="subtitle">What is up?</p>
-					<div class="content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar felis blandit. Vestibulum volutpat tellus diam, consequat gravida libero rhoncus ut. Morbi maximus, leo sit amet vehicula eleifend, nunc dui porta orci, quis semper odio felis ut quam.</p>
-						<p>Suspendisse varius ligula in molestie lacinia. Maecenas varius eget ligula a sagittis. Pellentesque interdum, nisl nec interdum maximus, augue diam porttitor lorem, et sollicitudin felis neque sit amet erat. Maecenas imperdiet felis nisi, fringilla luctus felis hendrerit sit amet. Aenean vitae gravida diam, finibus dignissim turpis. Sed eget varius ligula, at volutpat tortor.</p>
-						<p>Integer sollicitudin, tortor a mattis commodo, velit urna rhoncus erat, vitae congue lectus dolor consequat libero. Donec leo ligula, maximus et pellentesque sed, gravida a metus. Cras ullamcorper a nunc ac porta. Aliquam ut aliquet lacus, quis faucibus libero. Quisque non semper leo.</p>
+			<div class="tile is-parent is-vertical is-6">
+				<article class="tile is-child ">
+					<p class="title has-text-centered">Informations sur le produit</p>
+					<div class="field">
+						<label class="label">Catégorie</label>
+						<div class="control">
+						  <div class="select">
+							<select>
+							  <option>Téléphone</option>
+							  <option>Tablette</option>
+							  <option>Ordinateur</option>
+							</select>
+						  </div>
+						</div>
+					  </div>
+					<div class="field">
+						<label class="label">Nom du produit</label>
+						<div class="control">
+							<input class="input" type="text" placeholder="Text input">
+						</div>
 					</div>
+					<div class="field">
+						<label class="label">Etat du produit</label>
+						<div class="control">
+							<input class="input" type="text" placeholder="Text input">
+						</div>
+					</div>
+
+					<div class="field">
+						<label class="label">Description</label>
+						<div class="control">
+							<textarea class="textarea" placeholder="Textarea"></textarea>
+						</div>
+					</div>
+
+					<div class="field">
+						<div class="control">
+							<label class="radio">
+								<input type="radio" name="question">
+								Vendre
+							</label>
+							<label class="radio">
+								<input type="radio" name="question">
+								Réparer
+							</label>
+						</div>
+					</div>
+
 				</article>
 			</div>
 			<div class="tile is-parent is-6 is-vertical">
 				<article class="tile is-child">
 					<a>image.jpg</a>
+					<img id="image-new-ad" src="{{ asset('img/ecran-casse.jpg') }}" alt="image produit">
 					{# <p class="subtitle">What is up?</p> #}
 				</article>
 				<article class="tile is-child">
-					<p class="title">Hello World</p>
-					<p class="subtitle">What is up?</p>
+					<a>image.jpg</a>
+					<img id="image-new-ad" src="{{ asset('img/ecran-casse.jpg') }}" alt="image produit">
+					{# <p class="subtitle">What is up?</p> #}
 				</article>
 				<article class="tile is-child">
-					<p class="title">Hello World</p>
-					<p class="subtitle">What is up?</p>
+					<a>image.jpg</a>
+					<img id="image-new-ad" src="{{ asset('img/ecran-casse.jpg') }}" alt="image produit">
+					{# <p class="subtitle">What is up?</p> #}
 				</article>
 			</div>
 		</div>
-		<div class="tile is-ancestor box has-padding-5">
-            
-			<div class="tile is-parent">
-				<div class="tile is-child has-text-centered">
-                        <button class="button is-warning">Publier</button>
+		<div class="tile is-ancestor has-padding-5">
 
+			<div class="tile is-parent">
+				<div class="tile is-child has-text-centered control">
+					<button class="button is-custom is-rounded">Publier</button>
 				</div>
 			</div>
 		</div>
 	</div>
+
+
 
 
 {% endblock %}

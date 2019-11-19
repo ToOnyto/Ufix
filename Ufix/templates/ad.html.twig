@@ -1,0 +1,92 @@
+{% extends 'base.html.twig' %}
+
+{% block navbar %}
+{{ parent() }}
+<div class="container-is-fluid extended">
+    <p class="is-size-3 has-text-centered">Anonce</p>
+</div>
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+
+    <div class="card">
+        <header class="card-header">
+            <div class="columns">
+                <h2 class="column ad">Iphone 5</h2>
+                <i class="far fa-user is-size-6"></i>
+            </div>
+            <h3>Hors service</h3>
+
+            <img src="#" alt="Image Iphone 5">
+        </header>
+
+        <div class="card-content has-text-centered">
+            <div class="content">
+                <div class="columns">
+                    <div class="column">
+                        <h2 class="is-uppercase">Détails Techniques</h2>
+                        <table class="has-text-centered">
+                            <thead>
+                                <tr>
+                                    <th>marque</th>
+                                    <th>modèle</th>
+                                </tr>
+
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Apple</td>
+                                    <td>Iphone 5</td>
+                                </tr>
+                            </tbody>
+                            <thead>
+                                <tr>
+                                    <th>couleur</th>
+                                    <th>capacité</th>
+                                </tr>
+
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Blanc</td>
+                                    <td>64 Go</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="column">
+                        <h2 class="is-uppercase">Description</h2>
+                        <p>Iphone 5 avec un problème matériel, le téléphone s'allume
+                            et se charge mais reste bloqué sur l'écran de recherche du serveur d'activation d'Apple </p>
+                    </div>
+                    <div class="column">
+                        <h2 class="is-uppercase">Vendeur</h2>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="card-footer">
+
+            <span class="fa-stack fa-2x">
+                <i class="fas fa-circle fa-stack-1x fa"></i>
+                <i class="far fa-user fa-stack-1x fa-inverse"></i>
+            </span>
+
+
+            <button class="button is-outlined is-rounded is-custom-button-5">
+                Réparer >
+            </button>
+        </footer>
+    </div>
+
+
+</div>
+</div>
+</div>
+
+
+{% endblock %}
