@@ -44,6 +44,7 @@ class DefaultController extends AbstractController
         return $this->render('profil.html.twig');
     }
 
+
     /**
      * @Route("/ad", name="ad")
      */
@@ -59,5 +60,6 @@ class DefaultController extends AbstractController
     {
         return $this->render('ads_saved.html.twig');
     }
+
 
 }

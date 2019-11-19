@@ -167,6 +167,7 @@ body {
   }
 }
 
+
 .box {
   background-color: $color4;
 }
@@ -219,4 +220,18 @@ body {
 #profil-default{
   height: 50%;
   width: 50%;
+
+.has-image-centered{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.orange-background{
+  background-color: $color3;
+}
+
+.white-text{
+  color: white;
+
 }
