@@ -24,6 +24,15 @@
 $color1: white;
 $color2: #231f20;
 $color3: #ff7417;
+$color4: #f3f3f3;
+$color5: #65c18d;
+
+$font-1-thin: "Neusa-Thin";
+$font-1-light: "Neusa-Light";
+$font-1: "Neusa";
+$font-1-medium: "Neusa-Medium";
+$font-1-bold: "Neusa-Bold";
+
 
 body {
   background-color: $color1;
@@ -55,6 +64,29 @@ body {
   .hero.is-fullheight-with-navbar {
     min-height: calc(100vh - 3.2rem) !important;
   }
+  .navbar-menu {
+    .navbar-end {
+      margin-left: 0;
+    }
+    .navbar-center {
+      .navbar-item::before {
+        content: "";
+        background-color: $color3;
+        opacity: 0.8;
+        width: 30%;
+        height: 0.1rem;
+        position: absolute;
+        left: 35%;
+        bottom: 28%;
+      }
+      .navbar-item:active,
+      .navbar-item:hover {
+        background-color: $color2;
+        font-family: $font-1-bold;
+        color: $color3;
+      }
+    }
+  }
 }
 
 .navbar-center {
@@ -78,6 +110,7 @@ body {
     max-height: 1.5rem;
   }
 }
+
 .navbar-menu {
   .navbar-center {
     .navbar-item::before {
@@ -98,6 +131,18 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+// END NAVBAR
+
+// START HOME
+#home_logo {
+  height: auto; 
+  width: auto; 
+  max-width: 300px; 
+  max-height: 300px;
+}
+#slogan {  
+  font-size: 1.3rem;
+}
 
 .orange-background{
   background-color: $color3;
@@ -105,4 +150,10 @@ body {
 
 .white-text{
   color: white;
+}
+  
+
+// END HOME
+.extended {
+  background-color: $color4;
 }
