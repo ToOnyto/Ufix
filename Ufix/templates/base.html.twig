@@ -14,7 +14,7 @@
         <nav class="navbar" role="navigation" aria-label="main navigation">
           <div class="navbar-brand">
             <a class="navbar-item" href="#">
-              <img src="{{ asset('img/logo_white.png') }}" />
+              <img src="{{ asset('img/logo_white.png') }}"/>
             </a>
 
             <a
@@ -48,7 +48,13 @@
               <div class="navbar-item">
                 <a href="#">
                   <span class="icon is-medium">
-                    <i class="far fa-comment-alt"></i>
+                    <i class="far fa-user is-size-6"></i>
+                  </span>
+                  <span class="icon is-small">
+                    <i class="far fa-comment-alt is-size-6"></i>
+                  </span>
+                  <span class="icon is-medium">
+                    <i class="far fa-heart is-size-6"></i>
                   </span>
                 </a>
               </div>
@@ -79,15 +85,20 @@
             <p class="has-text-centered is-size-7">@UFiX 2019</p>
           </div>
           <div class="column">
-            <p class="has-text-right-desktop has-text-centered-mobile is-size-7">
+            <p
+              class="has-text-right-desktop has-text-centered-mobile is-size-7"
+            >
               Retrouvez-nous sur :
-              {# <span class="icon is-medium">
-                <span class="fa-stack">
-                  <i class="fas fa-circle fa-stack-2x"></i>
-                  <i class="fas fa-flag fa-stack-1x fa-inverse"></i>
-                </span>
+              <span class="icon is-medium">
+                <i class="fab fa-twitter"></i>
               </span>
-            </p> #}
+              <span class="icon is-small">
+                <i class="fab fa-facebook-f"></i>
+              </span>
+              <span class="icon is-medium">
+                <i class="far fa-paper-plane"></i>
+              </span>
+            </p>
           </div>
         </div>
         {% endblock %}
@@ -95,8 +106,35 @@
     </section>
 
     {% block javascripts %}
-    <script type="text/javascript" src="{{ asset('build/js/app.js') }}"></script>
-    {% endblock %}
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.js"
+    ></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const $navbarBurgers = Array.prototype.slice.call(
+          document.querySelectorAll(".navbar-burger"),
+          0
+        );
+
+        if ($navbarBurgers.length > 0) {
+          $navbarBurgers.forEach(el => {
+            el.addEventListener("click", () => {
+              const target = el.dataset.target;
+              const $target = document.getElementById(target);
+
+              el.classList.toggle("is-active");
+              $target.classList.toggle("is-active");
+            });
+          });
+        }
+      });
+    </script>
+    {#
+    <script
+      type="text/javascript"
+      src="{{ asset('build/js/app.js') }}"
+    ></script>
+    #} {% endblock %}
   </body>
 </html>
-

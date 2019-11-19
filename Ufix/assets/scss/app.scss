@@ -1,4 +1,25 @@
 @import "../../node_modules/bulma/bulma.sass";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/regular.scss";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
+
+@mixin font($font-family, $font-file) {
+  @font-face {
+    font-family: $font-family;
+    src: url($font-file+".eot"), url($font-file+".woff") format("woff"),
+      url($font-file+".ttf") format("truetype"),
+      url($font-file+".svg#aller") format("svg");
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+
+@include font("Neusa-Thin", "./../../public/fonts/NeusaNextPro-Thin");
+@include font("Neusa-Light", "./../../public/fonts/NeusaNextPro-Light");
+@include font("Neusa", "./../../public/fonts/NeusaNextPro-Regular");
+@include font("Neusa-Medium", "./../../public/fonts/NeusaNextPro-Medium");
+@include font("Neusa-Bold", "./../../public/fonts/NeusaNextPro-Bold");
 
 // @font-face {
 //   font-family: "Neusa-thin";
@@ -24,9 +45,23 @@
 $color1: white;
 $color2: #231f20;
 $color3: #ff7417;
+$color4: #f3f3f3;
+$color5: #65c18d;
+
+$font-1-thin: "Neusa-Thin";
+$font-1-light: "Neusa-Light";
+$font-1: "Neusa";
+$font-1-medium: "Neusa-Medium";
+$font-1-bold: "Neusa-Bold";
 
 body {
+  font-family: $font-1;
   background-color: $color1;
+  .navbar-item {
+    img {
+      max-height: 1.4rem;
+    }
+  }
 }
 .navbar {
   background-color: $color2 !important;
@@ -41,6 +76,17 @@ body {
     align-items: stretch;
     display: flex;
   }
+  .navbar-menu {
+    .navbar-item {
+      color: $color2;
+      text-align: center;
+    }
+    .navbar-center {
+      .navbar-item::before {
+        display: none;
+      }
+    }
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -48,12 +94,31 @@ body {
     align-items: stretch;
     display: flex;
   }
-
-  .navbar-item {
-  }
-
   .hero.is-fullheight-with-navbar {
     min-height: calc(100vh - 3.2rem) !important;
+  }
+  .navbar-menu {
+    .navbar-end {
+      margin-left: 0;
+    }
+    .navbar-center {
+      .navbar-item::before {
+        content: "";
+        background-color: $color3;
+        opacity: 0.8;
+        width: 30%;
+        height: 0.1rem;
+        position: absolute;
+        left: 35%;
+        bottom: 25%;
+      }
+      .navbar-item:active,
+      .navbar-item:hover {
+        background-color: $color2;
+        font-family: $font-1-bold;
+        color: $color3;
+      }
+    }
   }
 }
 
@@ -66,30 +131,10 @@ body {
   .columns {
     margin: 0;
     .column {
-      padding: 0.5rem 1rem 0.5rem 1rem !important;
+      padding: 0.2rem 1rem 0.2rem 1rem !important;
       a {
         color: $color1;
       }
     }
   }
 }
-.navbar-item {
-  img {
-    max-height: 1.5rem;
-  }
-}
-.navbar-menu {
-  .navbar-center {
-    .navbar-item::before {
-      content: "";
-      background-color: $color3;
-      opacity: 0.8;
-      width: 30%;
-      height: 0.1rem;
-      position: absolute;
-      left: 35%;
-      bottom: 25%;
-    }
-  }
-}
-
