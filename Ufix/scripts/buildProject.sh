@@ -8,3 +8,7 @@ yarn install
 
 echo "========== Yarn Encore  =========="
 yarn encore dev 
+
+echo "========== Restart Server =========="
+./bin/console server:stop
+./bin/console server:start
