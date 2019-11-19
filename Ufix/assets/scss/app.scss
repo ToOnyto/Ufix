@@ -1,0 +1,95 @@
+@import "../../node_modules/bulma/bulma.sass";
+
+// @font-face {
+//   font-family: "Neusa-thin";
+//   src: url("./../../public/fonts/NEUSANEXTPRO-THIN.TTF");
+// }
+// @font-face {
+//   font-family: "Neusa-light";
+//   src: url("./../../public/fonts/NEUSANEXTPRO-LIGHT.TTF");
+// }
+// @font-face {
+//   font-family: "Neusa-regular";
+//   src: url("./../../public/fonts/NEUSANEXTPRO-REGULAR.TTF");
+// }
+// @font-face {
+//   font-family: "Neusa-medium";
+//   src: url("./../../public/fonts/NEUSANEXTPRO-MEDIUM.TTF");
+// }
+// @font-face {
+//   font-family: "Neusa-bold";
+//   src: url("./../../public/fonts/NEUSANEXTPRO-BOLD.TTF");
+// }
+
+$color1: white;
+$color2: #231f20;
+$color3: #ff7417;
+
+body {
+  background-color: $color1;
+}
+.navbar {
+  background-color: $color2 !important;
+  a,
+  .icon {
+    color: $color1;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .navbar-center-mobile {
+    align-items: stretch;
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .navbar-center {
+    align-items: stretch;
+    display: flex;
+  }
+
+  .navbar-item {
+  }
+
+  .hero.is-fullheight-with-navbar {
+    min-height: calc(100vh - 3.2rem) !important;
+  }
+}
+
+.navbar-center {
+  margin: 0 auto;
+}
+.hero-footer {
+  background-color: $color2;
+  color: $color1;
+  .columns {
+    margin: 0;
+    .column {
+      padding: 0.5rem 1rem 0.5rem 1rem !important;
+      a {
+        color: $color1;
+      }
+    }
+  }
+}
+.navbar-item {
+  img {
+    max-height: 1.5rem;
+  }
+}
+.navbar-menu {
+  .navbar-center {
+    .navbar-item::before {
+      content: "";
+      background-color: $color3;
+      opacity: 0.8;
+      width: 30%;
+      height: 0.1rem;
+      position: absolute;
+      left: 35%;
+      bottom: 25%;
+    }
+  }
+}
+

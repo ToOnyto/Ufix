@@ -1,12 +1,102 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('build/css/app.css') }}" />
+    {% endblock %}
+  </head>
+  <body>
+    <section class="hero">
+      <div class="hero-head">
+        {% block navbar %}
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+          <div class="navbar-brand">
+            <a class="navbar-item" href="#">
+              <img src="{{ asset('img/logo_white.png') }}" />
+            </a>
+
+            <a
+              role="button"
+              class="navbar-burger burger"
+              aria-label="menu"
+              aria-expanded="false"
+              data-target="navbarBasicExample"
+            >
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
+          </div>
+
+          <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-center is-size-6">
+              <a class="navbar-item">
+                Déposer une annonce
+              </a>
+              <a class="navbar-item">
+                Rechercher une annonce
+              </a>
+              <a class="navbar-item">
+                Mes annonces
+              </a>
+            </div>
+            <div class="navbar-center-mobile is-hidden-desktop"></div>
+
+            <div class="navbar-end">
+              <div class="navbar-item">
+                <a href="#">
+                  <span class="icon is-medium">
+                    <i class="far fa-comment-alt"></i>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </nav>
+        {% endblock %}
+      </div>
+    </section>
+
+    <section class="hero is-fullheight-with-navbar">
+      <div class="hero-body">
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+      </div>
+      <div class="hero-footer">
+        {% block footer %}
+        <div class="columns is-vcentered">
+          <div class="column">
+            <p class="has-text-left-desktop has-text-centered-mobile">
+              <a href="#" class="is-size-7">Mentions légales</a>
+              |
+              <a href="#" class="is-size-7">Protection des données</a>
+              |
+              <a href="#" class="is-size-7">CGV</a>
+            </p>
+          </div>
+          <div class="column">
+            <p class="has-text-centered is-size-7">@UFiX 2019</p>
+          </div>
+          <div class="column">
+            <p class="has-text-right-desktop has-text-centered-mobile is-size-7">
+              Retrouvez-nous sur :
+              {# <span class="icon is-medium">
+                <span class="fa-stack">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fas fa-flag fa-stack-1x fa-inverse"></i>
+                </span>
+              </span>
+            </p> #}
+          </div>
+        </div>
+        {% endblock %}
+      </div>
+    </section>
+
+    {% block javascripts %}
+    <script type="text/javascript" src="{{ asset('build/js/app.js') }}"></script>
+    {% endblock %}
+  </body>
 </html>
+
