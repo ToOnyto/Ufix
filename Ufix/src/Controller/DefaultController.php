@@ -35,4 +35,13 @@ class DefaultController extends AbstractController
     {
         return $this->render('TO_DELETE.html.twig');
     }
+
+    /**
+     * @Route("/profil", name="profil_page")
+     */
+    public function showProfilPage()
+    {
+        return $this->render('profil.html.twig');
+    }
+
 }
