@@ -152,8 +152,6 @@ body {
 #home_logo {
   height: auto; 
   width: auto; 
-  max-width: 300px; 
-  max-height: 300px;
 }
 #slogan {  
   font-size: 1.3rem;
@@ -176,6 +174,10 @@ body {
 // END HOME
 .extended {
   background-color: $color4;
+}
+
+#image-new-ad {
+  width: 20%;
 }
 
 
