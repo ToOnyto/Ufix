@@ -51,5 +51,13 @@ class DefaultController extends AbstractController
     {
         return $this->render('ad.html.twig');
     }
+    
+    /** 
+     * @Route("/adsSaved", name="ads_saved")
+     */
+    public function showAdsSaved()
+    {
+        return $this->render('ads_saved.html.twig');
+    }
 
 }
