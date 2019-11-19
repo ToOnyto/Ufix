@@ -44,4 +44,12 @@ class DefaultController extends AbstractController
         return $this->render('profil.html.twig');
     }
 
+    /**
+     * @Route("/ad", name="ad")
+     */
+    public function showAdPage()
+    {
+        return $this->render('ad.html.twig');
+    }
+
 }
