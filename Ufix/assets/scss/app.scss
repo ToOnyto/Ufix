@@ -45,7 +45,6 @@
 $color1: white;
 $color2: #231f20;
 $color3: #ff7417;
-<<<<<<< HEAD
 $color4: #f3f3f3;
 $color5: #65c18d;
 
@@ -54,9 +53,7 @@ $font-1-light: "Neusa-Light";
 $font-1: "Neusa";
 $font-1-medium: "Neusa-Medium";
 $font-1-bold: "Neusa-Bold";
-=======
-$color4: #F3F3F3; //gris en dessous de navbar
->>>>>>> 647b3b9e6bd86e53b4ad6266b52df364bc50f095
+
 
 body {
   font-family: $font-1;
@@ -171,16 +168,13 @@ body {
   }
 }
 
-<<<<<<< HEAD
 .is-custom {
   background-color: $color3;
   color: $color1;
   text-transform: uppercase;
 }
 // END HOME
-=======
 .extended {
   background-color: $color4;
 }
 
->>>>>>> 647b3b9e6bd86e53b4ad6266b52df364bc50f095
