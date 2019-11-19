@@ -111,7 +111,7 @@ body {
         height: 0.1rem;
         position: absolute;
         left: 35%;
-        bottom: 25%;
+        bottom: 28%;
       }
       .navbar-item:active,
       .navbar-item:hover {
@@ -143,20 +143,6 @@ body {
 .navbar-item {
   img {
     max-height: 1.5rem;
-  }
-}
-.navbar-menu {
-  .navbar-center {
-    .navbar-item::before {
-      content: "";
-      background-color: $color3;
-      opacity: 0.8;
-      width: 30%;
-      height: 0.1rem;
-      position: absolute;
-      left: 35%;
-      bottom: 25%;
-    }
   }
 }
 // END NAVBAR
