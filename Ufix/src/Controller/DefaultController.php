@@ -19,4 +19,20 @@ class DefaultController extends AbstractController
     {
         return $this->render('base.html.twig');
     }
+
+    /**
+     * @Route("/newad", name="new_ad")
+     */
+    public function newAd()
+    {
+        return $this->render('new_ad.html.twig');
+    }
+
+        /**
+     * @Route("/temp", name="temp")
+     */
+    public function temp()
+    {
+        return $this->render('TO_DELETE.html.twig');
+    }
 }

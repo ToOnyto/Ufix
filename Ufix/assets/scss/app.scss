@@ -24,6 +24,7 @@
 $color1: white;
 $color2: #231f20;
 $color3: #ff7417;
+$color4: #F3F3F3; //gris en dessous de navbar
 
 body {
   background-color: $color1;
@@ -91,5 +92,9 @@ body {
       bottom: 25%;
     }
   }
+}
+
+.extended {
+  background-color: $color4;
 }
 
