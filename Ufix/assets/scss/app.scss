@@ -36,6 +36,7 @@ body {
   }
 }
 
+// START NAVBAR
 @media screen and (max-width: 1023px) {
   .navbar-center-mobile {
     align-items: stretch;
@@ -92,4 +93,31 @@ body {
     }
   }
 }
+// END NAVBAR
 
+// START HOME
+#home_logo {
+  height: auto; 
+  width: auto; 
+  max-width: 300px; 
+  max-height: 300px;
+}
+#slogan {  
+  font-size: 1.3rem;
+}
+
+.columns {
+  .column {
+    h2 {
+      color: $color3;
+      font-size: 1.3rem;
+    }
+  }
+}
+
+.is-custom {
+  background-color: $color3;
+  color: $color1;
+  text-transform: uppercase;
+}
+// END HOME

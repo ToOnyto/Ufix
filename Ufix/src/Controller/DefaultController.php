@@ -17,6 +17,6 @@ class DefaultController extends AbstractController
      */
     public function showHomePage()
     {
-        return $this->render('base.html.twig');
+        return $this->render('home.html.twig');
     }
 }
