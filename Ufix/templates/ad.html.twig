@@ -1,53 +1,92 @@
 {% extends 'base.html.twig' %}
 
 {% block navbar %}
-	{{ parent() }}
-	<div class="container-is-fluid extended">
-		<p class="is-size-3 has-text-centered">Anonce</p>
-	</div>
-
+{{ parent() }}
+<div class="container-is-fluid extended">
+    <p class="is-size-3 has-text-centered">Anonce</p>
+</div>
 {% endblock %}
 
 {% block body %}
 
-	<div class="container">
-		<div class="tile is-ancestor box">
-			<div class="tile is-parent is-vertical is-6 box">
-				<article class="tile is-child">
-					<p class="title">Hello World</p>
-					<p class="subtitle">What is up?</p>
-					<div class="content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar felis blandit. Vestibulum volutpat tellus diam, consequat gravida libero rhoncus ut. Morbi maximus, leo sit amet vehicula eleifend, nunc dui porta orci, quis semper odio felis ut quam.</p>
-						<p>Suspendisse varius ligula in molestie lacinia. Maecenas varius eget ligula a sagittis. Pellentesque interdum, nisl nec interdum maximus, augue diam porttitor lorem, et sollicitudin felis neque sit amet erat. Maecenas imperdiet felis nisi, fringilla luctus felis hendrerit sit amet. Aenean vitae gravida diam, finibus dignissim turpis. Sed eget varius ligula, at volutpat tortor.</p>
-						<p>Integer sollicitudin, tortor a mattis commodo, velit urna rhoncus erat, vitae congue lectus dolor consequat libero. Donec leo ligula, maximus et pellentesque sed, gravida a metus. Cras ullamcorper a nunc ac porta. Aliquam ut aliquet lacus, quis faucibus libero. Quisque non semper leo.</p>
-					</div>
-				</article>
-			</div>
-			<div class="tile is-parent is-6 is-vertical">
-				<article class="tile is-child">
-					<a>image.jpg</a>
-					{# <p class="subtitle">What is up?</p> #}
-				</article>
-				<article class="tile is-child">
-					<p class="title">Hello World</p>
-					<p class="subtitle">What is up?</p>
-				</article>
-				<article class="tile is-child">
-					<p class="title">Hello World</p>
-					<p class="subtitle">What is up?</p>
-				</article>
-			</div>
-		</div>
-		<div class="tile is-ancestor box has-padding-5">
-            
-			<div class="tile is-parent">
-				<div class="tile is-child has-text-centered">
-                        <button class="button is-warning">Publier</button>
+<div class="container">
 
-				</div>
-			</div>
-		</div>
-	</div>
+    <div class="card">
+        <header class="card-header">
+            <div class="columns">
+                <h2 class="column ad">Iphone 5</h2>
+                <i class="far fa-user is-size-6"></i>
+            </div>
+            <h3>Hors service</h3>
+
+            <img src="#" alt="Image Iphone 5">
+        </header>
+
+        <div class="card-content has-text-centered">
+            <div class="content">
+                <div class="columns">
+                    <div class="column">
+                        <h2 class="is-uppercase">Détails Techniques</h2>
+                        <table class="has-text-centered">
+                            <thead>
+                                <tr>
+                                    <th>marque</th>
+                                    <th>modèle</th>
+                                </tr>
+
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Apple</td>
+                                    <td>Iphone 5</td>
+                                </tr>
+                            </tbody>
+                            <thead>
+                                <tr>
+                                    <th>couleur</th>
+                                    <th>capacité</th>
+                                </tr>
+
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Blanc</td>
+                                    <td>64 Go</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="column">
+                        <h2 class="is-uppercase">Description</h2>
+                        <p>Iphone 5 avec un problème matériel, le téléphone s'allume
+                            et se charge mais reste bloqué sur l'écran de recherche du serveur d'activation d'Apple </p>
+                    </div>
+                    <div class="column">
+                        <h2 class="is-uppercase">Vendeur</h2>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="card-footer">
+
+            <span class="fa-stack fa-2x">
+                <i class="fas fa-circle fa-stack-1x fa"></i>
+                <i class="far fa-user fa-stack-1x fa-inverse"></i>
+            </span>
+
+
+            <button class="button is-outlined is-rounded is-custom-button-5">
+                Réparer >
+            </button>
+        </footer>
+    </div>
+
+
+</div>
+</div>
+</div>
 
 
 {% endblock %}

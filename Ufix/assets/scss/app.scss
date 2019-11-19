@@ -168,8 +168,18 @@ body {
   }
 }
 
+.box {
+  background-color: $color4;
+}
+
 .is-custom {
   background-color: $color3;
+  color: $color1;
+  text-transform: uppercase;
+}
+
+.is-custom-button-5 {
+  background-color: $color5;
   color: $color1;
   text-transform: uppercase;
 }
@@ -178,4 +188,6 @@ body {
   background-color: $color4;
 }
 
-
+.card-footer {
+  background-color: $color2;
+}
