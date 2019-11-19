@@ -54,7 +54,6 @@ $font-1: "Neusa";
 $font-1-medium: "Neusa-Medium";
 $font-1-bold: "Neusa-Bold";
 
-
 body {
   font-family: $font-1;
   background-color: $color1;
@@ -150,10 +149,12 @@ body {
 
 // START HOME
 #home_logo {
+
   height: auto; 
   width: auto; 
+
 }
-#slogan {  
+#slogan {
   font-size: 1.3rem;
 }
 
@@ -166,18 +167,47 @@ body {
   }
 }
 
+.box {
+  background-color: $color4;
+}
+
 .is-custom {
   background-color: $color3;
+  color: $color1;
+  text-transform: uppercase;
+}
+
+.is-custom-button-5 {
+  background-color: $color5;
   color: $color1;
   text-transform: uppercase;
 }
 // END HOME
 .extended {
   background-color: $color4;
+  padding: 0.2rem;
+  .title {
+    font: 16px $font-1-light, sans-serif;
+  }
 }
+.is-fullheight-with-navbar {
+  .hero-body {
+    padding: 3rem 0rem;
+  }
+}
+.is-fluid-without-padding {
+  max-width: none;
+  padding: 0;
+  width: 100%;
+}
+
 
 #image-new-ad {
   width: 20%;
+}
+
+.card-footer {
+  background-color: $color2;
 }
 
 

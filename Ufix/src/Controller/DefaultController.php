@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 
 /**
- * @Route("/home")
+ * @Route("/")
  */
 class DefaultController extends AbstractController
 {
@@ -42,6 +42,22 @@ class DefaultController extends AbstractController
     public function showProfilPage()
     {
         return $this->render('profil.html.twig');
+    }
+
+    /**
+     * @Route("/ad", name="ad")
+     */
+    public function showAdPage()
+    {
+        return $this->render('ad.html.twig');
+    }
+    
+    /** 
+     * @Route("/adsSaved", name="ads_saved")
+     */
+    public function showAdsSaved()
+    {
+        return $this->render('ads_saved.html.twig');
     }
 
 }
