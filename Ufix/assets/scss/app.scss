@@ -71,6 +71,7 @@ body {
   }
 }
 
+// START NAVBAR
 @media screen and (max-width: 1023px) {
   .navbar-center-mobile {
     align-items: stretch;
@@ -138,3 +139,51 @@ body {
     }
   }
 }
+
+.navbar-item {
+  img {
+    max-height: 1.5rem;
+  }
+}
+.navbar-menu {
+  .navbar-center {
+    .navbar-item::before {
+      content: "";
+      background-color: $color3;
+      opacity: 0.8;
+      width: 30%;
+      height: 0.1rem;
+      position: absolute;
+      left: 35%;
+      bottom: 25%;
+    }
+  }
+}
+// END NAVBAR
+
+// START HOME
+#home_logo {
+  height: auto; 
+  width: auto; 
+  max-width: 300px; 
+  max-height: 300px;
+}
+#slogan {  
+  font-size: 1.3rem;
+}
+
+.columns {
+  .column {
+    h2 {
+      color: $color3;
+      font-size: 1.3rem;
+    }
+  }
+}
+
+.is-custom {
+  background-color: $color3;
+  color: $color1;
+  text-transform: uppercase;
+}
+// END HOME
