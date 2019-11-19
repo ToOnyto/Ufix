@@ -11,11 +11,11 @@
 // Need jQuery? Install it with "yarn add jquery", then uncomment to require it.
 // const $ = require('jquery');
 
-// require("@fortawesome/fontawesome-free/js/all");
-// require("@fortawesome/fontawesome-free/js/fontawesome");
-// require("@fortawesome/fontawesome-free/js/solid");
-// require("@fortawesome/fontawesome-free/js/regular");
-// require("@fortawesome/fontawesome-free/js/brands");
+require("@fortawesome/fontawesome-free/js/all");
+require("@fortawesome/fontawesome-free/js/fontawesome");
+require("@fortawesome/fontawesome-free/js/solid");
+require("@fortawesome/fontawesome-free/js/regular");
+require("@fortawesome/fontawesome-free/js/brands");
 
 // menu hamburger
 document.addEventListener('DOMContentLoaded', () => {
