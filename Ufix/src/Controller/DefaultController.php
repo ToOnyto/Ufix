@@ -69,7 +69,7 @@ class DefaultController extends AbstractController
     }
 
     /** 
-     * @Route("/contact-seller-with-repair-2", name="contact_seller_with_repair")
+     * @Route("/contact-seller-with-repair-2", name="contact_seller_with_repair2")
      */
     public function showContactSellerWithRepair2 ()
     {
