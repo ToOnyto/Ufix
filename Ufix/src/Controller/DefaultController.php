@@ -28,14 +28,6 @@ class DefaultController extends AbstractController
         return $this->render('new_ad.html.twig');
     }
 
-        /**
-     * @Route("/temp", name="temp")
-     */
-    public function temp()
-    {
-        return $this->render('TO_DELETE.html.twig');
-    }
-
     /**
      * @Route("/profil", name="profil_page")
      */
