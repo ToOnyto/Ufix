@@ -229,3 +229,21 @@ body {
 .card {
   border-radius: 20px;
 }
+
+/**
+.fa-stack {
+  font-size: .8em; 
+  i { vertical-align: middle; }
+}
+**/
+.green-circle {
+  color: $color5;
+}
+
+.orange-circle {
+  color: $color3;
+}
+
+.orange {
+  background-color: $color3;
+}

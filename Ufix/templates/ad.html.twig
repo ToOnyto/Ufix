@@ -1,5 +1,9 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}
+	Annonce
+{% endblock %}
+
 {% block navbar %}
 	{{ parent() }}
 	<div class="container-is-fluid extended">
@@ -17,24 +21,27 @@
 					<div class="tile is-parent is-vertical has-text-centered">
 
 						<div class="tile is-child">
-                            <div class="columns">
+							<div class="columns">
 								<div class="column">
 									<h2 class="ad">Iphone 5</h2>
-								</div>
-								<div class="column">
-									<span class="icon">
-										<i class="far fa-user is-size-6"></i>
+									<span class="fa-stack">
+										<i class="fas fa-circle green-circle fa-2x"></i>
+										<i class="fas fa-tools fa-stack-1x fa-inverse"></i>
 									</span>
 								</div>
 							</div>
-                        </div>
-                        
+						</div>
+
 						<div class="tile is-child">
 							<h3>Hors service</h3>
-                        </div>
-                        
-						<div class="tile is-child is-color6">
-							<img src="{{ asset('img/iphone5.png') }}" alt="Image Iphone 5">
+						</div>
+
+						<div class="tile is-child">
+							<div class="columns is-centered">
+								<div class="column is-color6 is-4">
+									<img src="{{ asset('img/iphone5.png') }}" alt="Image Iphone 5">
+								</div>
+							</div>
 						</div>
 
 					</div>
@@ -77,31 +84,31 @@
 						</div>
 						<div class="column">
 							<h2 class="is-uppercase">Description</h2>
-							<p>Iphone 5 avec un problème matériel, le téléphone s'allume
-							 et se charge mais reste bloqué sur l'écran de recherche du serveur d'activation d'Apple</p>
+							<p>Iphone 5 avec un problème matériel, le téléphone s'allume et se charge mais reste bloqué sur l'écran de recherche du serveur d'activation d'Apple</p>
 						</div>
 						<div class="column">
 							<h2 class="is-uppercase">Vendeur</h2>
-
+							<span class="tag orange">4/5</span>
+							<p>Pascal MOLIPOU
+								<br>
+								Pessac - 33 600</p>
 						</div>
 					</div>
 				</div>
 			</div>
 
 			<footer class="card-footer">
-
-				<span class="fa-stack fa-2x">
-					<i class="fas fa-circle fa-stack-1x fa"></i>
-					<i class="far fa-user fa-stack-1x fa-inverse"></i>
+				<span class="fa-stack">
+					<i class="fas fa-circle orange-circle fa-2x"></i>
+					<i class="far fa-heart fa-stack-1x fa-inverse"></i>
 				</span>
-
-
 				<button class="button is-outlined is-rounded is-pulled-right is-custom-button-5">
-					Réparer >
+					<span>Réparer</span>
+					<span class="icon">
+						<i class="fas fa-angle-right"></i>
+					</span>
 				</button>
 			</footer>
 		</div>
-
-
 	</div>
 </div></div>{% endblock %}
