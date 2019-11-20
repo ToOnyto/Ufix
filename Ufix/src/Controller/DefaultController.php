@@ -53,7 +53,7 @@ class DefaultController extends AbstractController
     }
 
     /** 
-     * @Route("/contact-Seller-Without-Repair", name="contact_seller_without_repair")
+     * @Route("/contact-seller-without-repair", name="contact_seller_without_repair")
      */
     public function showContactSellerWithoutRepair ()
     {
@@ -61,7 +61,7 @@ class DefaultController extends AbstractController
     }
 
     /** 
-     * @Route("/contact-Seller-With-Repair", name="contact_seller_with_repair")
+     * @Route("/contact-seller-with-repair", name="contact_seller_with_repair")
      */
     public function showContactSellerWithRepair ()
     {
