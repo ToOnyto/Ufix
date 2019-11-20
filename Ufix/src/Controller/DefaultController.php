@@ -21,7 +21,7 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/newad", name="new_ad")
+     * @Route("/new-ad", name="new_ad")
      */
     public function newAd()
     {
@@ -53,6 +53,15 @@ class DefaultController extends AbstractController
     }
 
     /** 
+
+     * @Route("/selectRepairer", name="select_repairer")
+     */
+    public function showSelectRepairer()
+    {
+        return $this->render('select_repairer.html.twig');
+    }
+
+
      * @Route("/contact-seller-without-repair", name="contact_seller_without_repair")
      */
     public function showContactSellerWithoutRepair ()
@@ -67,4 +76,13 @@ class DefaultController extends AbstractController
     {
         return $this->render('contact_seller_with_repair.html.twig');
     }
+
+    /** 
+     * @Route("/contact-seller-with-repair-2", name="contact_seller_with_repair2")
+     */
+    public function showContactSellerWithRepair2 ()
+    {
+        return $this->render('contact_seller_with_repair_2.html.twig');
+    }
+
 }
