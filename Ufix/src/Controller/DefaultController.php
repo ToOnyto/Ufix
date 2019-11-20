@@ -53,11 +53,36 @@ class DefaultController extends AbstractController
     }
 
     /** 
+
      * @Route("/selectRepairer", name="select_repairer")
      */
     public function showSelectRepairer()
     {
         return $this->render('select_repairer.html.twig');
+    }
+
+
+     * @Route("/contact-seller-without-repair", name="contact_seller_without_repair")
+     */
+    public function showContactSellerWithoutRepair ()
+    {
+        return $this->render('contact_seller_without_repair.html.twig');
+    }
+
+    /** 
+     * @Route("/contact-seller-with-repair", name="contact_seller_with_repair")
+     */
+    public function showContactSellerWithRepair ()
+    {
+        return $this->render('contact_seller_with_repair.html.twig');
+    }
+
+    /** 
+     * @Route("/contact-seller-with-repair-2", name="contact_seller_with_repair2")
+     */
+    public function showContactSellerWithRepair2 ()
+    {
+        return $this->render('contact_seller_with_repair_2.html.twig');
     }
 
 }
