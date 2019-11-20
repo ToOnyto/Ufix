@@ -45,11 +45,11 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/ad", name="ad")
+     * @Route("/repair", name="to_repair")
      */
     public function showAdPage()
     {
-        return $this->render('ad.html.twig');
+        return $this->render('toRepair.html.twig');
     }
     
     /** 
