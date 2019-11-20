@@ -47,9 +47,17 @@ class DefaultController extends AbstractController
     /**
      * @Route("/repair", name="to_repair")
      */
-    public function showAdPage()
+    public function showRepairPage()
     {
         return $this->render('toRepair.html.twig');
+    }
+
+    /**
+     * @Route("/sell", name="to_sell")
+     */
+    public function showSellPage()
+    {
+        return $this->render('toSell.html.twig');
     }
     
     /** 
