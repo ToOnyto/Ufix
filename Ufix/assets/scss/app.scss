@@ -1,3 +1,19 @@
+$color1: white;
+$color2: #231f20;
+$color3: #ff7417;
+$color4: #f3f3f3;
+$color5: #65c18d;
+
+$primary: $color3 !default;
+$dark: $color2 !default;
+$light: $color1 !default;
+
+$font-1-thin: "Neusa-Thin";
+$font-1-light: "Neusa-Light";
+$font-1: "Neusa";
+$font-1-medium: "Neusa-Medium";
+$font-1-bold: "Neusa-Bold";
+
 @import "../../node_modules/bulma/bulma.sass";
 @import "../../node_modules/bulma-checkradio/dist/css/bulma-checkradio.sass";
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
@@ -55,6 +71,12 @@ $font-1: "Neusa";
 $font-1-medium: "Neusa-Medium";
 $font-1-bold: "Neusa-Bold";
 
+button {
+  font-family: $font-1-bold;
+  font-weight: normal;
+  font-size: 16px;
+  padding-top: calc(0.6em - 1px) !important;
+}
 body {
   font-family: $font-1;
   background-color: $color1;
@@ -100,7 +122,7 @@ body {
     display: flex;
   }
   .hero.is-fullheight-with-navbar {
-    min-height: calc(100vh - 3.2rem) !important;
+    min-height: calc(100vh - 5.4rem) !important;
   }
   .navbar-menu {
     .navbar-end {
@@ -109,15 +131,17 @@ body {
     .navbar-center {
       .navbar-item::before {
         content: "";
-        background-color: $color3;
-        opacity: 0.8;
-        width: 30%;
-        height: 0.1rem;
+        background-color: $color1;
+        opacity: 1;
+        width: 0.1rem;
+        height: 20%;
         position: absolute;
-        left: 35%;
-        bottom: 28%;
+        left: 49%;
+        bottom: 0%;
       }
       .navbar-item:active,
+      .is-active::before,
+      .is-active,
       .navbar-item:hover {
         background-color: $color2;
         font-family: $font-1-bold;
@@ -156,10 +180,8 @@ body {
 
 // START HOME
 #home_logo {
-
-  height: auto; 
-  width: auto; 
-
+  height: auto;
+  width: auto;
 }
 #slogan {
   font-size: 1.3rem;
@@ -182,6 +204,9 @@ body {
   background-color: $color3;
   color: $color1;
   text-transform: uppercase;
+  font-family: $font-1-bold;
+  font-weight: normal;
+  font-size: 16px;
 }
 
 .is-custom-button-5 {
@@ -191,15 +216,17 @@ body {
 }
 // END HOME
 .extended {
-  background-color: $color4;
-  padding: 0.2rem;
+  background-color: $color3;
+  padding: 0.4rem 0 0.3rem 0;
   .title {
-    font: 16px $font-1-light, sans-serif;
+    font: 18px $font-1, sans-serif;
+    color: $color1;
   }
 }
 .is-fullheight-with-navbar {
   .hero-body {
     padding: 3rem 0rem;
+    align-items: baseline !important;
   }
 }
 .is-fluid-without-padding {
@@ -216,22 +243,22 @@ body {
   background-color: $color2;
 }
 
-.has-item-centered{
+.has-item-centered {
   display: block;
   margin-right: auto;
   margin-left: auto;
 }
 
-#profil-default{
+#profil-default {
   height: 50%;
   width: 50%;
 }
 
-.button-edit{
-  margin-top:-5%;
+.button-edit {
+  margin-top: -5%;
 }
 
-.margin-form{
+.margin-form {
   margin-left: 5%;
   margin-right: 5%;
 }
@@ -241,8 +268,60 @@ body {
   margin-right:15%;
 }
 
-.min-height-textarea{
-  min-height:20rem !important;
+.tile {
+  a {
+    color: $color2;
+    text-decoration: underline;
+  }
+  .title {
+    font-family: $font-1-bold;
+    font-size: 25px;
+    font-weight: normal;
+  }
+  .field {
+    .label {
+      font-family: $font-1-light;
+      font-size: 14px;
+      font-weight: normal;
+    }
+    .control {
+      .select {
+        select {
+          option {
+            font-family: $font-1;
+            font-size: 16px;
+            font-weight: normal;
+          }
+        }
+      }
+    }
+  }
+}
+// label::before {
+//   border-color: $color3 !important;
+//   background-color: $color3 !important;
+// }
+.container2 {
+  padding: 1rem;
+  background-color: $color4;
+}
+article {
+  a {
+    color: $color3;
+    text-decoration: underline;
+    font-family: "Neusa-Light";
+    font-size: 14px;
+    font-weight: normal;
+  }
+}
+
+.margin-contact {
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+.min-height-textarea {
+  min-height: 20rem !important;
   margin-bottom: 5%;
 }
 
