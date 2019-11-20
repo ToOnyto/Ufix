@@ -60,4 +60,11 @@ class DefaultController extends AbstractController
         return $this->render('contact_seller_without_repair.html.twig');
     }
 
+    /** 
+     * @Route("/contact-Seller-With-Repair", name="contact_seller_with_repair")
+     */
+    public function showContactSellerWithRepair ()
+    {
+        return $this->render('contact_seller_with_repair.html.twig');
+    }
 }
