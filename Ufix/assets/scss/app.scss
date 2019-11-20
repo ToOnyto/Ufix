@@ -214,7 +214,7 @@ body {
   width: 20%;
 }
 
-.card-footer {
+.custom-card-footer{
   background-color: $color2;
 }
 
@@ -260,4 +260,16 @@ body {
 .card-header,
 .card-content {
   background-color: $color4;
+}
+
+.custom-card-footer {
+  .columns {
+    .column {
+      p {
+        color: $color1;
+        font-size: 1.5rem;
+        font-family: $font-1-bold;
+      }
+    }
+  }
 }
