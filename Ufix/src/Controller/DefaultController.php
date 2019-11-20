@@ -53,7 +53,6 @@ class DefaultController extends AbstractController
     }
 
     /** 
-
      * @Route("/selectRepairer", name="select_repairer")
      */
     public function showSelectRepairer()
@@ -61,9 +60,9 @@ class DefaultController extends AbstractController
         return $this->render('select_repairer.html.twig');
     }
 
-
-     * @Route("/contact-seller-without-repair", name="contact_seller_without_repair")
-     */
+    /**
+    * @Route("/contact-seller-without-repair", name="contact_seller_without_repair")
+    */
     public function showContactSellerWithoutRepair ()
     {
         return $this->render('contact_seller_without_repair.html.twig');
