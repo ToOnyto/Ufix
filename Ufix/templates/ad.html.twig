@@ -1,92 +1,107 @@
 {% extends 'base.html.twig' %}
 
-
-
 {% block navbar %}
-{{ parent() }}
-<div class="container-is-fluid extended">
-    <p class="is-size-3 has-text-centered">Annonce</p>
-</div>
+	{{ parent() }}
+	<div class="container-is-fluid extended">
+		<p class="is-size-3 has-text-centered">Annonce</p>
+	</div>
+{% endblock %}
 
 {% block body %}
 
-<div class="container">
+	<div class="container">
 
-    <div class="card">
-        <header class="card-header">
-            <div class="columns">
-                <h2 class="column ad">Iphone 5</h2>
-                <i class="far fa-user is-size-6"></i>
-            </div>
-            <h3>Hors service</h3>
+		<div class="card">
+			<header class="card-header">
+				<div class="tile is-ancestor">
+					<div class="tile is-parent is-vertical has-text-centered">
 
-            <img src="#" alt="Image Iphone 5">
-        </header>
+						<div class="tile is-child">
+                            <div class="columns">
+								<div class="column">
+									<h2 class="ad">Iphone 5</h2>
+								</div>
+								<div class="column">
+									<span class="icon">
+										<i class="far fa-user is-size-6"></i>
+									</span>
+								</div>
+							</div>
+                        </div>
+                        
+						<div class="tile is-child">
+							<h3>Hors service</h3>
+                        </div>
+                        
+						<div class="tile is-child is-color6">
+							<img src="{{ asset('img/iphone5.png') }}" alt="Image Iphone 5">
+						</div>
 
-        <div class="card-content has-text-centered">
-            <div class="content">
-                <div class="columns">
-                    <div class="column">
-                        <h2 class="is-uppercase">Détails Techniques</h2>
-                        <table class="has-text-centered">
-                            <thead>
-                                <tr>
-                                    <th>marque</th>
-                                    <th>modèle</th>
-                                </tr>
+					</div>
+				</div>
+			</header>
 
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Apple</td>
-                                    <td>Iphone 5</td>
-                                </tr>
-                            </tbody>
-                            <thead>
-                                <tr>
-                                    <th>couleur</th>
-                                    <th>capacité</th>
-                                </tr>
+			<div class="card-content has-text-centered">
+				<div class="content">
+					<div class="columns">
+						<div class="column">
+							<h2 class="is-uppercase">Détails Techniques</h2>
+							<table class="has-text-centered">
+								<thead>
+									<tr>
+										<th>marque</th>
+										<th>modèle</th>
+									</tr>
 
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Blanc</td>
-                                    <td>64 Go</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="column">
-                        <h2 class="is-uppercase">Description</h2>
-                        <p>Iphone 5 avec un problème matériel, le téléphone s'allume
-                            et se charge mais reste bloqué sur l'écran de recherche du serveur d'activation d'Apple </p>
-                    </div>
-                    <div class="column">
-                        <h2 class="is-uppercase">Vendeur</h2>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Apple</td>
+										<td>Iphone 5</td>
+									</tr>
+								</tbody>
+								<thead>
+									<tr>
+										<th>couleur</th>
+										<th>capacité</th>
+									</tr>
 
-                    </div>
-                </div>
-            </div>
-        </div>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Blanc</td>
+										<td>64 Go</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="column">
+							<h2 class="is-uppercase">Description</h2>
+							<p>Iphone 5 avec un problème matériel, le téléphone s'allume
+							 et se charge mais reste bloqué sur l'écran de recherche du serveur d'activation d'Apple</p>
+						</div>
+						<div class="column">
+							<h2 class="is-uppercase">Vendeur</h2>
 
-        <footer class="card-footer">
+						</div>
+					</div>
+				</div>
+			</div>
 
-            <span class="fa-stack fa-2x">
-                <i class="fas fa-circle fa-stack-1x fa"></i>
-                <i class="far fa-user fa-stack-1x fa-inverse"></i>
-            </span>
+			<footer class="card-footer">
 
-
-            <button class="button is-outlined is-rounded is-custom-button-5">
-                Réparer >
-            </button>
-        </footer>
-    </div>
+				<span class="fa-stack fa-2x">
+					<i class="fas fa-circle fa-stack-1x fa"></i>
+					<i class="far fa-user fa-stack-1x fa-inverse"></i>
+				</span>
 
 
-</div>
-</div>
-</div>
+				<button class="button is-outlined is-rounded is-pulled-right is-custom-button-5">
+					Réparer >
+				</button>
+			</footer>
+		</div>
 
-{% endblock %}
+
+	</div>
+</div></div>{% endblock %}

@@ -47,6 +47,7 @@ $color2: #231f20;
 $color3: #ff7417;
 $color4: #f3f3f3;
 $color5: #65c18d;
+$color6: #e4e4e4;
 
 $font-1-thin: "Neusa-Thin";
 $font-1-light: "Neusa-Light";
@@ -219,4 +220,12 @@ body {
 #profil-default{
   height: 50%;
   width: 50%;
+}
+
+.is-color6 {
+  background-color: $color6;
+}
+
+.card {
+  border-radius: 20px;
 }
