@@ -38,45 +38,13 @@ $font-1-bold: "Neusa-Bold";
 @include font("Neusa-Medium", "./../../public/fonts/NeusaNextPro-Medium");
 @include font("Neusa-Bold", "./../../public/fonts/NeusaNextPro-Bold");
 
-// @font-face {
-//   font-family: "Neusa-thin";
-//   src: url("./../../public/fonts/NEUSANEXTPRO-THIN.TTF");
-// }
-// @font-face {
-//   font-family: "Neusa-light";
-//   src: url("./../../public/fonts/NEUSANEXTPRO-LIGHT.TTF");
-// }
-// @font-face {
-//   font-family: "Neusa-regular";
-//   src: url("./../../public/fonts/NEUSANEXTPRO-REGULAR.TTF");
-// }
-// @font-face {
-//   font-family: "Neusa-medium";
-//   src: url("./../../public/fonts/NEUSANEXTPRO-MEDIUM.TTF");
-// }
-// @font-face {
-//   font-family: "Neusa-bold";
-//   src: url("./../../public/fonts/NEUSANEXTPRO-BOLD.TTF");
-// }
-
-$color1: white;
-$color2: #231f20;
-$color3: #ff7417;
-$color4: #f3f3f3;
-$color5: #65c18d;
-
-$font-1-thin: "Neusa-Thin";
-$font-1-light: "Neusa-Light";
-$font-1: "Neusa";
-$font-1-medium: "Neusa-Medium";
-$font-1-bold: "Neusa-Bold";
-
 button {
   font-family: $font-1-bold;
   font-weight: normal;
   font-size: 16px;
   padding-top: calc(0.6em - 1px) !important;
 }
+
 body {
   font-family: $font-1;
   background-color: $color1;
@@ -91,6 +59,12 @@ body {
   a,
   .icon {
     color: $color1;
+  }
+}
+
+.is-fullheight-with-navbar {
+  .hero-body {
+    align-items: baseline !important;
   }
 }
 
@@ -323,3 +297,32 @@ article {
 .contact-footer {
   background-color: $color2;
 }
+
+.panel {
+  color: $color3;
+  .panel-tabs {
+    a {
+      color: $color2;
+    }
+    a:hover {
+      color: $color3;
+    }
+  }
+  .panel-block {
+    .title {
+      font-family: $font-1-medium;
+      font-size: 20px;
+      font-weight: normal;
+      line-height: normal;
+    }
+    .subtitle {
+      font-family: $font-1-light;
+      font-size: 16px;
+    }
+    .panel-icon {
+      color: $color3;
+      margin-right: 0;
+    }
+  }
+}
+
