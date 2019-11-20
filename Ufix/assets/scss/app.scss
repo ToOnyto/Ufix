@@ -1,4 +1,5 @@
 @import "../../node_modules/bulma/bulma.sass";
+@import "../../node_modules/bulma-carousel/src/sass/index.sass";
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/regular.scss";
@@ -252,4 +253,11 @@ body {
 
 .orange {
   background-color: $color3;
+}
+.card-header {
+  display: block;
+}
+.card-header,
+.card-content {
+  background-color: $color4;
 }
