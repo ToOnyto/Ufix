@@ -234,3 +234,54 @@ body {
   margin-left: 5%;
   margin-right: 5%;
 }
+
+.repairer {
+  background-color: $color4;
+  border-style: solid;
+  border-radius: 10px;
+  border-color: $color2;
+  border-width: 2px;
+  margin: 20px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.rate {
+  background-color: $color5;
+  border-radius: 50px;
+  color: $color4;
+  width: 80%;
+  font-family : $font-1-bold;
+
+}
+
+
+
+.star::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f005";
+  color: $color1;
+}
+
+.is-scrollable {
+  height: 30rem;
+  margin: 20px;
+  overflow-y: scroll;
+}
+
+.is-margin-top {
+  margin-top : 20px;
+}
+
+
+.contact-footer {
+  background-color: $color2;
+}
+  
+.text-footer {
+  color : $color1;
+}
+

@@ -21,7 +21,7 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/newad", name="new_ad")
+     * @Route("/new-ad", name="new_ad")
      */
     public function newAd()
     {
@@ -50,6 +50,14 @@ class DefaultController extends AbstractController
     public function showAdsSaved()
     {
         return $this->render('ads_saved.html.twig');
+    }
+
+    /** 
+     * @Route("/selectRepairer", name="select_repairer")
+     */
+    public function showSelectRepairer()
+    {
+        return $this->render('select_repairer.html.twig');
     }
 
 }
