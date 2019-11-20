@@ -14,7 +14,6 @@ $font-1: "Neusa";
 $font-1-medium: "Neusa-Medium";
 $font-1-bold: "Neusa-Bold";
 
-
 @import "../../node_modules/bulma/bulma.sass";
 @import "../../node_modules/bulma-checkradio/dist/css/bulma-checkradio.sass";
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
@@ -236,6 +235,10 @@ body {
   width: 100%;
 }
 
+#image-new-ad {
+  width: 20%;
+}
+
 .card-footer {
   background-color: $color2;
 }
@@ -259,6 +262,7 @@ body {
   margin-left: 5%;
   margin-right: 5%;
 }
+
 .tile {
   a {
     color: $color2;
@@ -304,4 +308,18 @@ article {
     font-size: 14px;
     font-weight: normal;
   }
+}
+
+.margin-contact {
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+.min-height-textarea {
+  min-height: 20rem !important;
+  margin-bottom: 5%;
+}
+
+.contact-footer {
+  background-color: $color2;
 }

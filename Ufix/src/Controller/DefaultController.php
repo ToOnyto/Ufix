@@ -52,4 +52,19 @@ class DefaultController extends AbstractController
         return $this->render('ads_saved.html.twig');
     }
 
+    /** 
+     * @Route("/contact-seller-without-repair", name="contact_seller_without_repair")
+     */
+    public function showContactSellerWithoutRepair ()
+    {
+        return $this->render('contact_seller_without_repair.html.twig');
+    }
+
+    /** 
+     * @Route("/contact-seller-with-repair", name="contact_seller_with_repair")
+     */
+    public function showContactSellerWithRepair ()
+    {
+        return $this->render('contact_seller_with_repair.html.twig');
+    }
 }
