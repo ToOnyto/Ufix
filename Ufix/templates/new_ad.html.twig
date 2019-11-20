@@ -1,9 +1,9 @@
-{% extends 'base.html.twig' %} 
+{% extends 'base.html.twig' %}
 {% block navbar %}
-{{ parent() }}
-<div class="container-is-fluid extended">
-  <p class="title has-text-centered">Déposer une annonce</p>
-</div>
+	{{ parent() }}
+	<div class="container-is-fluid extended">
+		<p class="title has-text-centered">Déposer une annonce</p>
+	</div>
 
 {% endblock %}
 
@@ -17,15 +17,15 @@
 					<div class="field">
 						<label class="label">Catégorie</label>
 						<div class="control">
-						  <div class="select">
-							<select>
-							  <option>Téléphone</option>
-							  <option>Tablette</option>
-							  <option>Ordinateur</option>
-							</select>
-						  </div>
+							<div class="select">
+								<select>
+									<option>Téléphone</option>
+									<option>Tablette</option>
+									<option>Ordinateur</option>
+								</select>
+							</div>
 						</div>
-					  </div>
+					</div>
 					<div class="field">
 						<label class="label">Nom du produit</label>
 						<div class="control">
@@ -48,37 +48,65 @@
 
 					<div class="field">
 						<div class="control">
-							<label class="radio">
-								<input type="radio" name="question">
-								Vendre
-							</label>
-							<label class="radio">
-								<input type="radio" name="question">
-								Réparer
-							</label>
+							<div class="field">
+								<input class="is-checkradio is-rtl has-background-color is-warning" id="exampleRtlRadioInline1" type="radio" name="exampleRtlRadioInline" checked="checked">
+								<label for="exampleRtlRadioInline1">Vendre</label>
+								<input class="is-checkradio is-rtl has-background-color is-warning" id="exampleRtlRadioInline2" type="radio" name="exampleRtlRadioInline">
+								<label for="exampleRtlRadioInline2">Réparer</label>
+							  </div>
 						</div>
 					</div>
 
 				</article>
 			</div>
-			<div class="tile is-parent is-6 is-vertical">
-				<article class="tile is-child">
+
+			<div class="tile is-parent is-vertical is-6 has-text-centered is-hidden-mobile">
+				<article class="tile is-child ">
 					<a>image.jpg</a>
-					<img id="image-new-ad" src="{{ asset('img/ecran-casse.jpg') }}" alt="image produit">
-					{# <p class="subtitle">What is up?</p> #}
+					<img
+					id="image-new-ad" src="{{ asset('img/ecran-casse.jpg') }}" alt="image produit">
+				{# <p class="subtitle">What is up?</p> #}
 				</article>
 				<article class="tile is-child">
 					<a>image.jpg</a>
-					<img id="image-new-ad" src="{{ asset('img/ecran-casse.jpg') }}" alt="image produit">
-					{# <p class="subtitle">What is up?</p> #}
+					<img
+					id="image-new-ad" src="{{ asset('img/ecran-casse.jpg') }}" alt="image produit">
+				{# <p class="subtitle">What is up?</p> #}
 				</article>
 				<article class="tile is-child">
 					<a>image.jpg</a>
-					<img id="image-new-ad" src="{{ asset('img/ecran-casse.jpg') }}" alt="image produit">
-					{# <p class="subtitle">What is up?</p> #}
+					<img
+					id="image-new-ad" src="{{ asset('img/ecran-casse.jpg') }}" alt="image produit">
+				{# <p class="subtitle">What is up?</p> #}
 				</article>
 			</div>
+			
+			<div class="tile is-parent is-6 has-text-centered is-hidden-desktop">
+				<article class="tile is-child ">
+					<a>image.jpg</a>
+					<img
+					id="image-new-ad" src="{{ asset('img/ecran-casse.jpg') }}" alt="image produit">
+				{# <p class="subtitle">What is up?</p> #}
+				</article>
+				<article class="tile is-child">
+					<a>image.jpg</a>
+					<img
+					id="image-new-ad" src="{{ asset('img/ecran-casse.jpg') }}" alt="image produit">
+				{# <p class="subtitle">What is up?</p> #}
+				</article>
+				<article class="tile is-child">
+					<a>image.jpg</a>
+					<img
+					id="image-new-ad" src="{{ asset('img/ecran-casse.jpg') }}" alt="image produit">
+				{# <p class="subtitle">What is up?</p> #}
+				</article>
+			</div>
+
+
+
+
 		</div>
+		
 		<div class="tile is-ancestor has-padding-5">
 
 			<div class="tile is-parent">
@@ -88,8 +116,6 @@
 			</div>
 		</div>
 	</div>
-
-
 
 
 {% endblock %}
