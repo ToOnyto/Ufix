@@ -21,6 +21,14 @@ class DefaultController extends AbstractController
     }
 
     /**
+     * @Route("/home", name="home_connected")
+     */
+    public function showConnectedHomePage()
+    {
+        return $this->render('home_connected.html.twig');
+    }
+
+    /**
      * @Route("/newad", name="new_ad")
      */
     public function newAd()
