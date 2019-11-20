@@ -6,6 +6,7 @@ $color5: #65c18d;
 $color6: #e4e4e4;
 
 $primary: $color3 !default;
+$info: $color5 !default;
 $dark: $color2 !default;
 $light: $color1 !default;
 
@@ -87,9 +88,6 @@ body {
       }
     }
   }
-  #image-new-ad {
-    width: 20%;
-  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -123,9 +121,6 @@ body {
         font-family: $font-1-bold;
         color: $color3;
       }
-    }
-    #image-new-ad {
-      width: 40%;
     }
   }
 }
@@ -176,27 +171,6 @@ body {
   background-color: $color4;
 }
 
-.is-custom {
-  background-color: $color3;
-  color: $color1;
-  text-transform: uppercase;
-  font-family: $font-1-bold;
-  font-weight: normal;
-  font-size: 16px;
-}
-
-.is-custom-button-3 {
-  background-color: $color3;
-  color: $color1;
-  text-transform: uppercase;
-}
-
-.is-custom-button-5 {
-  background-color: $color5;
-  color: $color1;
-  text-transform: uppercase;
-}
-// END HOME
 .extended {
   background-color: $color3;
   padding: 0.4rem 0 0.3rem 0;
@@ -215,10 +189,6 @@ body {
   max-width: none;
   padding: 0;
   width: 100%;
-}
-
-#image-new-ad {
-  width: 20%;
 }
 
 .custom-card-footer{
