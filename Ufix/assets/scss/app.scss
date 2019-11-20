@@ -1,3 +1,19 @@
+$color1: white;
+$color2: #231f20;
+$color3: #ff7417;
+$color4: #f3f3f3;
+$color5: #65c18d;
+
+$primary: $color3 !default;
+$dark: $color2 !default;
+$light: $color1 !default;
+
+$font-1-thin: "Neusa-Thin";
+$font-1-light: "Neusa-Light";
+$font-1: "Neusa";
+$font-1-medium: "Neusa-Medium";
+$font-1-bold: "Neusa-Bold";
+
 @import "../../node_modules/bulma/bulma.sass";
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
@@ -21,39 +37,6 @@
 @include font("Neusa-Medium", "./../../public/fonts/NeusaNextPro-Medium");
 @include font("Neusa-Bold", "./../../public/fonts/NeusaNextPro-Bold");
 
-// @font-face {
-//   font-family: "Neusa-thin";
-//   src: url("./../../public/fonts/NEUSANEXTPRO-THIN.TTF");
-// }
-// @font-face {
-//   font-family: "Neusa-light";
-//   src: url("./../../public/fonts/NEUSANEXTPRO-LIGHT.TTF");
-// }
-// @font-face {
-//   font-family: "Neusa-regular";
-//   src: url("./../../public/fonts/NEUSANEXTPRO-REGULAR.TTF");
-// }
-// @font-face {
-//   font-family: "Neusa-medium";
-//   src: url("./../../public/fonts/NEUSANEXTPRO-MEDIUM.TTF");
-// }
-// @font-face {
-//   font-family: "Neusa-bold";
-//   src: url("./../../public/fonts/NEUSANEXTPRO-BOLD.TTF");
-// }
-
-$color1: white;
-$color2: #231f20;
-$color3: #ff7417;
-$color4: #f3f3f3;
-$color5: #65c18d;
-
-$font-1-thin: "Neusa-Thin";
-$font-1-light: "Neusa-Light";
-$font-1: "Neusa";
-$font-1-medium: "Neusa-Medium";
-$font-1-bold: "Neusa-Bold";
-
 body {
   font-family: $font-1;
   background-color: $color1;
@@ -68,6 +51,12 @@ body {
   a,
   .icon {
     color: $color1;
+  }
+}
+
+.is-fullheight-with-navbar {
+  .hero-body {
+    align-items: baseline !important;
   }
 }
 
@@ -149,10 +138,8 @@ body {
 
 // START HOME
 #home_logo {
-
-  height: auto; 
-  width: auto; 
-
+  height: auto;
+  width: auto;
 }
 #slogan {
   font-size: 1.3rem;
@@ -185,7 +172,6 @@ body {
 // END HOME
 .extended {
   background-color: $color4;
-<<<<<<< HEAD
   padding: 0.2rem;
   .title {
     font: 16px $font-1-light, sans-serif;
@@ -202,7 +188,6 @@ body {
   width: 100%;
 }
 
-
 #image-new-ad {
   width: 20%;
 }
@@ -211,17 +196,41 @@ body {
   background-color: $color2;
 }
 
-.has-item-centered{
+.has-item-centered {
   display: block;
   margin-right: auto;
   margin-left: auto;
 }
 
-#profil-default{
+#profil-default {
   height: 50%;
   width: 50%;
 }
-=======
-}
 
->>>>>>> d6d42ef6b171133aa4fddd4d597c2edd0c763c44
+.panel {
+  color: $color3;
+  .panel-tabs {
+    a {
+      color: $color2;
+    }
+    a:hover {
+      color: $color3;
+    }
+  }
+  .panel-block {
+    .title {
+      font-family: $font-1-medium;
+      font-size: 20px;
+      font-weight: normal;
+      line-height: normal;
+    }
+    .subtitle {
+      font-family: $font-1-light;
+      font-size: 16px;
+    }
+    .panel-icon {
+      color: $color3;
+      margin-right: 0;
+    }
+  }
+}
