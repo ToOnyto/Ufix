@@ -21,7 +21,15 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/new-ad", name="new_ad")
+     * @Route("/home", name="home_connected")
+     */
+    public function showConnectedHomePage()
+    {
+        return $this->render('home_connected.html.twig');
+    }
+
+    /**
+     * @Route("/newad", name="new_ad")
      */
     public function newAd()
     {
@@ -37,11 +45,19 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/ad", name="ad")
+     * @Route("/repair", name="to_repair")
      */
-    public function showAdPage()
+    public function showRepairPage()
     {
-        return $this->render('ad.html.twig');
+        return $this->render('toRepair.html.twig');
+    }
+
+    /**
+     * @Route("/sell", name="to_sell")
+     */
+    public function showSellPage()
+    {
+        return $this->render('toSell.html.twig');
     }
     
     /** 

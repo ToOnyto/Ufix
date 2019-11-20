@@ -1,0 +1,159 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Annonce
+{% endblock %}
+
+{% block navbar %}
+	{{ parent() }}
+	<div class="container-is-fluid extended">
+		<p class="is-size-3 has-text-centered">Annonce</p>
+	</div>
+{% endblock %}
+
+{% block body %}
+
+	<div class="container">
+
+		<div class="card">
+			<header class="card-header">
+				<div class="tile is-ancestor">
+					<div class="tile is-parent is-vertical has-text-centered">
+
+						<div class="tile is-child">
+							<div class="columns">
+								<div class="column">
+									<h2 class="ad">Iphone 4</h2>
+									<span class="fa-stack">
+										<i class="fas fa-circle orange-circle fa-2x"></i>
+										<i class="fas fa-exclamation-triangle fa-stack-1x fa-inverse"></i>
+									</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="tile is-child">
+							<h3>Ecran cassé</h3>
+						</div>
+
+						<div class="tile is-child">
+							<div class="columns is-centered">
+								<div class="column is-color6 is-4">
+									<img src="{{ asset('img/ecran-casse.jpg ') }}" alt="Image Iphone 4 écran cassé">
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</header>
+
+			<div class="card-content has-text-centered">
+				<div class="content">
+					<div class="columns">
+						<div class="column">
+							<h2 class="is-uppercase">Détails Techniques</h2>
+							<table class="has-text-centered">
+								<thead>
+									<tr>
+										<th>marque</th>
+										<th>modèle</th>
+									</tr>
+
+								</thead>
+								<tbody>
+									<tr>
+										<td>Apple</td>
+										<td>Iphone 4</td>
+									</tr>
+								</tbody>
+								<thead>
+									<tr>
+										<th>couleur</th>
+										<th>capacité</th>
+									</tr>
+
+								</thead>
+								<tbody>
+									<tr>
+										<td>Noir</td>
+										<td>64 Go</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="column">
+							<h2 class="is-uppercase">Description</h2>
+							<p>Je vend mon Iphone 4, l'écran est cassé mais le tactile fonctionne, le bonton home est capricieux. A réparer ou bien pour pièces, prix ferme.</p>
+						</div>
+						<div class="column">
+							<h2 class="is-uppercase">Vendeur</h2>
+							<span class="tag orange">4.7</span>
+							<p>Jacques POMMIER
+								<br>
+								Gradignan - 33 170</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<footer class="custom-card-footer">
+				<div class="columns is-marginless is-vcentered is-variable is-hidden-mobile">
+					<div class="column is-1">
+						<span class="fa-stack">
+							<i class="fas fa-circle orange-circle fa-2x"></i>
+							<i class="far fa-heart fa-stack-1x fa-inverse"></i>
+						</span>
+					</div>
+					<div class="column is-7 has-text-centered">
+						<p>50€</p>
+					</div>
+					<div class="column is-2">
+						<button class="button is-rounded is-custom-button-5">
+							<span>Réparer</span>
+							<span class="icon">
+								<i class="fas fa-angle-right"></i>
+							</span>
+						</button>
+					</div>
+					<div class="column is-2">
+						<button class="button is-rounded is-custom-button-3">
+							<span>Contacter</span>
+							<span class="icon">
+								<i class="fas fa-angle-right"></i>
+							</span>
+						</button>
+					</div>
+				</div>
+
+				<div class="columns is-marginless is-vcentered is-variable is-mobile is-hidden-tablet is-hidden-desktop">
+					<div class="column is-2">
+						<span class="fa-stack">
+							<i class="fas fa-circle orange-circle fa-2x"></i>
+							<i class="far fa-heart fa-stack-1x fa-inverse"></i>
+						</span>
+					</div>
+					<div class="column is-2">
+						<p>50€</p>
+					</div>
+					<div class="column is-4">
+						<button class="button is-rounded is-custom-button-5">
+							<span>Réparer</span>
+							<span class="icon">
+								<i class="fas fa-angle-right"></i>
+							</span>
+						</button>
+					</div>
+					<div class="column is-4">
+						<button class="button is-rounded is-custom-button-3">
+							<span>Contacter</span>
+							<span class="icon">
+								<i class="fas fa-angle-right"></i>
+							</span>
+						</button>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</div>
+</div></div>{% endblock %}

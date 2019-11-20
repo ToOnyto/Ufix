@@ -16,6 +16,7 @@ $font-1-bold: "Neusa-Bold";
 
 @import "../../node_modules/bulma/bulma.sass";
 @import "../../node_modules/bulma-checkradio/dist/css/bulma-checkradio.sass";
+@import "../../node_modules/bulma-carousel/src/sass/index.sass";
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/regular.scss";
@@ -183,6 +184,12 @@ body {
   font-size: 16px;
 }
 
+.is-custom-button-3 {
+  background-color: $color3;
+  color: $color1;
+  text-transform: uppercase;
+}
+
 .is-custom-button-5 {
   background-color: $color5;
   color: $color1;
@@ -213,7 +220,7 @@ body {
   width: 20%;
 }
 
-.card-footer {
+.custom-card-footer{
   background-color: $color2;
 }
 
@@ -371,4 +378,48 @@ article {
 
 .text-footer {
   color: $color1;
+}
+.is-color6 {
+  background-color: $color6;
+}
+
+.card {
+  border-radius: 20px;
+}
+
+/**
+.fa-stack {
+  font-size: .8em; 
+  i { vertical-align: middle; }
+}
+**/
+.green-circle {
+  color: $color5;
+}
+
+.orange-circle {
+  color: $color3;
+}
+
+.orange {
+  background-color: $color3;
+}
+.card-header {
+  display: block;
+}
+.card-header,
+.card-content {
+  background-color: $color4;
+}
+
+.custom-card-footer {
+  .columns {
+    .column {
+      p {
+        color: $color1;
+        font-size: 1.5rem;
+        font-family: $font-1-bold;
+      }
+    }
+  }
 }
