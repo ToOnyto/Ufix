@@ -1,0 +1,178 @@
+{% extends 'base.html.twig' %} {% block navbar %}
+{{ parent() }}
+<div class="container-is-fluid extended">
+  <p class="title has-text-centered">Mes annonces</p>
+</div>
+
+{% endblock %} {% block body %}
+
+<div class="container">
+    <div class="columns">
+        <div class="column is-3-desktop is-half-mobile is-offset-one-quarter-mobile column-edit">
+            <article>
+                <img
+                id="image-new-ad"
+                src="{{ asset('img/ecran-casse.jpg') }}"
+                alt="image annonce 1"
+                />
+                <div class="text-block has-text-centered">
+                    <p>iPhone 4</p>
+                    <p>Ecran cassé</p>
+                </div>
+                <div class="has-text-centered" id="selected">
+                    MODIFIER
+                </div>
+            </article>
+            <article>
+                <img
+                id="image-new-ad"
+                src="{{ asset('img/iphone4.png') }}"
+                alt="image annonce 2"
+                />
+                <div class="text-block has-text-centered">
+                    <p>iPhone 4</p>
+                    <p>Hors service</p>
+                </div>
+                <div class="has-text-centered">
+                    MODIFIER
+                </div>
+            </article>
+            <article>
+                <img
+                id="image-new-ad"
+                src="{{ asset('img/iphone6.png') }}"
+                alt="image annonce 3"
+                />
+                <div class="text-block has-text-centered">
+                    <p>iPhone 6</p>
+                    <p>Lightning fracassé</p>
+                </div>
+                <div class="has-text-centered">
+                    MODIFIER
+                </div>
+            </article>
+        </div>
+        <div class="column is-9">
+            <div class="columns container2 is-multiline is-desktop">
+                <div class="column is-9-desktop is-12">
+                <article class="tile is-child ">
+                    <p class="title has-text-centered">Informations sur le produit</p>
+                    <div class="field">
+                    <label class="label">Catégorie</label>
+                    <div class="control">
+                        <div class="select">
+                        <select>
+                            <option>Téléphone</option>
+                            <option>Tablette</option>
+                            <option>Ordinateur</option>
+                        </select>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="field">
+                    <label class="label">Nom du produit</label>
+                    <div class="control">
+                        <input class="input" type="text" value="Iphone 4" />
+                    </div>
+                    </div>
+                    <div class="field">
+                    <label class="label">Etat du produit</label>
+                    <div class="control">
+                        <input class="input" type="text" value="Ecran cassé" />
+                    </div>
+                    </div>
+
+                    <div class="field">
+                    <label class="label">Description</label>
+                    <div class="control">
+                        <textarea class="textarea">
+Je vend mon iphone 4, l'écran est cassé mais le tactile fonctionne, le bouton home est capricieux.
+A réparer ou bien pour pièces, prix ferme. 
+                        </textarea>
+                    </div>
+                    </div>
+
+                    <div class="field">
+                    <div class="control">
+                        <div class="field">
+                        <input
+                            class="is-checkradio is-rtl has-background-color is-warning"
+                            id="exampleRtlRadioInline1"
+                            type="radio"
+                            name="exampleRtlRadioInline"
+                            checked="checked"
+                        />
+                        <label for="exampleRtlRadioInline1">Vendre</label>
+                        <input
+                            class="is-checkradio is-rtl has-background-color is-warning"
+                            id="exampleRtlRadioInline2"
+                            type="radio"
+                            name="exampleRtlRadioInline"
+                        />
+                        <label for="exampleRtlRadioInline2">Réparer</label>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="field prix">
+                        <label class="label">Prix</label>
+                        <div class="control has-icons-right">
+                            <input class="input" type="text" value="49.99"/>
+                            <span class="icon is-small is-right">
+                                <i class="fas fa-euro-sign"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                </article>
+                </div>
+                <div class="column is-3-desktop is-half-mobile is-offset-one-quarter-mobile">
+                <article>
+                    <a>image.jpg</a>
+                    <img
+                    id="image-new-ad"
+                    src="{{ asset('img/ecran-casse.jpg') }}"
+                    alt="image produit"
+                    />
+                    {#
+                    <p class="subtitle">What is up?</p>
+                    #}
+                </article>
+                <article>
+                    <a>image.jpg</a>
+                    <img
+                    id="image-new-ad"
+                    src="{{ asset('img/ecran-casse.jpg') }}"
+                    alt="image produit"
+                    />
+                    {#
+                    <p class="subtitle">What is up?</p>
+                    #}
+                </article>
+                <article>
+                    <a>image.jpg</a>
+                    <img
+                    id="image-new-ad"
+                    src="{{ asset('img/ecran-casse.jpg') }}"
+                    alt="image produit"
+                    />
+                    {#
+                    <p class="subtitle">What is up?</p>
+                    #}
+                </article>
+                </div>
+                <div class="column is-half is-offset-one-quarter has-text-centered">
+                    <button class="button is-primary is-rounded is-outlined">
+                        <span>MODIFIER</span>
+                        <span class="icon">
+                            <i class="fas fa-angle-right"></i>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+</div>
+
+{% endblock %}
