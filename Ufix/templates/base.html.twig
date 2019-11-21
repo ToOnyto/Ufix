@@ -32,13 +32,13 @@
 
           <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-center is-size-6">
-              <a class="navbar-item">
+              <a class="navbar-item" href="{{ path('new_ad') }}">
                 Déposer une annonce
               </a>
-              <a class="navbar-item">
+              <a class="navbar-item" href="{{ path('new_ad') }}">
                 Rechercher une annonce
               </a>
-              <a class="navbar-item">
+              <a class="navbar-item" href="{{ path('new_ad') }}">
                 Mes annonces
               </a>
             </div>
@@ -50,7 +50,7 @@
                   <span class="icon is-medium">
                     <i class="far fa-user is-size-6"></i>
                   </span>
-                  <span class="icon is-small">
+                  <span class="icon is-small-desktop is-medium-mobile is-medium-tablet">
                     <i class="far fa-comment-alt is-size-6"></i>
                   </span>
                   <span class="icon is-medium">
@@ -64,9 +64,11 @@
         {% endblock %}
       </div>
     </section>
-
+    
     <section class="hero is-fullheight-with-navbar">
+        
       <div class="hero-body">
+         
         {% block body %}{% endblock %}
       </div>
       <div class="hero-footer">
