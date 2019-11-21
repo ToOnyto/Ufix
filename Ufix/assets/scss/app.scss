@@ -420,6 +420,7 @@ article {
 .orange {
   background-color: $color3;
 }
+
 .card-header {
   display: block;
   padding-bottom: 2rem;
@@ -673,6 +674,10 @@ hr {
   }
 }
 
+<<<<<<< HEAD
+.without-blue {
+  color : $color2;
+=======
 .legal-mentions {
   margin-bottom: 20px;
   margin-top: 20px;
@@ -708,4 +713,5 @@ hr {
 }
 .title-wrapper {
   margin: 0 0 5rem 0 !important;
+>>>>>>> aed90181275c35d7627e6ebee1b0b887e72ac5a8
 }

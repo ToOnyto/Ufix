@@ -63,7 +63,7 @@
 							<!-- Fills the grid -->
 							{% for i in 0..2 %}
 								<div class="columns">
-									<div class="column">
+									<a class="column without-blue" href="{{ path('to_repair') }}">
 										<div class="is-white is-4">
 											<img class="image-grid" src="{{ asset('img/iphone5.png') }}" alt="Image Iphone 5">
 											<div class="column is-half is-offset-one-quarter has-text-centered">
@@ -87,14 +87,20 @@
 
 											</div>
 										</div>
-									</div>
-									<div class="column">
+									</a>
+									<a class="column without-blue" href="{{ path('to_sell') }}">
 										<div class="is-white is-4">
 											<img class="image-grid" src="{{ asset('img/iphone4.png') }}" alt="Image Iphone 4">
 											<div class="column is-half is-offset-one-quarter has-text-centered">
 												<div class="columns">
 													<div class="column">
 														<p>Iphone 4</p>
+													</div>
+													<div class="column has-text-left-desktop">
+														<span class="fa-stack">
+															<i class="fas fa-circle orange-circle fa-2x"></i>
+															<i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
+														</span>
 													</div>
 												</div>
 												<div class="columns">
@@ -108,17 +114,22 @@
 
 													</div>
 												</div>
-
 											</div>
 										</div>
-									</div>
-									<div class="column">
+									</a>
+									<a class="column without-blue" href="{{ path('to_sell') }}">
 										<div class="is-white is-4">
 											<img class="image-grid" src="{{ asset('img/ecran-casse.jpg') }}" alt="Image Iphone 4">
 											<div class="column is-half is-offset-one-quarter has-text-centered">
 												<div class="columns">
 													<div class="column">
 														<p>Iphone 4</p>
+													</div>
+													<div class="column has-text-left-desktop">
+														<span class="fa-stack">
+															<i class="fas fa-circle orange-circle fa-2x"></i>
+															<i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
+														</span>
 													</div>
 												</div>
 												<div class="columns">
@@ -135,14 +146,21 @@
 
 											</div>
 										</div>
-									</div>
-									<div class="column">
+									</a>
+									
+									<a class="column without-blue" href="{{ path('to_sell') }}">
 										<div class="is-white is-4">
 											<img class="image-grid" src="{{ asset('img/iphone6.png') }}" alt="Image Iphone 6">
 											<div class="column is-half is-offset-one-quarter has-text-centered">
 												<div class="columns">
 													<div class="column">
 														<p>Iphone 6</p>
+													</div>
+													<div class="column has-text-left-desktop">
+														<span class="fa-stack">
+															<i class="fas fa-circle orange-circle fa-2x"></i>
+															<i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
+														</span>
 													</div>
 												</div>
 												<div class="columns">
@@ -158,8 +176,8 @@
 
 											</div>
 										</div>
-									</div>
-									<div class="column">
+									</a>
+									<a class="column without-blue" href="{{ path('to_repair') }}">
 										<div class="is-white is-4">
 											<img class="image-grid" src="{{ asset('img/iphone5.png') }}" alt="Image Iphone 5">
 											<div class="column is-half is-offset-one-quarter has-text-centered">
@@ -183,8 +201,7 @@
 
 											</div>
 										</div>
-									</div>
-
+									</a>
 								</div>
 							{% endfor %}
 						</div>
