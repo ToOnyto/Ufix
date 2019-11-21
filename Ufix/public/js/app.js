@@ -57,3 +57,33 @@ function readURL(input) {
 $("#imageUpload").change(function() {
   readURL(this);
 });
+
+function readURL2(input) {
+  if (input.files && input.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function(e2) {
+          $('#imagePreview2').css('background-image', 'url('+e2.target.result +')');
+          $('#imagePreview2').hide();
+          $('#imagePreview2').fadeIn(650);
+      }
+      reader.readAsDataURL(input.files[0]);
+  }
+}
+$("#imageUpload2").change(function() {
+  readURL2(this);
+});
+
+function readURL3(input) {
+  if (input.files && input.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function(e3) {
+          $('#imagePreview3').css('background-image', 'url('+e3.target.result +')');
+          $('#imagePreview3').hide();
+          $('#imagePreview3').fadeIn(650);
+      }
+      reader.readAsDataURL(input.files[0]);
+  }
+}
+$("#imageUpload3").change(function() {
+  readURL3(this);
+});
