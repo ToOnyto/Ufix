@@ -1,67 +1,73 @@
 <!DOCTYPE html>
 <html>
-<<<<<<< HEAD
-	<head>
-		<meta charset="UTF-8"/>
-		<title>
-			{% block title %}Welcome!
-			{% endblock %}
-		</title>
-		{% block stylesheets %}
-			<link rel="stylesheet" href="{{ asset('build/css/app.css') }}"/>
-		{% endblock %}
-	</head>
-	<body>
-		<section class="hero">
-			<div class="hero-head">
-				{% block navbar %}
-					<nav class="navbar" role="navigation" aria-label="main navigation">
-						<div class="navbar-brand">
-							<a class="navbar-item" href="{{ path('home_page') }}">
-								<img src="{{ asset('img/logo_white.png') }}"/>
-							</a>
-							<a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-								<span aria-hidden="true"></span>
-								<span aria-hidden="true"></span>
-								<span aria-hidden="true"></span>
-							</a>
-						</div>
+  <head>
+    <meta charset="UTF-8" />
+    <title>
+      {% block title %}Welcome! {% endblock %}
+    </title>
+    {% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('build/css/app.css') }}" />
+    {% endblock %}
+  </head>
+  <body>
+    <section class="hero">
+      <div class="hero-head">
+        {% block navbar %}
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+          <div class="navbar-brand">
+            <a class="navbar-item" href="{{ path('home_page') }}">
+              <img src="{{ asset('img/logo_white.png') }}" />
+            </a>
+            <a
+              role="button"
+              class="navbar-burger burger"
+              aria-label="menu"
+              aria-expanded="false"
+              data-target="navbarBasicExample"
+            >
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
+          </div>
 
-						<div id="navbarBasicExample" class="navbar-menu">
-							<div class="navbar-center is-size-6">
-								<a class="navbar-item" href="{{ path('new_ad') }}">
-									Déposer une annonce
-								</a>
-								<a class="navbar-item" href="{{ path('home_connected') }}">
-									Rechercher une annonce
-								</a>
-								<a class="navbar-item" href="{{ path('ads_saved') }}">
-									Mes annonces
-								</a>
-							</div>
-							<div class="navbar-center-mobile is-hidden-desktop"></div>
-							<div class="navbar-end">
-								<a class="navbar-item" href="{{ path('profil_page') }}">
-									<span class="icon is-medium">
-										<i class="far fa-user is-size-6"></i>
-									</span>
-								</a>
-								<a class="navbar-item" href="{{ path('messaging') }}">
-									<span class="icon is-small-desktop is-medium-mobile is-medium-tablet">
-										<i class="far fa-comment-alt is-size-6"></i>
-									</span>
-								</a>
-								<a class="navbar-item" href="{{ path('ads_saved') }}">
-									<span class="icon is-medium">
-										<i class="far fa-heart is-size-6"></i>
-									</span>
-								</a>
-							</div>
-						</div>
-					</nav>
-				{% endblock %}
-			</div>
-		</section>
+          <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-center is-size-6">
+              <a class="navbar-item" href="{{ path('new_ad') }}">
+                Déposer une annonce
+              </a>
+              <a class="navbar-item" href="{{ path('home_connected') }}">
+                Rechercher une annonce
+              </a>
+              <a class="navbar-item" href="{{ path('ads_saved') }}">
+                Mes annonces
+              </a>
+            </div>
+            <div class="navbar-center-mobile is-hidden-desktop"></div>
+            <div class="navbar-end">
+              <a class="navbar-item" href="{{ path('profil_page') }}">
+                <span class="icon is-medium">
+                  <i class="far fa-user is-size-6"></i>
+                </span>
+              </a>
+              <a class="navbar-item" href="{{ path('messaging') }}">
+                <span
+                  class="icon is-small-desktop is-medium-mobile is-medium-tablet"
+                >
+                  <i class="far fa-comment-alt is-size-6"></i>
+                </span>
+              </a>
+              <a class="navbar-item" href="{{ path('ads_saved') }}">
+                <span class="icon is-medium">
+                  <i class="far fa-heart is-size-6"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+        </nav>
+        {% endblock %}
+      </div>
+    </section>
 
     <section class="hero is-fullheight-with-navbar">
       <div class="hero-body verticaly-top">
@@ -105,94 +111,40 @@
       </div>
     </section>
 
-			<div class="hero-body"> {% block body %}{% endblock %}
-				</div>
-				<div class="hero-footer">
-					{% block footer %}
-						<div class="columns is-vcentered">
-							<div class="column">
-								<p class="has-text-left-desktop has-text-centered-mobile has-text-left-tablet">
-									<a href="#" class="is-size-7">Mentions légales</a>
-									|
-									<a href="#" class="is-size-7">Protection des données</a>
-									|
-									<a href="#" class="is-size-7">CGV</a>
-								</p>
-							</div>
-							<div class="column">
-								<p class="has-text-centered is-size-7">@UFiX 2019</p>
-							</div>
-							<div class="column">
-								<p class="has-text-right-desktop has-text-centered-mobile is-size-7 has-text-right-tablet">
-									Retrouvez-nous sur :
-									<span class="icon is-medium">
-										<i class="fab fa-twitter"></i>
-									</span>
-									<span class="icon is-small">
-										<i class="fab fa-facebook-f"></i>
-									</span>
-									<span class="icon is-medium">
-										<i class="far fa-paper-plane"></i>
-									</span>
-								</p>
-							</div>
-						</div>
-					{% endblock %}
-				</div>
-			</section>
+    {% block javascripts %}
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.js"
+    ></script>
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function() {
+        var $navbarBurgers = Array.prototype.slice.call(
+          document.querySelectorAll(".navbar-burger"),
+          0
+        );
 
-			{% block javascripts %}
-				<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.js"></script>
-				{# <script>
-					document.addEventListener("DOMContentLoaded", () => {
-            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll(".navbar-burger"), 0);
-            if ($navbarBurgers.length > 0) {
-              $navbarBurgers.forEach(el => {
-                el.addEventListener("click", () => {
-                  const target = el.dataset.target;
-                  const $target = document.getElementById(target);
-
+        if ($navbarBurgers.length > 0) {
+          $navbarBurgers.forEach(function(el) {
+            el.addEventListener("click", function() {
+              var target = el.dataset.target;
+              var $target = document.getElementById(target);
               el.classList.toggle("is-active");
               $target.classList.toggle("is-active");
             });
           });
         }
       });
-
-      document.addEventListener("DOMContentLoaded", () => {
+      document.addEventListener("DOMContentLoaded", function() {
         (document.querySelectorAll(".notification .delete") || []).forEach(
-          $delete => {
+          function($delete) {
             $notification = $delete.parentNode;
-            $delete.addEventListener("click", () => {
+            $delete.addEventListener("click", function() {
               $notification.parentNode.removeChild($notification);
             });
           }
         );
       });
-
-      const $ = require('jquery');
-
-      $(document).ready(function(){
-        // au clic sur un lien
-        $('a.scroll').on('click', function(evt){
-           // bloquer le comportement par défaut: on ne rechargera pas la page
-           evt.preventDefault(); 
-           // enregistre la valeur de l'attribut  href dans la variable target
-              var target = $(this).attr('href');
-                  /* le sélecteur $(html, body) permet de corriger un bug sur chrome 
-                  et safari (webkit) */
-              $('html, body')
-           // on arrête toutes les animations en cours 
-           .stop()
-           /* on fait maintenant l'animation vers le haut (scrollTop) vers 
-            notre ancre target */
-           .animate({scrollTop: $(target).offset().top}, 1000 );
-        });
-    });
-    
-    </script> #}
-    <script type="text/javascript" src="{{ asset('build/js/app.js') }}"></script>
+    </script>
     {% endblock %}
   </body>
 </html>
-
