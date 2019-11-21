@@ -3,6 +3,10 @@
 <div class="container-is-fluid extended">
   <p class="title has-text-centered">Profil</p>
 </div>
+<div id="notif" class="notification notif-fixed-top is-hidden">
+    <button class="delete"></button>
+    <p>Profil modifiée !</p>
+  </div>
 {% endblock %} {% block body %}
 <div class="container">
   <div class="has-text-centered ">
@@ -82,7 +86,7 @@
         </div>
       
         <div class="has-text-centered">
-          <button class="button is-outlined is-rounded is-primary">
+          <button class="button is-outlined is-rounded is-primary" onclick="isSend()">
             <span>CONFIRMER</span>
             <span class="icon">
               <i class="fas fa-angle-right"></i>
