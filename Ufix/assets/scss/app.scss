@@ -331,13 +331,11 @@ article {
   }
   .panel-block {
     .title {
-      font-family: $font-1-medium;
       font-size: 20px;
       font-weight: normal;
       line-height: normal;
     }
     .subtitle {
-      font-family: $font-1-light;
       font-size: 16px;
     }
     .panel-icon {
@@ -389,8 +387,133 @@ article {
       p {
         color: $color1;
         font-size: 1.5rem;
-        font-family: $font-1-bold;
       }
     }
   }
 }
+
+.contacts {
+  max-height: 47rem;
+  min-height: 47rem;
+  overflow-y: scroll;
+
+  hr {
+    background-color: $color1;
+    margin: 0;
+  }
+ 
+}
+
+.contact {
+  background-color: $color4;
+  padding: 30px;
+  
+}
+
+
+.chat {
+  width: 490px;
+  float:left;
+  background: $color4;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  
+  color: $color2;
+  
+  
+  .chat-history {
+    // padding: 30px 30px 20px;
+    border-bottom: 2px solid white;
+    overflow-y: scroll;
+    height: 30rem;
+    
+    .message-data {
+      margin-bottom: 15px;
+    }
+    
+    .message-data-time {
+      color: lighten($color2, 8%);
+      padding-left: 6px;
+    }
+    
+    .message {      
+      color: white;
+      padding: 18px 20px;
+      line-height: 26px;
+      font-size: 16px;
+      border-radius: 7px;
+      margin-bottom: 30px;
+      width: 90%;
+      position: relative;
+      
+      &:after {
+        bottom: 100%;
+        left: 7%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+        border-bottom-color: $color2;
+        border-width: 10px;
+        margin-left: -10px;
+      }
+    }
+    
+    .my-message {
+      background: $color2;
+    }
+    
+    .other-message {
+      background: $color3;
+      
+      &:after {
+        border-bottom-color: $color3;
+        left: 93%;
+      }
+    }
+
+    li{
+      list-style-type: none;
+    }
+
+
+    
+  }
+  
+  .chat-message {
+    padding: 30px;
+    
+    textarea {
+      width: 100%;
+      border: none;
+      padding: 10px 20px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      resize: none;
+      
+    }
+    
+    .fa-file-o, .fa-file-image-o {
+      font-size: 16px;
+      color: gray;
+      cursor: pointer;
+      
+    }
+    
+    
+  }
+}
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+
+
+
