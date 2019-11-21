@@ -424,3 +424,23 @@ hr {
   width: 70%;
   height: 1px;
 }
+.panel {
+  div.panel-block:first-of-type {
+    background-color: $color4;
+  }
+  .panel-block {
+    display: block;
+    hr {
+      background-color: $color2;
+      margin: 0 auto;
+      width: 2px;
+      height: 100%;
+    }
+  }
+  .panel-tabs {
+    background-color: $color4;
+    a {
+      text-decoration: none;
+    }
+  }
+}
