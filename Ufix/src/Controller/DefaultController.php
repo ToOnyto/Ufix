@@ -76,28 +76,36 @@ class DefaultController extends AbstractController
         return $this->render('select_repairer.html.twig');
     }
 
-    /**
-    * @Route("/contact-seller-without-repair", name="contact_seller_without_repair")
-    */
-    public function showContactSellerWithoutRepair ()
+    /** 
+     * @Route("/contact/toRepair", name="contact_repair")
+     */
+    public function showContactRepair ()
     {
-        return $this->render('contact_seller_without_repair.html.twig');
+        return $this->render('contactToRepair.html.twig');
+    }
+
+    /**
+    * @Route("/contact/seller/buy", name="contact_seller_without_repair")
+    */
+    public function showContactSellerBuy ()
+    {
+        return $this->render('contactSellerBuy.html.twig');
     }
 
     /** 
-     * @Route("/contact-seller-with-repair", name="contact_seller_with_repair")
+     * @Route("/contact/seller/repair", name="contact_seller_with_repair")
      */
     public function showContactSellerWithRepair ()
     {
-        return $this->render('contact_seller_with_repair.html.twig');
+        return $this->render('contactSellerRepair.html.twig');
     }
 
     /** 
-     * @Route("/contact-seller-with-repair-2", name="contact_seller_with_repair2")
+     * @Route("/contact/seller/repair-2", name="contact_seller_with_repair2")
      */
     public function showContactSellerWithRepair2 ()
     {
-        return $this->render('contact_seller_with_repair_2.html.twig');
+        return $this->render('contactSellerRepair2.html.twig');
     }
 
 
@@ -107,15 +115,6 @@ class DefaultController extends AbstractController
     public function showMessaging ()
     {
         return $this->render('messaging.html.twig');
-    }
-
-
-    /** 
-     * @Route("/contact-repair", name="contact_repair")
-     */
-    public function showContactRepair ()
-    {
-        return $this->render('contact_repair.html.twig');
     }
 
     /** 
