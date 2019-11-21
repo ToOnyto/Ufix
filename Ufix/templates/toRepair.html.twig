@@ -88,18 +88,43 @@
 				</div>
 			</div>
 
-			<footer class="card-footer">
-				<span class="fa-stack">
-					<i class="fas fa-circle orange-circle fa-2x"></i>
-					<i class="far fa-heart fa-stack-1x fa-inverse"></i>
-				</span>
-				<button class="button is-outlined is-rounded is-info">
-					<span>Réparer</span>
-					<span class="icon">
-						<i class="fas fa-angle-right"></i>
-					</span>
-				</button>
-			</footer>
+			
+
+			<footer class="custom-card-footer">
+					<div class="columns is-marginless is-vcentered is-variable is-hidden-mobile">
+						<div class="column is-1">
+							<span class="fa-stack">
+								<i class="fas fa-circle orange-circle fa-2x"></i>
+								<i class="far fa-heart fa-stack-1x fa-inverse"></i>
+							</span>
+						</div>
+						<div class="column is-2 is-offset-8">
+							<button class="button is-outlined is-rounded is-info">
+								<span>Réparer</span>
+								<span class="icon">
+									<i class="fas fa-angle-right"></i>
+								</span>
+							</button>
+						</div>
+					</div>
+	
+					<div class="columns is-marginless is-vcentered is-variable is-mobile is-hidden-tablet is-hidden-desktop">
+						<div class="column is-2">
+							<span class="fa-stack">
+								<i class="fas fa-circle orange-circle fa-2x"></i>
+								<i class="far fa-heart fa-stack-1x fa-inverse"></i>
+							</span>
+						</div>
+						<div class="column is-4 is-offset-6">
+							<button class="button is-outlined is-rounded is-info">
+								<span>Réparer</span>
+								<span class="icon">
+									<i class="fas fa-angle-right"></i>
+								</span>
+							</button>
+						</div>
+					</div>
+				</footer>
 		</div>
 	</div>
 </div></div>{% endblock %}
