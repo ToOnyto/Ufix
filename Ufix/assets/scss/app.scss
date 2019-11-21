@@ -661,7 +661,8 @@ hr {
 .notification {
   padding: 5px 10px 5px 10px;
   border-radius: 0 0 8px 8px;
-  background-color: $color4;
+  background-color: $color5;
+  color: $color1;
   margin: 0 auto;
   .delete {
     top: 0.25rem;
@@ -744,4 +745,11 @@ hr {
       background-position: center;
     }
   }
+}
+
+.notif-fixed-top {
+  position: fixed;
+  top: 0;
+  left: 38%;
+  z-index: 99;
 }

@@ -3,7 +3,7 @@
 <div class="container-is-fluid extended">
   <p class="title has-text-centered">Déposer une annonce</p>
 </div>
-<div class="notification">
+<div id="notif" class="notification notif-fixed-top is-hidden">
   <button class="delete"></button>
   <p>Annonce publiée !</p>
 </div>
@@ -120,7 +120,7 @@
         </div>
     </div>
     <div class="column is-half is-offset-one-quarter has-text-centered">
-      <button class="button is-primary is-rounded is-outlined">Publier</button>
+      <button class="button is-primary is-rounded is-outlined" onclick="isSend()">Publier</button>
     </div>
   </div>
 </div>

@@ -87,3 +87,8 @@ function readURL3(input) {
 $("#imageUpload3").change(function() {
   readURL3(this);
 });
+
+function isSend() {
+  var selectNotif = document.getElementById("notif");
+  selectNotif.classList.remove('is-hidden');
+}
