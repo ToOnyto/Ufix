@@ -125,4 +125,12 @@ class DefaultController extends AbstractController
     {
         return $this->render('edit_product.html.twig');
     }
+
+    /**
+     * @Route("/contacter", name="contact")
+     */
+    public function showContact ()
+    {
+        return $this->render('contact.html.twig');
+    }
 }
