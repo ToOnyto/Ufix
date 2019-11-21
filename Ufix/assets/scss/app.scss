@@ -363,6 +363,10 @@ article {
   background-color: $color6;
 }
 
+.is-white {
+  background-color: $color1;
+}
+
 .card {
   border-radius: 20px;
 }
@@ -423,4 +427,9 @@ hr {
   margin: 0 auto;
   width: 70%;
   height: 1px;
+}
+.image-grid {
+  height: 110px;
+  width: auto;
+  max-width: 300px;
 }
