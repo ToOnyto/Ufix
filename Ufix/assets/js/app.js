@@ -1,40 +1,46 @@
-/*
- * Welcome to your app's main JavaScript file!
- *
- * We recommend including the built version of this JavaScript file
- * (and its CSS file) in your base layout (base.html.twig).
- */
-
-// any CSS you require will output into a single css file (app.css in this case)
-// require('../scss/app.scss');
-
-// Need jQuery? Install it with "yarn add jquery", then uncomment to require it.
-// const $ = require('jquery');
-
-// require("@fortawesome/fontawesome-free/js/all");
-// require("@fortawesome/fontawesome-free/js/fontawesome");
-// require("@fortawesome/fontawesome-free/js/solid");
-// require("@fortawesome/fontawesome-free/js/regular");
-// require("@fortawesome/fontawesome-free/js/brands");
-
-// menu hamburger
-document.addEventListener('DOMContentLoaded', () => {
-
-    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-
+document.addEventListener("DOMContentLoaded", () => {
+    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll(".navbar-burger"), 0);
     if ($navbarBurgers.length > 0) {
+      $navbarBurgers.forEach(el => {
+        el.addEventListener("click", () => {
+          const target = el.dataset.target;
+          const $target = document.getElementById(target);
 
-        $navbarBurgers.forEach(el => {
-            el.addEventListener('click', () => {
+      el.classList.toggle("is-active");
+      $target.classList.toggle("is-active");
+    });
+  });
+}
+});
 
-                const target = el.dataset.target;
-                const $target = document.getElementById(target);
+document.addEventListener("DOMContentLoaded", () => {
+(document.querySelectorAll(".notification .delete") || []).forEach(
+  $delete => {
+    $notification = $delete.parentNode;
+    $delete.addEventListener("click", () => {
+      $notification.parentNode.removeChild($notification);
+    });
+  }
+);
+});
 
-                el.classList.toggle('is-active');
-                $target.classList.toggle('is-active');
+const $ = require('jquery');
 
-            });
-        });
-    }
+$(document).ready(function(){
+// au clic sur un lien
+$('a.scroll').on('click', function(evt){
+   // bloquer le comportement par défaut: on ne rechargera pas la page
+   evt.preventDefault(); 
+   // enregistre la valeur de l'attribut  href dans la variable target
+      var target = $(this).attr('href');
+          /* le sélecteur $(html, body) permet de corriger un bug sur chrome 
+          et safari (webkit) */
+      $('html, body')
+   // on arrête toutes les animations en cours 
+   .stop()
+   /* on fait maintenant l'animation vers le haut (scrollTop) vers 
+    notre ancre target */
+   .animate({scrollTop: $(target).offset().top}, 1000 );
+});
 });
 
