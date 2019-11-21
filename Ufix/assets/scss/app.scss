@@ -94,6 +94,11 @@ body {
       }
     }
   }
+  .navbar {
+    .icon {
+      color: $color2;
+    }
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -442,5 +447,13 @@ hr {
     a {
       text-decoration: none;
     }
+  }
+}
+.image {
+  background-color: $color4;
+  img {
+    height: 45px;
+    width: auto;
+    margin: 0 auto;
   }
 }
