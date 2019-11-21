@@ -51,6 +51,12 @@ button {
 body {
   font-family: $font-1;
   background-color: $color1;
+  p {
+    font-family: $font-1;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: normal;
+  }
   .navbar-item {
     img {
       max-height: 1.4rem;
@@ -88,6 +94,11 @@ body {
       }
     }
   }
+  .navbar {
+    .icon {
+      color: $color2;
+    }
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -122,6 +133,9 @@ body {
         color: $color3;
       }
     }
+  }
+  .fa-stack-1x {
+    margin-left: 7px;
   }
 }
 
@@ -191,7 +205,7 @@ body {
   width: 100%;
 }
 
-.custom-card-footer{
+.custom-card-footer {
   background-color: $color2;
 }
 
@@ -303,7 +317,7 @@ article {
     font-size: 14px;
     font-weight: normal;
   }
-  .prix{
+  .prix {
     width: 20%;
   }
 }
@@ -378,6 +392,7 @@ article {
 }
 .card-header {
   display: block;
+  padding-bottom: 2rem;
 }
 .card-header,
 .card-content {
@@ -404,42 +419,38 @@ article {
     background-color: $color1;
     margin: 0;
   }
- 
 }
 
 .contact {
   background-color: $color4;
   padding: 30px;
-  
 }
-
 
 .chat {
   width: 490px;
-  float:left;
+  float: left;
   background: $color4;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-  
+
   color: $color2;
-  
-  
+
   .chat-history {
     // padding: 30px 30px 20px;
     border-bottom: 2px solid white;
     overflow-y: scroll;
     height: 30rem;
-    
+
     .message-data {
       margin-bottom: 15px;
     }
-    
+
     .message-data-time {
       color: lighten($color2, 8%);
       padding-left: 6px;
     }
-    
-    .message {      
+
+    .message {
       color: white;
       padding: 18px 20px;
       line-height: 26px;
@@ -448,7 +459,7 @@ article {
       margin-bottom: 30px;
       width: 90%;
       position: relative;
-      
+
       &:after {
         bottom: 100%;
         left: 7%;
@@ -463,31 +474,28 @@ article {
         margin-left: -10px;
       }
     }
-    
+
     .my-message {
       background: $color2;
     }
-    
+
     .other-message {
       background: $color3;
-      
+
       &:after {
         border-bottom-color: $color3;
         left: 93%;
       }
     }
 
-    li{
+    li {
       list-style-type: none;
     }
-
-
-    
   }
-  
+
   .chat-message {
     padding: 30px;
-    
+
     textarea {
       width: 100%;
       border: none;
@@ -495,28 +503,70 @@ article {
       margin-bottom: 10px;
       border-radius: 5px;
       resize: none;
-      
     }
-    
-    .fa-file-o, .fa-file-image-o {
+
+    .fa-file-o,
+    .fa-file-image-o {
       font-size: 16px;
       color: gray;
       cursor: pointer;
-      
     }
-    
-    
   }
 }
 
 .clearfix:after {
-	visibility: hidden;
-	display: block;
-	font-size: 0;
-	content: " ";
-	clear: both;
-	height: 0;
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
 }
 
+.card {
+  .title {
+    font-family: $font-1-medium;
+    font-size: 25px;
+    font-weight: normal;
+    line-height: normal;
+  }
+  .subtitle {
+    font-family: $font-1-light;
+    font-size: 16px;
+  }
+}
 
-
+hr {
+  background-color: $color2;
+  margin: 0 auto;
+  width: 70%;
+  height: 1px;
+}
+.panel {
+  div.panel-block:first-of-type {
+    background-color: $color4;
+  }
+  .panel-block {
+    display: block;
+    hr {
+      background-color: $color2;
+      margin: 0 auto;
+      width: 2px;
+      height: 100%;
+    }
+  }
+  .panel-tabs {
+    background-color: $color4;
+    a {
+      text-decoration: none;
+    }
+  }
+}
+.image {
+  background-color: $color4;
+  img {
+    height: 45px;
+    width: auto;
+    margin: 0 auto;
+  }
+}
