@@ -100,12 +100,22 @@ class DefaultController extends AbstractController
         return $this->render('contact_seller_with_repair_2.html.twig');
     }
 
+
         /** 
      * @Route("/messaging", name="messaging")
      */
     public function showMessaging ()
     {
         return $this->render('messaging.html.twig');
+    }
+
+
+    /** 
+     * @Route("/contact-repair", name="contact_repair")
+     */
+    public function showContactRepair ()
+    {
+        return $this->render('contact_repair.html.twig');
     }
 
 }
