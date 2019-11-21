@@ -7,7 +7,7 @@
 {% block navbar %}
 	{{ parent() }}
 	<div class="container-is-fluid extended">
-		<p class="is-size-3 has-text-centered">Annonces</p>
+		<p class="title has-text-centered">Annonces</p>
 	</div>
 {% endblock %}
 
@@ -16,9 +16,11 @@
 	<div class="container">
 
 
-		<div class="card">
+		<div
+			class="card">
 			<!-- Header -->
-			<header class="card-header">
+			<header
+				class="card-header">
 				<!-- Search bar -->
 				<div class="columns has-text-centered is-gapless is-multiline is-centered">
 					<div class="column">
@@ -52,10 +54,12 @@
 
 			<!-- Content -->
 			<div class="card-content has-text-centered">
-				<div class="content">
+				<div
+					class="content">
 					<!-- Creating a grid -->
 					<div class="columns">
-						<div class="column">
+						<div
+							class="column">
 							<!-- Fills the grid -->
 							{% for i in 0..2 %}
 								<div class="columns">
