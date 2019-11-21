@@ -404,6 +404,7 @@ article {
 .orange {
   background-color: $color3;
 }
+
 .card-header {
   display: block;
   padding-bottom: 2rem;
@@ -642,4 +643,8 @@ hr {
   .icon:hover {
     color: $color2;
   }
+}
+
+.without-blue {
+  color : $color2;
 }
