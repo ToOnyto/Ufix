@@ -631,3 +631,15 @@ hr {
     margin: 0 auto;
   }
 }
+
+.social-media {
+  
+  .icon {
+    margin-top: 20px;
+    margin-right: 30px;
+    color: $color3;
+  }
+  .icon:hover {
+    color: $color2;
+  }
+}
