@@ -5,7 +5,7 @@
 </div>
 <div class="notification">
   <button class="delete"></button>
-  <p>Annonce publié !</p>
+  <p>Annonce publiée !</p>
 </div>
 {% endblock %} {% block body %}
 
@@ -82,53 +82,17 @@
     <div
       class="column is-3-desktop is-half-mobile is-offset-one-quarter-mobile"
     >
-      <div id="file-js-example" class="file has-name">
-        <label class="file-label">
-          <input class="file-input" type="file" name="resume" />
-          <span class="file-cta">
-            <span class="file-icon">
-              <i class="fas fa-upload"></i>
-            </span>
-            <span class="file-label">
-              Choose a file…
-            </span>
-          </span>
-          <span class="file-name">
-            No file uploaded
-          </span>
-        </label>
-      </div>
-      <div id="file-js-example" class="file has-name">
-        <label class="file-label">
-          <input class="file-input" type="file" name="resume" />
-          <span class="file-cta">
-            <span class="file-icon">
-              <i class="fas fa-upload"></i>
-            </span>
-            <span class="file-label">
-              Choose a file…
-            </span>
-          </span>
-          <span class="file-name">
-            No file uploaded
-          </span>
-        </label>
-      </div>
-      <div id="file-js-example" class="file has-name">
-        <label class="file-label">
-          <input class="file-input" type="file" name="resume" />
-          <span class="file-cta">
-            <span class="file-icon">
-              <i class="fas fa-upload"></i>
-            </span>
-            <span class="file-label">
-              Choose a file…
-            </span>
-          </span>
-          <span class="file-name">
-            No file uploaded
-          </span>
-        </label>
+      <div class="avatar-upload">
+        <div class="avatar-edit">
+          <input type="file" id="imageUpload" accept=".png, .jpg, .jpeg" />
+          <label for="imageUpload"></label>
+        </div>
+        <div class="avatar-preview">
+          <div
+            id="imagePreview"
+            style="background-image: url("{{ asset('img/image_profil.png') }}");"
+          ></div>
+        </div>
       </div>
     </div>
     <div class="column is-half is-offset-one-quarter has-text-centered">
