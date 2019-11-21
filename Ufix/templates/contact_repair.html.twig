@@ -1,24 +1,26 @@
-{% extends 'base.html.twig' %} {% block navbar %}
-{{ parent() }}
-<div class="container-is-fluid extended">
-  <p class="title has-text-centered">Contacter le vendeur</p>
-</div>
-{% endblock %} {% block body %}
-<div class="container">
-  <div class="card has-background-light">
-      <div class="has-text-centered">
-        <p class=" title is-size-4">Pascal MOLIPOU</p>
-      </div>
-      <div class="has-text-centered">
-    <p class="title is-size-5 has-text-grey">PESSAC - 33600</p>
-      </div>
+{% extends 'base.html.twig' %}
+{% block navbar %}
+	{{ parent() }}
+	<div class="container-is-fluid extended">
+		<p class="title has-text-centered">Contacter le vendeur</p>
+	</div>
+{% endblock %}
+{% block body %}
+	<div class="container">
+		<div class="card has-background-light">
+			<div class="has-text-centered">
+				<p class=" title is-size-4">Pascal MOLIPOU</p>
+			</div>
+			<div class="has-text-centered">
+				<p class="title is-size-5 has-text-grey">PESSAC - 33600</p>
+			</div>
 
-    <div class="card-content has-text-centered">
-      <div class="content">
-        <form action="" >
-          <div class="field margin-contact">
-            <div class="control">
-              <textarea class="textarea min-height-textarea" required>
+			<div class="card-content has-text-centered">
+				<div class="content">
+					<form action="">
+						<div class="field margin-contact">
+							<div class="control">
+								<textarea class="textarea min-height-textarea" required>
 Bonjour, 
               
 Je suis en mesure de réparer votre appareil.
@@ -26,57 +28,51 @@ Quand et où pouvons-nous nous donner rendez-vous ?
 
 Cordialement,
 Léo POMA
-              </textarea>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
+								</textarea>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
 
-    <footer class="contact-footer">
-      <div class="columns is-marginless is-vcentered is-variable is-hidden-mobile" >
-        <div class="column is-1">
-          <img
-            src="{{ asset('img/iphone5-petit.png') }}"
-            alt="image du téléphone"
-          />
-        </div>
-        <div class="column is-9">
-          <p class="has-text-white">Iphone 5</p>
-          <p class="has-text-grey">Hors service</p>
-        </div>
-        <div class="column">
-            <a class="button is-outlined is-rounded is-primary" href="{{ path('home_connected') }}">
-              <span>Envoyer</span>
-              <span class="icon">
-                <i class="fas fa-angle-right"></i>
-              </span> 
-            </a>
-        </div>
-      </div>
+			<footer class="contact-footer">
+				<div class="columns is-marginless is-vcentered is-variable is-hidden-mobile">
+					<div class="column is-1">
+						<img src="{{ asset('img/iphone5-petit.png') }}" alt="image du téléphone"/>
+					</div>
+					<div class="column is-9">
+						<p class="has-text-white">Iphone 5</p>
+						<p class="has-text-grey">Hors service</p>
+					</div>
+					<div class="column">
+						<a class="button is-outlined is-rounded is-info" href="{{ path("messaging") }}">
+							<span>Envoyer</span>
+							<span class="icon">
+								<i class="fas fa-angle-right"></i>
+							</span>
+						</a>
+					</div>
+				</div>
 
-      <div class="columns is-marginless is-vcentered is-variable is-mobile is-hidden-tablet is-hidden-desktop" >
-        <div class="column is-2">
-          <img
-            src="{{ asset('img/iphone5-petit.png') }}"
-            alt="image du téléphone"
-          />
-        </div>
-        <div class="column is-6">
-          <p class="has-text-white">Iphone 5</p>
-          <p class="has-text-grey">Hors service</p>
-        </div>
-        <div class="column is-4">
-            <button class="button is-outlined is-rounded is-info">
-              <span>Envoyer</span>
-              <span class="icon">
-                <i class="fas fa-angle-right"></i>
-              </span> 
-            </button>
-        </div>
-      </div>
-    </footer>
-    
-  </div>
-</div>
+				<div class="columns is-marginless is-vcentered is-variable is-mobile is-hidden-tablet is-hidden-desktop">
+					<div class="column is-2">
+						<img src="{{ asset('img/iphone5-petit.png') }}" alt="image du téléphone"/>
+					</div>
+					<div class="column is-6">
+						<p class="has-text-white">Iphone 5</p>
+						<p class="has-text-grey">Hors service</p>
+					</div>
+					<div class="column is-4">
+						<a class="button is-outlined is-rounded is-info" href="{{ path("messaging") }}">
+							<span>Envoyer</span>
+							<span class="icon">
+								<i class="fas fa-angle-right"></i>
+							</span>
+						</a>
+					</div>
+				</div>
+			</footer>
+
+		</div>
+	</div>
 {% endblock %}
