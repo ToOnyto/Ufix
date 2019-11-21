@@ -3,9 +3,9 @@
 <div class="container-is-fluid extended">
   <p class="title has-text-centered">Déposer une annonce</p>
 </div>
-<div class="notification">
+<div id="notif" class="notification notif-fixed-top is-hidden">
   <button class="delete"></button>
-  <p>Annonce publié !</p>
+  <p>Annonce publiée !</p>
 </div>
 {% endblock %} {% block body %}
 
@@ -82,57 +82,45 @@
     <div
       class="column is-3-desktop is-half-mobile is-offset-one-quarter-mobile"
     >
-      <div id="file-js-example" class="file has-name">
-        <label class="file-label">
-          <input class="file-input" type="file" name="resume" />
-          <span class="file-cta">
-            <span class="file-icon">
-              <i class="fas fa-upload"></i>
-            </span>
-            <span class="file-label">
-              Choose a file…
-            </span>
-          </span>
-          <span class="file-name">
-            No file uploaded
-          </span>
-        </label>
+    {# AVATAR 1 #}
+      <div class="avatar-upload">
+        <div class="avatar-edit">
+          <input type="file" id="imageUpload" accept=".png, .jpg, .jpeg" />
+          <label for="imageUpload"></label>
+        </div>
+        <div class="avatar-preview">
+          <div
+            id="imagePreview">
+          </div>
+        </div>
       </div>
-      <div id="file-js-example" class="file has-name">
-        <label class="file-label">
-          <input class="file-input" type="file" name="resume" />
-          <span class="file-cta">
-            <span class="file-icon">
-              <i class="fas fa-upload"></i>
-            </span>
-            <span class="file-label">
-              Choose a file…
-            </span>
-          </span>
-          <span class="file-name">
-            No file uploaded
-          </span>
-        </label>
+    {# AVATAR 2 #}
+    <div class="avatar-upload">
+        <div class="avatar-edit">
+          <input type="file" id="imageUpload2" accept=".png, .jpg, .jpeg" />
+          <label for="imageUpload2"></label>
+        </div>
+        <div class="avatar-preview">
+          <div
+            id="imagePreview2">
+          </div>
+        </div>
       </div>
-      <div id="file-js-example" class="file has-name">
-        <label class="file-label">
-          <input class="file-input" type="file" name="resume" />
-          <span class="file-cta">
-            <span class="file-icon">
-              <i class="fas fa-upload"></i>
-            </span>
-            <span class="file-label">
-              Choose a file…
-            </span>
-          </span>
-          <span class="file-name">
-            No file uploaded
-          </span>
-        </label>
-      </div>
+      {# AVATAR 3 #}
+      <div class="avatar-upload">
+          <div class="avatar-edit">
+            <input type="file" id="imageUpload3" accept=".png, .jpg, .jpeg" />
+            <label for="imageUpload3"></label>
+          </div>
+          <div class="avatar-preview">
+            <div
+              id="imagePreview3">
+            </div>
+          </div>
+        </div>
     </div>
     <div class="column is-half is-offset-one-quarter has-text-centered">
-      <button class="button is-primary is-rounded is-outlined">Publier</button>
+      <button class="button is-primary is-rounded is-outlined" onclick="isSend()">Publier</button>
     </div>
   </div>
 </div>
