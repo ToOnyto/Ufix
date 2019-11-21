@@ -354,6 +354,10 @@ article {
   background-color: $color6;
 }
 
+.is-white {
+  background-color: $color1;
+}
+
 .card {
   border-radius: 20px;
 }
@@ -393,4 +397,10 @@ article {
       }
     }
   }
+}
+
+.image-grid  {
+  height: 110px;
+  width: auto;
+  max-width: 300px;
 }
