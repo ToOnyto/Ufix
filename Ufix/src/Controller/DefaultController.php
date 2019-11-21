@@ -126,11 +126,26 @@ class DefaultController extends AbstractController
         return $this->render('edit_product.html.twig');
     }
 
+    /** 
+     * @Route("/cgu", name="cgu")
+     */
+    public function showCGU ()
+    {
+        return $this->render('cgu.html.twig');
+    }
     /**
      * @Route("/contacter", name="contact")
      */
     public function showContact ()
     {
         return $this->render('contact.html.twig');
+    }
+
+    /**
+    * @Route("/mentions_legales", name="legal_mentions")
+    */
+    public function showLegalMentions ()
+    {
+        return $this->render('legal_mentions.html.twig');
     }
 }

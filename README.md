@@ -1,5 +1,15 @@
 # README UFIX
 
+## Start the project
+Dev :
+* yarn install
+* composer install
+* yarn run encore dev --watch
+* php bin/console server:run
+
+Prod :
+* yarn run encore production --progress
+
 ## Naming of commits 
 
 ### Adding

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}UFiX{% endblock %}</title>
+    {% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('build/css/app.css') }}" />
+    <link rel="icon" type="image/png" href="{{ asset('img/icon-onglet.png') }}" />
+    {% endblock %}
+  </head>
+  <body>
+    <section class="hero">
+      <div class="hero-head">
+        {% block navbar %}
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+          <div class="navbar-brand">
+            <a class="navbar-item" href="#">
+              <img src="{{ asset('img/logo_white.png') }}" />
+            </a>
+
+            <a
+              role="button"
+              class="navbar-burger burger"
+              aria-label="menu"
+              aria-expanded="false"
+              data-target="navbarBasicExample"
+            >
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
+          </div>
+
+          <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-center is-size-6">
+              <a class="navbar-item" href="{{ path('new_ad') }}">
+                Déposer une annonce
+              </a>
+              <a class="navbar-item" href="{{ path('new_ad') }}">
+                Rechercher une annonce
+              </a>
+              <a class="navbar-item" href="{{ path('edit_product') }}">
+                Mes annonces
+              </a>
+            </div>
+            <div class="navbar-center-mobile is-hidden-desktop"></div>
+
+            <div class="navbar-end">
+              <div class="navbar-item">
+                <a href="#">
+                  <span class="icon is-medium">
+                    <i class="far fa-user is-size-6"></i>
+                  </span>
+                  <span
+                    class="icon is-small-desktop is-medium-mobile is-medium-tablet"
+                  >
+                    <i class="far fa-comment-alt is-size-6"></i>
+                  </span>
+                  <span class="icon is-medium">
+                    <i class="far fa-heart is-size-6"></i>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </nav>
+        {% endblock %}
+      </div>
+    </section>
+
+    {% block body %}{% endblock %}
+
+    <section class="hero">
+      <div class="hero-footer">
+        {% block footer %}
+        <div class="columns is-vcentered">
+          <div class="column">
+            <p
+              class="has-text-left-desktop has-text-centered-mobile has-text-left-tablet"
+            >
+              <a href="#" class="is-size-7">Mentions légales</a>
+              |
+              <a href="{{ path('cgu') }}" class="is-size-7">CGU</a>
+            </p>
+          </div>
+          <div class="column">
+            <p class="has-text-centered is-size-7">@UFiX 2019</p>
+          </div>
+          <div class="column">
+            <p
+              class="has-text-right-desktop has-text-centered-mobile is-size-7 has-text-right-tablet"
+            >
+              Retrouvez-nous sur :
+              <span class="icon is-medium">
+                <i class="fab fa-twitter"></i>
+              </span>
+              <span class="icon is-small">
+                <i class="fab fa-facebook-f"></i>
+              </span>
+              <span class="icon is-medium">
+                <i class="far fa-paper-plane"></i>
+              </span>
+            </p>
+          </div>
+        </div>
+        {% endblock %}
+      </div>
+    </section>
+
+    {% block javascripts %}
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.js"
+    ></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const $navbarBurgers = Array.prototype.slice.call(
+          document.querySelectorAll(".navbar-burger"),
+          0
+        );
+
+        if ($navbarBurgers.length > 0) {
+          $navbarBurgers.forEach(el => {
+            el.addEventListener("click", () => {
+              const target = el.dataset.target;
+              const $target = document.getElementById(target);
+
+              el.classList.toggle("is-active");
+              $target.classList.toggle("is-active");
+            });
+          });
+        }
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        (document.querySelectorAll(".notification .delete") || []).forEach(
+          $delete => {
+            $notification = $delete.parentNode;
+            $delete.addEventListener("click", () => {
+              $notification.parentNode.removeChild($notification);
+            });
+          }
+        );
+      });
+    </script>
+    {#
+    <script
+      type="text/javascript"
+      src="{{ asset('build/js/app.js') }}"
+    ></script>
+    #} {% endblock %}
+  </body>
+</html>
