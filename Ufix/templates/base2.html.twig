@@ -67,10 +67,9 @@
       </div>
     </section>
 
-    <section class="hero is-fullheight-with-navbar">
-      <div class="hero-body verticaly-top">
-        {% block body %}{% endblock %}
-      </div>
+    {% block body %}{% endblock %}
+
+    <section class="hero">
       <div class="hero-footer">
         {% block footer %}
         <div class="columns is-vcentered">

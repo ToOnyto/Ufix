@@ -41,6 +41,13 @@ $font-1-bold: "Neusa-Bold";
 @include font("Neusa-Medium", "./../../public/fonts/NeusaNextPro-Medium");
 @include font("Neusa-Bold", "./../../public/fonts/NeusaNextPro-Bold");
 
+h4 {
+  font-family: $font-1-medium;
+  font-weight: normal;
+  font-size: 24px;
+}
+
+a.button,
 button {
   font-family: $font-1-bold;
   font-weight: normal;
@@ -71,12 +78,6 @@ body {
   }
 }
 
-.is-fullheight-with-navbar {
-  .hero-body {
-    align-items: baseline !important;
-  }
-}
-
 // START NAVBAR
 @media screen and (max-width: 1023px) {
   .navbar-center-mobile {
@@ -99,6 +100,14 @@ body {
       color: $color2;
     }
   }
+  .notification {
+    width: 60%;
+  }
+  article {
+    .prix {
+      width: 40%;
+    }
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -107,7 +116,7 @@ body {
     display: flex;
   }
   .hero.is-fullheight-with-navbar {
-    min-height: calc(100vh - 5.4rem) !important;
+    min-height: calc(100vh - 5.65rem) !important;
   }
   .navbar-menu {
     .navbar-end {
@@ -136,6 +145,14 @@ body {
   }
   .fa-stack-1x {
     margin-left: 7px;
+  }
+  .notification {
+    width: 25%;
+  }
+  article {
+    .prix {
+      width: 20%;
+    }
   }
 }
 
@@ -193,10 +210,12 @@ body {
     color: $color1;
   }
 }
+.verticaly-top {
+  align-items: baseline !important;
+}
 .is-fullheight-with-navbar {
   .hero-body {
     padding: 3rem 0rem;
-    align-items: baseline !important;
   }
 }
 .is-fluid-without-padding {
@@ -316,9 +335,6 @@ article {
     font-family: "Neusa-Light";
     font-size: 14px;
     font-weight: normal;
-  }
-  .prix {
-    width: 20%;
   }
 }
 
@@ -569,4 +585,31 @@ hr {
     width: auto;
     margin: 0 auto;
   }
+}
+.notification {
+  padding: 5px 10px 5px 10px;
+  border-radius: 0 0 8px 8px;
+  background-color: $color4;
+  margin: 0 auto;
+  .delete {
+    top: 0.25rem;
+  }
+}
+.has-background-white {
+  a {
+    color: $color3;
+  }
+}
+.card-icon {
+  margin: 1rem 0 1rem 0 !important;
+  .image-home {
+    height: 6rem;
+    width: auto;
+  }
+}
+.card-action {
+  margin: 1rem 0 0 0 !important;
+}
+.title-wrapper {
+  margin: 0 0 5rem 0 !important;
 }
