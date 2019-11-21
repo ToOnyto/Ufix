@@ -125,4 +125,12 @@ class DefaultController extends AbstractController
     {
         return $this->render('edit_product.html.twig');
     }
+
+    /** 
+     * @Route("/cgu", name="cgu")
+     */
+    public function showCGU ()
+    {
+        return $this->render('cgu.html.twig');
+    }
 }
