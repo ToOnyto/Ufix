@@ -1,4 +1,10 @@
-{% extends 'base2.html.twig' %} {% block body %}
+{% extends 'base2.html.twig' %} 
+
+{% block title %}
+	{{ parent() }} - Accueil
+{% endblock %}
+
+{% block body %}
 <div id="notif" class="notification notif-fixed-top is-hidden">
   <button class="delete"></button>
   <p>Vous êtes bien inscrit.</p>
