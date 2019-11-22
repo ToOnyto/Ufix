@@ -92,3 +92,19 @@ function isSend() {
   var selectNotif = document.getElementById("notif");
   selectNotif.classList.remove('is-hidden');
 }
+function isDelete1() {
+  var selectAds = document.getElementById("ads_delete_1");
+  selectAds.classList.add('is-hidden');
+}
+function isDelete2() {
+  var selectAds = document.getElementById("ads_delete_2");
+  selectAds.classList.add('is-hidden');
+}
+function isDelete3() {
+  var selectAds = document.getElementById("ads_delete_3");
+  selectAds.classList.add('is-hidden');
+}
+function isDelete4() {
+  var selectAds = document.getElementById("ads_delete_4");
+  selectAds.classList.add('is-hidden');
+}

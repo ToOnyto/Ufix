@@ -66,7 +66,7 @@ body {
   }
   .navbar-item {
     img {
-      max-height: 1.4rem;
+      max-height: 1.5rem;
     }
   }
 }
@@ -136,24 +136,27 @@ body {
   .navbar-menu {
     .navbar-end {
       margin-left: 0;
-      color: #65c18d;
-    }
-    .navbar-end:hover {
-      background-color: $color2;
-      font-family: $font-1-bold;
-      color: $color3;
+      a.navbar-item:active,
+      a.navbar-item:hover {
+        background-color: $color2 !important;
+        span.icon:hover {
+          color: $color3;
+        }
+      }
     }
 
     .navbar-center {
       .navbar-item::before {
         content: "";
-        background-color: $color1;
+        background-color: $color3;
         opacity: 1;
-        width: 0.1rem;
-        height: 20%;
+        width: 50%;
+        height: 0.6rem;
         position: absolute;
-        left: 49%;
-        bottom: 0%;
+        left: 25%;
+        bottom: 34%;
+        z-index: -10;
+        opacity: 0.8;
       }
       .navbar-item:active,
       .is-active::before,
@@ -228,7 +231,7 @@ body {
   background-color: $color3;
   padding: 0.4rem 0 0.3rem 0;
   .title {
-    font: 18px $font-1, sans-serif;
+    font: 20px $font-1-medium, sans-serif;
     color: $color1;
   }
 }
@@ -309,7 +312,6 @@ body {
     width: 100%;
     height: 1px;
   }
-
 }
 
 .is-margin-top {
@@ -669,16 +671,16 @@ hr {
   }
 }
 
-.image-default{
+.image-default {
   background-color: transparent;
 }
-.article-cgu{
+.article-cgu {
   margin-bottom: 4%;
-  h2{
+  h2 {
     margin-bottom: 2%;
   }
-  .article-cgu-list{
-    margin-left:5%;
+  .article-cgu-list {
+    margin-left: 5%;
     margin-bottom: 2%;
   }
 }
@@ -693,9 +695,8 @@ hr {
   }
 }
 
-
 .without-blue {
-  color : $color2;
+  color: $color2;
 }
 .legal-mentions {
   margin-bottom: 20px;
@@ -732,12 +733,11 @@ hr {
 }
 .title-wrapper {
   margin: 0 0 5rem 0 !important;
-
 }
 // AVATAR UPLOAD
 .avatar-upload {
   position: relative;
-  max-width: 205px;
+  max-width: 192px;
   height: 8rem;
   margin: 0 auto 2rem auto;
   .avatar-edit {
@@ -766,7 +766,7 @@ hr {
         &:after {
           font-family: "Font Awesome 5 Free";
           font-weight: 900;
-          content: "\f303";
+          content: "\f093";
           color: #757575;
           position: absolute;
           top: 5px;
@@ -793,4 +793,87 @@ hr {
     }
   }
 }
+.navbar-center {
+  a.navbar-item {
+    font-family: $font-1-medium;
+    font-size: 17px;
+    font-weight: normal;
+    line-height: normal;
+  }
+}
 
+// AVATAR 2
+.avatar-upload2 {
+  position: relative;
+  max-width: 192px;
+  margin: 0 auto 4rem auto;
+  .avatar-edit {
+    position: absolute;
+    right: 78px;
+    z-index: 1;
+    top: 172px;
+    input {
+      display: none;
+      + label {
+        display: inline-block;
+        width: 34px;
+        height: 34px;
+        margin-bottom: 0;
+        border-radius: 100%;
+        background: #ffffff;
+        border: 1px solid transparent;
+        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+        cursor: pointer;
+        font-weight: normal;
+        transition: all 0.2s ease-in-out;
+        &:hover {
+          background: #f1f1f1;
+          border-color: #d6d6d6;
+        }
+        &:after {
+          font-family: "Font Awesome 5 Free";
+          font-weight: 900;
+          content: "\f093";
+          color: #757575;
+          position: absolute;
+          top: 5px;
+          left: 0;
+          right: 0;
+          text-align: center;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+  .avatar-preview {
+    width: 192px;
+    height: 192px;
+    position: relative;
+    border-radius: 100%;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+    > div {
+      width: 100%;
+      height: 100%;
+      border-radius: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+}
+.m-2b {
+  margin-bottom: 2rem !important;
+}
+.m-1b {
+  margin-bottom: 1rem !important;
+}
+form.profil {
+  margin: 0 1rem 0 1rem;
+}
+.is-8-mobile {
+  p.title {
+    font-family: $font-1-bold;
+    font-size: 25px;
+    font-weight: normal;
+  }
+}

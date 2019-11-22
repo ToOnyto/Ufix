@@ -13,7 +13,7 @@
   <div class="columns container2 is-multiline is-desktop">
     <div class="column is-9-desktop is-12">
       <article class="tile is-child ">
-        <p class="title has-text-centered">Informations sur le produit</p>
+        <p class="title has-text-centered">Informations produit</p>
         <div class="field">
           <label class="label">Catégorie</label>
           <div class="control">
@@ -68,7 +68,7 @@
           </div>
         </div>
 
-        <div class="field prix">
+        <div class="field prix m-2b">
           <label class="label">Prix</label>
           <div class="control has-icons-right">
             <input class="input" type="text" placeholder="Prix" />
@@ -80,8 +80,9 @@
       </article>
     </div>
     <div
-      class="column is-3-desktop is-half-mobile is-offset-one-quarter-mobile"
+      class="column is-3-desktop is-8-mobile is-offset-2-mobile"
     >
+    <p class="title has-text-centered">Images produit</p>
     {# AVATAR 1 #}
       <div class="avatar-upload">
         <div class="avatar-edit">
@@ -120,7 +121,7 @@
         </div>
     </div>
     <div class="column is-half is-offset-one-quarter has-text-centered">
-      <button class="button is-primary is-rounded is-outlined" onclick="isSend()">Publier</button>
+      <a class="button is-primary is-rounded is-outlined" href="{{ path("home_connected") }}" onclick="isSend()">Publier</a>
     </div>
   </div>
 </div>
