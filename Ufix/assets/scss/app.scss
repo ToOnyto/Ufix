@@ -114,6 +114,9 @@ body {
       width: 40%;
     }
   }
+  .products {
+    margin: -0.75rem 0 0 0 !important;
+  }
 }
 
 .a-comment-alt {
@@ -870,10 +873,55 @@ hr {
 form.profil {
   margin: 0 1rem 0 1rem;
 }
-.is-8-mobile {
+.is-8-mobile,
+.is-3-desktop {
   p.title {
     font-family: $font-1-bold;
     font-size: 25px;
     font-weight: normal;
+  }
+}
+
+#search_bar {
+  .panel {
+    box-shadow: none !important;
+    .panel-tabs {
+      background-color: $color1 !important;
+    }
+    .panel-block {
+      background-color: $color1 !important;
+    }
+  }
+}
+.card-image {
+  figure.image {
+    background-color: $color6;
+    height: 10rem;
+    img {
+      height: 100%;
+      width: auto;
+    }
+  }
+}
+.to-repare::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f552";
+  color: $color5;
+  padding-left: 1rem;
+}
+.media {
+  .media-content {
+    p.title {
+      font-size: 22px !important;
+    }
+    p.subtitle {
+      margin-bottom: 0.6rem;
+    }
+  }
+}
+.all-ads {
+  .card-content {
+    padding: 0.8rem 0.5rem 0.8rem 0.5rem !important;
   }
 }
