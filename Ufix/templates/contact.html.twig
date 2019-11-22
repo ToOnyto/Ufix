@@ -9,6 +9,10 @@
 	<div class="container-is-fluid extended">
 		<p class="title has-text-centered">Contacter</p>
 	</div>
+	<div id="notif" class="notification notif-fixed-top is-hidden">
+		<button class="delete"></button>
+		<p>Message envoyé !</p>
+	</div>
 {% endblock %}
 
 {% block body %}
@@ -48,8 +52,13 @@
 						<textarea class="textarea is-medium"></textarea>
 					</div>
 				</div>
-				<div class="control">
-					<button type="submit" class="button is-fullwidth has-text-weight-medium is-medium is-primary">Envoyer</button>
+				<div class="control has-text-centered">
+					<a class="button is-outlined is-rounded is-primary " href="{{ path("home_page") }}" onclick="isSend()">
+						<span>Envoyer</span>
+						<span class="icon">
+							<i class="fas fa-angle-right"></i>
+						</span>	
+					</a>
 				</div>
 			</div>
 		</div>
