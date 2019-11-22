@@ -881,6 +881,9 @@ hr {
 .p-3t {
   padding-top: 3rem !important;
 }
+.m-1t {
+  margin-top: 1rem !important;
+}
 .m-2l {
   margin-left: 2rem !important;
 }
@@ -981,6 +984,12 @@ form.profil {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   border-radius: 10px;
 }
-#third-block > div > div > div > div > div.column.is-4.has-text-centered.sign-in-home > div:nth-child(2) {
+.p-form {
   padding-top: 0.75rem;
+}
+label.checkbox {
+  a {
+    color: $color2;
+    text-decoration: underline;
+  }
 }

@@ -1,8 +1,4 @@
 {% extends 'base2.html.twig' %} {% block body %}
-<div id="notif" class="notification notif-fixed-top is-hidden">
-  <button class="delete"></button>
-  <p>Vous êtes bien inscrit.</p>
-</div>
 <section class="hero is-fullheight-with-navbar">
   <div class="hero-body">
     <div class="container">
@@ -13,7 +9,7 @@
           </h1>
           <h2 class="subtitle is-5 is-dark">Et ainsi participer à la réduction de l'empreinte environnementale.</h2>
           <p>
-            <a class="button is-outlined is-primary scroll" href="#third-block">Me connecter / M'inscrire</a>
+            <a class="button is-outlined is-primary scroll" href="#third-block">Connexion / Inscription</a>
           </p>
         </div>
         <div class="column is-5">
@@ -122,26 +118,29 @@
         <div class="columns shadows-effect">
           <div class="column is-4 has-text-centered sign-in-home">
             <p class="title is-light">Connexion</p>
-            <div class="field">
-              <p class="control has-icons-left has-icons-right">
-                <input class="input" type="email" placeholder="Email">
-                <span class="icon is-small is-left">
-                  <i class="fas fa-envelope"></i>
-                </span>
-                <span class="icon is-small is-right">
-                  <i class="fas fa-check"></i>
-                </span>
-              </p>
-            </div>
-            <div class="field m-2b">
-              <p class="control has-icons-left">
-                <input class="input" type="password" placeholder="Password">
-                <span class="icon is-small is-left">
-                  <i class="fas fa-lock"></i>
-                </span>
-              </p>
-            </div>
-            <a class="button is-primary is-outlined" href="{{ asset('home') }}">Se connecter</a>
+            <form method="post" action="" class="form p-form">
+              <div class="field">
+                <p class="control has-icons-left has-icons-right">
+                  <input class="input" type="email" placeholder="Email" required>
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-envelope"></i>
+                  </span>
+                  <span class="icon is-small is-right">
+                    <i class="fas fa-check"></i>
+                  </span>
+                </p>
+              </div>
+              <div class="field m-2b">
+                <p class="control has-icons-left">
+                  <input class="input" type="password" placeholder="Password" required>
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-lock"></i>
+                  </span>
+                </p>
+              </div>
+              <button class="button is-primary is-outlined" href="{{ asset('home') }}" type="submit">Se
+                connecter</button>
+            </form>
           </div>
           <div class="column is-8 has-text-centered sign-up-home">
             <p class="title has-text-centered">Inscription</p>
@@ -150,7 +149,7 @@
                 <div class="column is-6">
                   <div class="field">
                     <p class="control has-icons-left has-icons-right">
-                      <input class="input" type="text" placeholder="Nom">
+                      <input class="input" type="text" placeholder="Nom" required>
                       <span class="icon is-small is-left">
                         <i class="far fa-user"></i>
                       </span>
@@ -158,7 +157,7 @@
                   </div>
                   <div class="field">
                     <p class="control has-icons-left has-icons-right">
-                      <input class="input" type="text" placeholder="Prénom">
+                      <input class="input" type="text" placeholder="Prénom" required>
                       <span class="icon is-small is-left">
                         <i class="far fa-user"></i>
                       </span>
@@ -166,7 +165,7 @@
                   </div>
                   <div class="field">
                     <p class="control has-icons-left">
-                      <input class="input" type="email" placeholder="Email">
+                      <input class="input" type="email" placeholder="Email" required>
                       <span class="icon is-small is-left">
                         <i class="far fa-envelope"></i>
                       </span>
@@ -174,7 +173,7 @@
                   </div>
                   <div class="field">
                     <p class="control has-icons-left">
-                      <input class="input" type="password" placeholder="Mot de passe">
+                      <input class="input" type="password" placeholder="Mot de passe" required>
                       <span class="icon is-small is-left">
                         <i class="fas fa-lock"></i>
                       </span>
@@ -184,7 +183,7 @@
                 <div class="column is-6">
                   <div class="field">
                     <p class="control has-icons-left has-icons-right">
-                      <input class="input" type="text" placeholder="Adresse">
+                      <input class="input" type="text" placeholder="Adresse" required>
                       <span class="icon is-small is-left">
                         <i class="fas fa-map-marker-alt"></i>
                       </span>
@@ -192,7 +191,7 @@
                   </div>
                   <div class="field">
                     <p class="control has-icons-left has-icons-right">
-                      <input class="input" type="text" placeholder="Code postale">
+                      <input class="input" type="text" placeholder="Code postale" required>
                       <span class="icon is-small is-left">
                         <i class="fas fa-map-marker-alt"></i>
                       </span>
@@ -200,7 +199,7 @@
                   </div>
                   <div class="field">
                     <p class="control has-icons-left has-icons-right">
-                      <input class="input" type="text" placeholder="Pays">
+                      <input class="input" type="text" placeholder="Pays" required>
                       <span class="icon is-small is-left">
                         <i class="far fa-flag"></i>
                       </span>
@@ -208,7 +207,7 @@
                   </div>
                   <div class="field m-2b">
                     <p class="control has-icons-left">
-                      <input class="input" type="text" placeholder="Ville">
+                      <input class="input" type="text" placeholder="Ville" required>
                       <span class="icon is-small is-left">
                         <i class="far fa-building"></i>
                       </span>
@@ -216,7 +215,13 @@
                   </div>
                 </div>
               </div>
-              <a class="button is-light is-outlined" href="{{ asset('home') }}" onclick="isSend()">M'inscrire</a>
+              <label class="checkbox">
+                <input type="checkbox" required>
+                I agree to the <a href="#">terms and conditions</a>
+              </label>
+              <br />
+              <button class="button is-light is-outlined m-1t" href="{{ asset('home') }}"
+                type="submit">M'inscrire</button>
             </form>
           </div>
         </div>
