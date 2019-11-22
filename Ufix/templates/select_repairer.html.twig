@@ -4,7 +4,6 @@
 <div class="container-is-fluid extended">
 	<p class="title has-text-centered">Sélection du réparateur</p>
 </div>
-
 {% endblock %}
 
 {% block body %}
@@ -205,7 +204,9 @@
 										</div>
 									</div>
 									<div class="column is-half">
-										<button class="button is-outlined is-rounded is-info">Soumettre</button>
+										<a href="{{ path("contact_repair") }}">
+											<button class="button is-outlined is-rounded is-info">Soumettre</button>
+										</a>
 									</div>
 								</div>
 							</div>
