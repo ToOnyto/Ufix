@@ -43,6 +43,10 @@ $(document).ready(function () {
   });
 });
 
+//Lorsque l'on arrive sur la page messaging, les messages les plus récents sont affichés (scrollbar vers le bas)
+$(document).ready(function () {
+  $("#messages").parent().scrollTop($("#messages").parent().prop('scrollHeight'));
+});
 //Fonction d'envoie de message dans la page messaging
 function sendMessage(){
   var valueMessage = $("#message-to-send").val();
@@ -51,8 +55,8 @@ function sendMessage(){
   if(valueMessage.length != 0 && !isNullOrEmpty(valueMessage)){
     $("#messages").append('<li class="clearfix"><div class="message-data has-text-right"><span class="message-data-time">'+time+', Today</span>&nbsp; &nbsp;<span class="message-data-name">Olia</span></div><div class="message other-message is-pulled-right">'+valueMessage+'</div></li>');
     $("#message-to-send").val('');
-  }
-    
+    $("#messages").parent().scrollTop($("#messages").parent().prop('scrollHeight'));
+  }    
 }
 //Fonction pour vérifier que le message ne contient pas uniquement des espaces.
 function isNullOrEmpty(str){

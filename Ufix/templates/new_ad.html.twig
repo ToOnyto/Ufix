@@ -1,4 +1,10 @@
-{% extends 'base.html.twig' %} {% block navbar %}
+{% extends 'base.html.twig' %} 
+
+{% block title %}
+	{{ parent() }} - Déposer une annonce
+{% endblock %}
+
+{% block navbar %}
 {{ parent() }}
 <div class="container-is-fluid extended">
   <p class="title has-text-centered">Déposer une annonce</p>
