@@ -16,43 +16,29 @@
     <div class="card-content">
       <div class="content">
         <div class="columns">
-          <div class="column is-fullheight contacts is-paddingless">
+          <div class="column is-2 is-fullheight contacts is-paddingless">
           
             {% for i in 0..6 %}
               <div class="contact">
                 <div class="columns">
                   <div class="column">
                     <div class="columns is-vcentered">
-                      <div class="column is-4 has-text-centered is-hidden-mobile">
-                        <img
-                          id="image-new-ad"
-                          src="{{ asset('img/ecran-casse.jpg') }}"
-                          alt="image produit"
-                        />
-                      </div>
-                      <div class="column is-8 is-vcentered">
+                      <div class="column">
                         <p>
-                          <span class="subtitle"
-                            >Jacques
-                            <br class="is-hidden-desktop" />
-                            Pommier</span
-                          >
-                          <span class="is-hidden-mobile">Vendeur</span>
-                          <br />
-                          <span class="is-hidden-mobile"
-                            >Iphone 4 Ecran cassé</span
-                          >
+                          <span class="title icon-before-msg">Jacques Pommier</span>
+                          <br/>
+                          <span class="subtitle">Vendeur</span>
                         </p>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <hr />
+              <hr class="b-1b"/>
             {% endfor %}
             
           </div>
-          <div class="column is-8 is-paddingless chat">
+          <div class="column is-10 is-paddingless chat">
             <div class="columns has-text-centered">
               <div class="column is-4 is-offset-4">
                 <p class="title">Jacques Pommier</p>
@@ -64,7 +50,7 @@
             <div class="chat-history">
               <ul  class="margin-form" id="messages">
                 <li class="clearfix">
-                  <div class="message-data is-pulled-right">
+                  <div class="message-data has-text-right">
                     <span class="message-data-time">10:10 AM, Today</span>
                     &nbsp; &nbsp;
                     <span class="message-data-name">Olia</span>

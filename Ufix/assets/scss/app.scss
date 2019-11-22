@@ -517,11 +517,16 @@ article {
   max-height: 47rem;
   min-height: 47rem;
   overflow-y: scroll;
+  border-right: 1px solid $color2;
 
   hr {
     background-color: $color1;
     margin: 0;
   }
+}
+
+.b-1b {
+  border-bottom: 1px solid $color2;
 }
 
 .contact {
@@ -546,6 +551,8 @@ article {
 
     .message-data {
       margin-bottom: 15px;
+      font-size: 12px;
+      font-family: $font-1-light;
     }
 
     .message-data-time {
@@ -556,12 +563,16 @@ article {
     .message {
       color: white;
       padding: 18px 20px;
-      line-height: 26px;
-      font-size: 16px;
+      font-size: 14px;
       border-radius: 7px;
-      margin-bottom: 30px;
-      width: 90%;
+      margin-bottom: 10px;
       position: relative;
+      @media screen and (min-width: 1024px) {
+        width: 60%;
+      }
+      @media screen and (max-width: 1023px) {
+        width: 90%;
+      }
 
       &:after {
         bottom: 100%;
@@ -1084,4 +1095,12 @@ label.checkbox {
       color: #333;
     }
   }
+}
+
+.icon-before-msg::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f054";
+  color: $color3;
+  padding-left: 1rem;
 }
