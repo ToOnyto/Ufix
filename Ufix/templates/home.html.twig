@@ -5,14 +5,18 @@
 {% endblock %}
 
 {% block body %}
+<!-- Notification -->
 <div id="notif" class="notification notif-fixed-top is-hidden">
   <button class="delete"></button>
   <p>Vous êtes bien inscrit.</p>
 </div>
+
 <section class="hero is-fullheight-with-navbar">
   <div class="hero-body">
     <div class="container">
+      <!-- Top part -->
       <div class="columns is-vcentered p-3t">
+        <!-- Left part-->
         <div class="column is-5 is-offset-1-desktop is-offset-1-tablet is-offset-1-mobile landing-caption">
           <h1 class="title is-1 is-bold is-spaced">
             Faites renaître vos appareils de leurs cendres !
@@ -22,12 +26,14 @@
             <a class="button is-outlined is-primary scroll" href="#third-block">Connexion / Inscription</a>
           </p>
         </div>
+        <!-- Image -->
         <div class="column is-5">
           <img src="{{ asset('img/home.jpg') }}" alt="Image présentation UFix" />
         </div>
       </div>
     </div>
   </div>
+  <!-- Button to link next section -->
   <div class="hero-footer has-background-white">
     <div class="container has-text-centered">
       <a class="scroll" href="#second-block">
@@ -41,12 +47,13 @@
 
 <section id="second-block" class="section is-medium">
   <div class="container">
+    <!-- Presentation top-->
     <div class="title-wrapper has-text-centered">
       <h2 class="title is-4">Grâce à UFix tu peux :</h2>
       <h3 class="subtitle is-6">*tout en préservant l'environnement</h3>
       <div class="divider is-centered"></div>
     </div>
-
+    <!-- Presentation of UFix -->
     <div class="content-wrapper">
       <div class="columns">
         <div class="column is-one-quarter">
@@ -121,11 +128,13 @@
     </div>
   </div>
 </section>
+<!-- Inscription and connexion part -->
 <section id="third-block" class="section is-medium">
   <div class="container">
     <div class="columns is-vcentered">
       <div class="column is-8 is-offset-2">
         <div class="columns shadows-effect">
+          <!-- Connexion -->
           <div class="column is-4 has-text-centered sign-in-home">
             <p class="title is-light">Connexion</p>
             <form method="post" action="" class="form p-form">
@@ -152,6 +161,7 @@
                 connecter</button>
             </form>
           </div>
+          <!-- Innscription -->
           <div class="column is-8 has-text-centered sign-up-home">
             <p class="title has-text-centered">Inscription</p>
             <form method="post" action="" class="form">

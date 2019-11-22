@@ -16,7 +16,9 @@
   </head>
   <body>
     <section class="hero">
+      <!-- Page head -->
       <div class="hero-head">
+        <!-- Navbar -->
         {% block navbar %}
         <nav class="navbar" role="navigation" aria-label="main navigation">
           <div class="navbar-brand">
@@ -73,11 +75,12 @@
         {% endblock %}
       </div>
     </section>
-
+    
     <section class="hero is-fullheight-with-navbar">
       <div class="hero-body verticaly-top">
         {% block body %}{% endblock %}
       </div>
+      <!-- Footer -->
       <div class="hero-footer">
         {% block footer %}
         <div class="columns is-vcentered">
