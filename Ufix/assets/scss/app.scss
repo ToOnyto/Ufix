@@ -80,6 +80,9 @@ body {
 
 // START NAVBAR
 @media screen and (max-width: 1023px) {
+  .margin-contact {
+    margin: 0 auto !important;
+}
   .notif-fixed-top {
     position: fixed;
     top: 0;
@@ -243,7 +246,7 @@ body {
 }
 .is-fullheight-with-navbar {
   .hero-body {
-    padding: 3rem 0rem;
+    padding: 0 0 3rem 0;
   }
 }
 .is-fluid-without-padding {
@@ -468,6 +471,7 @@ article {
 
 .column-edit {
   padding-right: 5%;
+  padding-top: 2rem;
   img {
     display: block;
     margin-left: auto;
@@ -870,6 +874,12 @@ hr {
 .m-1b {
   margin-bottom: 1rem !important;
 }
+.p-3t {
+  padding-top: 3rem !important;
+}
+.m-2l {
+  margin-left: 2rem !important;
+}
 form.profil {
   margin: 0 1rem 0 1rem;
 }
@@ -924,4 +934,19 @@ form.profil {
   .card-content {
     padding: 0.8rem 0.5rem 0.8rem 0.5rem !important;
   }
+}
+.card-footer {
+  background-color: $color2;
+  a {
+    color: $color1;
+  }
+}
+.columns {
+  margin-top: 0;
+}
+.column-without-p-top {
+  padding-top: 0;
+}
+.save-ad {
+  color: $color3;
 }

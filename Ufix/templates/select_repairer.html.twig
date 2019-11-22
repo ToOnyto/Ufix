@@ -1,272 +1,299 @@
 {% extends 'base.html.twig' %}
 {% block navbar %}
-	{{ parent() }}
-	<div class="container-is-fluid extended">
-		<p class="title has-text-centered">Sélection du réparateur</p>
-	</div>
+{{ parent() }}
+<div class="container-is-fluid extended">
+	<p class="title has-text-centered">Sélection du réparateur</p>
+</div>
 
 {% endblock %}
 
 {% block body %}
 
-	<div class="container">
-		<div class="card">
-			<div class="card-content">
-				<div class="content">
-					<div class="columns">
-						<div class="column is-4 is-offset-4">
+<div class="container">
+	<div class="card">
+		<div class="card-content">
+			<div class="content">
+				<div class="columns">
+					<div class="column is-4 is-offset-4">
 
-							<div class="columns">
-								<div class="column is-6 has-text-centered">
-									<img id="image-new-ad" src="{{ asset('img/ecran-casse.jpg') }}" alt="image produit">
-								</div>
-								<div class="column is-6">
-									<p class="title">Iphone 4</p>
-									<p class="subtitle">Ecran cassé</p>
-								</div>
+						<div class="columns">
+							<div class="column is-6 has-text-centered">
+								<img id="image-new-ad" src="{{ asset('img/ecran-casse.jpg') }}" alt="image produit">
 							</div>
-
-						</div>
-					</div>
-
-					<div class="columns">
-						<div class="column is-half ">
-							<div class="container-is-fluid extended">
-								<p class="title has-text-centered">Sélectionner un réparateur</p>
+							<div class="column is-6">
+								<p class="title">Iphone 4</p>
+								<p class="subtitle">Ecran cassé</p>
 							</div>
-							<div class="is-scrollable">
-								{% for i in 0..19 %}
-									<a class="repairer is-fullwidth" href="{{ path("contact_seller_with_repair2") }}">
-										<div class="columns is-vcentered">
-											<div class="column is-6">
-												<p>
-													<span class="subtitle">Jacques Boulon</span>
-													<br>
-													<span>
-														33600 PESSAC</span>
-												</p>
-											</div>
-											<div class="column is-3 has-text-centered">
-												<div class="rate">
-													<i class="star">
-														4.3</i>
-												</div>
-											</div>
-											<div class="column is-3 has-text-centered">
-												<p class="subtitle">15.00€</p>
-											</div>
-										</div>
-									</a>
-									<hr>
-								{% endfor %}
-								
-
-								<div class="repairer">
-									<div class="columns is-mobile is-vcentered">
-										<div class="column is-6">
-											<p>
-												<span class="subtitle">Jacques Boulon</span>
-												<br>
-												<span>
-													33600 PESSAC</span>
-											</p>
-										</div>
-										<div class="column is-3 has-text-centered">
-											<div class="rate">
-												<i class="star">
-													4.3</i>
-											</div>
-										</div>
-										<div class="column is-3 has-text-centered">
-											<p class="subtitle">15.00€</p>
-										</div>
-									</div>
-								</div>
-								<div class="repairer">
-									<div class="columns is-vcentered">
-										<div class="column is-6">
-											<p>
-												<span class="subtitle">Jacques Boulon</span>
-												<br>
-												<span>
-													33600 PESSAC</span>
-											</p>
-										</div>
-										<div class="column is-3 has-text-centered">
-											<div class="rate">
-												<i class="star">
-													4.3</i>
-											</div>
-										</div>
-										<div class="column is-3 has-text-centered">
-											<p class="subtitle">15.00€</p>
-										</div>
-									</div>
-								</div>
-								<div class="repairer">
-									<div class="columns is-vcentered">
-										<div class="column is-6">
-											<p>
-												<span class="subtitle">Jacques Boulon</span>
-												<br>
-												<span>
-													33600 PESSAC</span>
-											</p>
-										</div>
-										<div class="column is-3 has-text-centered">
-											<div class="rate">
-												<i class="star">
-													4.3</i>
-											</div>
-										</div>
-										<div class="column is-3 has-text-centered">
-											<p class="subtitle">15.00€</p>
-										</div>
-									</div>
-								</div>
-								<div class="repairer">
-									<div class="columns is-vcentered">
-										<div class="column is-6">
-											<p>
-												<span class="subtitle">Jacques Boulon</span>
-												<br>
-												<span>
-													33600 PESSAC</span>
-											</p>
-										</div>
-										<div class="column is-3 has-text-centered">
-											<div class="rate">
-												<i class="star">
-													4.3</i>
-											</div>
-										</div>
-										<div class="column is-3 has-text-centered">
-											<p class="subtitle">15.00€</p>
-										</div>
-									</div>
-								</div>
-								<div class="repairer">
-									<div class="columns is-vcentered">
-										<div class="column is-6">
-											<p>
-												<span class="subtitle">Jacques Boulon</span>
-												<br>
-												<span>
-													33600 PESSAC</span>
-											</p>
-										</div>
-										<div class="column is-3 has-text-centered">
-											<div class="rate">
-												<i class="star">
-													4.3</i>
-											</div>
-										</div>
-										<div class="column is-3 has-text-centered">
-											<p class="subtitle">15.00€</p>
-										</div>
-									</div>
-								</div>
-								<div class="repairer">
-									<div class="columns is-vcentered">
-										<div class="column is-6">
-											<p>
-												<span class="subtitle">Jacques Boulon</span>
-												<br>
-												<span>
-													33600 PESSAC</span>
-											</p>
-										</div>
-										<div class="column is-3 has-text-centered">
-											<div class="rate">
-												<i class="star">
-													4.3</i>
-											</div>
-										</div>
-										<div class="column is-3 has-text-centered">
-											<p class="subtitle">15.00€</p>
-										</div>
-									</div>
-								</div>
-							</div>
-
-						</div>
-						<div class="column is-half">
-							<div class="container-is-fluid extended">
-								<p class="title has-text-centered">Proposer une réparation</p>
-							</div>
-							<div class="columns is-margin-top">
-								<div class="column is-6 is-offset-3">
-									<div class="columns has-text-centered">
-										<div class="column is-half">
-											<div class="field">
-												<div class="control">
-													<input class="input" type="text" placeholder="Votre prix">
-												</div>
-											</div>
-										</div>
-										<div class="column is-half">
-											<button class="button is-outlined is-rounded is-info">Soumettre</button>
-										</div>
-									</div>
-								</div>
-							</div>
-
 						</div>
 
 					</div>
+				</div>
+
+				<div class="columns">
+					<div class="column is-half ">
+						<div class="container-is-fluid extended">
+							<p class="title has-text-centered">Sélectionner un réparateur</p>
+						</div>
+						<div class="is-scrollable">
+							{% for i in 0..19 %}
+							<a class="repairer is-fullwidth" href="{{ path("contact_seller_with_repair2") }}">
+								<div class="columns is-vcentered">
+									<div class="column is-6">
+										<p>
+											<span class="subtitle">Jacques Boulon</span>
+											<br>
+											<span>
+												33600 PESSAC</span>
+										</p>
+									</div>
+									<div class="column is-3 has-text-centered">
+										<div class="rate">
+											<i class="star">
+												4.3</i>
+										</div>
+									</div>
+									<div class="column is-3 has-text-centered">
+										<p class="subtitle">15.00€</p>
+									</div>
+								</div>
+							</a>
+							<hr>
+							{% endfor %}
+
+
+							<div class="repairer">
+								<div class="columns is-mobile is-vcentered">
+									<div class="column is-6">
+										<p>
+											<span class="subtitle">Jacques Boulon</span>
+											<br>
+											<span>
+												33600 PESSAC</span>
+										</p>
+									</div>
+									<div class="column is-3 has-text-centered">
+										<div class="rate">
+											<i class="star">
+												4.3</i>
+										</div>
+									</div>
+									<div class="column is-3 has-text-centered">
+										<p class="subtitle">15.00€</p>
+									</div>
+								</div>
+							</div>
+							<div class="repairer">
+								<div class="columns is-vcentered">
+									<div class="column is-6">
+										<p>
+											<span class="subtitle">Jacques Boulon</span>
+											<br>
+											<span>
+												33600 PESSAC</span>
+										</p>
+									</div>
+									<div class="column is-3 has-text-centered">
+										<div class="rate">
+											<i class="star">
+												4.3</i>
+										</div>
+									</div>
+									<div class="column is-3 has-text-centered">
+										<p class="subtitle">15.00€</p>
+									</div>
+								</div>
+							</div>
+							<div class="repairer">
+								<div class="columns is-vcentered">
+									<div class="column is-6">
+										<p>
+											<span class="subtitle">Jacques Boulon</span>
+											<br>
+											<span>
+												33600 PESSAC</span>
+										</p>
+									</div>
+									<div class="column is-3 has-text-centered">
+										<div class="rate">
+											<i class="star">
+												4.3</i>
+										</div>
+									</div>
+									<div class="column is-3 has-text-centered">
+										<p class="subtitle">15.00€</p>
+									</div>
+								</div>
+							</div>
+							<div class="repairer">
+								<div class="columns is-vcentered">
+									<div class="column is-6">
+										<p>
+											<span class="subtitle">Jacques Boulon</span>
+											<br>
+											<span>
+												33600 PESSAC</span>
+										</p>
+									</div>
+									<div class="column is-3 has-text-centered">
+										<div class="rate">
+											<i class="star">
+												4.3</i>
+										</div>
+									</div>
+									<div class="column is-3 has-text-centered">
+										<p class="subtitle">15.00€</p>
+									</div>
+								</div>
+							</div>
+							<div class="repairer">
+								<div class="columns is-vcentered">
+									<div class="column is-6">
+										<p>
+											<span class="subtitle">Jacques Boulon</span>
+											<br>
+											<span>
+												33600 PESSAC</span>
+										</p>
+									</div>
+									<div class="column is-3 has-text-centered">
+										<div class="rate">
+											<i class="star">
+												4.3</i>
+										</div>
+									</div>
+									<div class="column is-3 has-text-centered">
+										<p class="subtitle">15.00€</p>
+									</div>
+								</div>
+							</div>
+							<div class="repairer">
+								<div class="columns is-vcentered">
+									<div class="column is-6">
+										<p>
+											<span class="subtitle">Jacques Boulon</span>
+											<br>
+											<span>
+												33600 PESSAC</span>
+										</p>
+									</div>
+									<div class="column is-3 has-text-centered">
+										<div class="rate">
+											<i class="star">
+												4.3</i>
+										</div>
+									</div>
+									<div class="column is-3 has-text-centered">
+										<p class="subtitle">15.00€</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div class="column is-half">
+						<div class="container-is-fluid extended">
+							<p class="title has-text-centered">Proposer une réparation</p>
+						</div>
+						<div class="columns is-margin-top">
+							<div class="column is-6 is-offset-3">
+								<div class="columns has-text-centered">
+									<div class="column is-half">
+										<div class="field">
+											<div class="control">
+												<input class="input" type="text" placeholder="Votre prix">
+											</div>
+										</div>
+									</div>
+									<div class="column is-half">
+										<button class="button is-outlined is-rounded is-info">Soumettre</button>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<footer class="custom-card-footer">
+			<div class="columns is-vcentered">
+				<div class="column is-4 has-text-centered">
+					<p>
+						<span class="subtitle text-footer">49.99€</span>
+						<span class="subtitle text-footer">
+							produit</span>
+					</p>
+					<p class="subtitle text-footer">
+						<span class="subtitle text-footer">16.50€</span>
+						<span class="subtitle text-footer">
+							réparation</span>
+					</p>
+				</div>
+				<div class="column is-4 has-text-centered">
+					<p class="title text-footer">66.49€</p>
+				</div>
+				<div class="column is-4 has-text-centered">
+					<a class="button is-outlined is-rounded is-info" href="{{ path("contact_seller_with_repair") }}">
+						<span>Contacter le réparateur et le vendeur</span>
+						<span class="icon">
+							<i class="fas fa-angle-right"></i>
+						</span>
+					</a>
+				</div>
+			</div>
+		</footer>
+		{# <footer class="contact-footer">
+			<div class="columns is-marginless is-vcentered is-variable is-hidden-mobile">
+				<div class="column is-4">
+					<p>
+						<span class="subtitle text-footer">49.99€</span>
+						<span class="text-footer">
+							produit</span>
+					</p>
+					<p>
+						<span class="subtitle text-footer">16.50€</span>
+						<span class="text-footer">
+							Réparation</span>
+					</p>
+				</div>
+				<div class="column has-text-centered">
+					<p class="title text-footer">66.49€</p>
+				</div>
+				<div class="column has-text-right">
+					<button class="button is-outlined is-rounded is-primary">
+						<span>Envoyer</span>
+						<span class="icon">
+							<i class="fas fa-angle-right"></i>
+						</span>
+					</button>
 				</div>
 			</div>
 
-			<footer class="contact-footer">
-				<div class="columns is-marginless is-vcentered is-variable is-hidden-mobile">
-					<div class="column is-4">
-						<p>
-							<span class="subtitle text-footer">49.99€</span>
-							<span class="text-footer">
-								produit</span>
-						</p>
-						<p>
-							<span class="subtitle text-footer">16.50€</span>
-							<span class="text-footer">
-								Réparation</span>
-						</p>
-					</div>
-					<div class="column has-text-centered">
-						<p class="title text-footer">66.49€</p>
-					</div>
-					<div class="column has-text-right">
-						<button class="button is-outlined is-rounded is-primary">
-							<span>Envoyer</span>
-							<span class="icon">
-								<i class="fas fa-angle-right"></i>
-							</span>
-						</button>
-					</div>
+			<div class="columns is-marginless is-vcentered is-variable is-mobile is-hidden-tablet is-hidden-desktop">
+				<div class="column is-2">
+					<img src="{{ asset('img/ecran-casse-petit.png') }}" alt="image du téléphone" />
 				</div>
-
-				<div class="columns is-marginless is-vcentered is-variable is-mobile is-hidden-tablet is-hidden-desktop">
-					<div class="column is-2">
-						<img src="{{ asset('img/ecran-casse-petit.png') }}" alt="image du téléphone"/>
-					</div>
-					<div class="column is-6">
-						<p class="has-text-white">Iphone 4</p>
-						<p class="has-text-grey">Ecran cassé</p>
-					</div>
-					<div class="column is-4">
-						<button class="button is-outlined is-rounded is-primary">
-							<span>Envoyer</span>
-							<span class="icon">
-								<i class="fas fa-angle-right"></i>
-							</span>
-						</button>
-					</div>
+				<div class="column is-6">
+					<p class="has-text-white">Iphone 4</p>
+					<p class="has-text-grey">Ecran cassé</p>
 				</div>
-			</footer>
-
-		</div>
-
+				<div class="column is-4">
+					<button class="button is-outlined is-rounded is-primary">
+						<span>Envoyer</span>
+						<span class="icon">
+							<i class="fas fa-angle-right"></i>
+						</span>
+					</button>
+				</div>
+			</div>
+		</footer> #}
 
 	</div>
+
+
+</div>
 
 
 {% endblock %}

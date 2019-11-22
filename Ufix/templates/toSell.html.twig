@@ -1,158 +1,124 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-	Annonce
+Annonce
 {% endblock %}
 
 {% block navbar %}
-	{{ parent() }}
-	<div class="container-is-fluid extended">
-		<p class="title has-text-centered">Annonce</p>
-	</div>
+{{ parent() }}
+<div class="container-is-fluid extended">
+	<p class="title has-text-centered">Annonce</p>
+</div>
 {% endblock %}
 
 {% block body %}
 
-	<div class="container">
-
-		<div
-			class="card">
-			<!-- Card header -->
-			<div class="card-header">
-				<div class="columns">
-					<div class="column is-half is-offset-one-quarter has-text-centered">
-						<div class="columns">
-							<div class="column ">
-								<p class="title">Iphone 4</p>
-								<p class="subtitle">Ecran cassé</p>
-							</div>
+<div class="container">
+	<div class="card">
+		<!-- Card header -->
+		<div class="card-header p-3t">
+			<div class="columns">
+				<div class="column is-half is-offset-one-quarter has-text-centered column-without-p-top">
+					<div class="columns">
+						<div class="column ">
+							<p class="title">Iphone 4</p>
+							<p class="subtitle">Ecran cassé</p>
 						</div>
-						<div class="is-color6 is-4">
-							<img src="{{ asset('img/ecran-casse.jpg') }}" alt="Image Iphone 4 écran cassé">
-						</div>
+					</div>
+					<div class="is-color6 is-4">
+						<img src="{{ asset('img/ecran-casse.jpg') }}" alt="Image Iphone 4 écran cassé">
 					</div>
 				</div>
 			</div>
-			<hr
-			class="is-hidden-mobile"/>
-
-			<!-- Content -->
-			<div class="card-content">
-				<div class="content">
-					<div
-						class="columns">
-						<!-- Column onformation -->
-						<div class="column is-2-desktop is-hidden-mobile"></div>
-						<div class="column is-3">
-							<p class="subtitle is-uppercase">Description</p>
-							<p>Je vend mon Iphone 4, l'écran est cassé mais le tactile fonctionne, le bonton home est capricieux. A réparer ou bien pour pièces, prix ferme.</p>
-						</div>
-						<!-- Column specification-->
-						<div class="column is-4">
-							<p class="subtitle is-uppercase">Détails Techniques</p>
-							<table class="has-text-centered">
-								<thead>
-									<tr>
-										<th>marque</th>
-										<th>modèle</th>
-									</tr>
-
-								</thead>
-								<tbody>
-									<tr>
-										<td>Apple</td>
-										<td>Iphone 4</td>
-									</tr>
-								</tbody>
-								<thead>
-									<tr>
-										<th>couleur</th>
-										<th>capacité</th>
-									</tr>
-
-								</thead>
-								<tbody>
-									<tr>
-										<td>Noir</td>
-										<td>64 Go</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-						<!-- Column seller -->
-						<div class="column is-3">
-							<p class="subtitle is-uppercase">Vendeur</p>
-							<span class="tag orange">4/5</span>
-							<p>Jacques POMMIER
-								<br>
-								Gradignan - 33 170</p>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<!-- Card footer-->
-			<footer
-				class="custom-card-footer">
-				<!-- For desktop -->
-				<div class="columns is-marginless is-vcentered is-variable is-hidden-mobile">
-					<div class="column is-1">
-						<span class="fa-stack">
-							<i class="fas fa-circle orange-circle fa-2x"></i>
-							<i class="far fa-heart fa-stack-1x fa-inverse"></i>
-						</span>
-					</div>
-					<div class="column is-7 has-text-centered">
-						<p>50€</p>
-					</div>
-					<div class="column is-2">
-						<a class="button is-outlined is-rounded is-info" href="{{ path("select_repairer") }}">
-							<span>Réparer</span>
-							<span class="icon">
-								<i class="fas fa-angle-right"></i>
-							</span>
-						</a>
-					</div>
-					<div class="column is-2">
-						<a class="button is-outlined is-rounded is-primary" href="{{ path("contact_seller_without_repair") }}">
-							<span>Contacter</span>
-							<span class="icon">
-								<i class="fas fa-angle-right"></i>
-							</span>
-						</a>
-					</div>
-				</div>
-				<!-- For mobile -->
-				<div class="columns is-marginless is-vcentered is-variable is-mobile is-hidden-tablet is-hidden-desktop">
-					<div class="column is-2">
-						<span class="fa-stack">
-							<i class="fas fa-circle orange-circle fa-2x"></i>
-							<i class="far fa-heart fa-stack-1x fa-inverse"></i>
-						</span>
-					</div>
-					<div class="column is-2">
-						<p>50€</p>
-					</div>
-					<div class="column is-4">
-						<a class="button is-outlined is-rounded is-info" href="{{ path("select_repairer") }}">
-							<span>Réparer</span>
-							<span class="icon">
-								<i class="fas fa-angle-right"></i>
-							</span>
-						</a>
-					</div>
-					<div class="column is-4">
-
-						<a class="button is-outlined is-rounded is-primary" href="{{ path("contact_seller_without_repair") }}">
-							<span>Contacter</span>
-							<span class="icon">
-								<i class="fas fa-angle-right"></i>
-							</span>
-						</a>
-
-					</div>
-				</div>
-			</footer>
 		</div>
+		<hr class="is-hidden-mobile" />
+
+		<!-- Content -->
+		<div class="card-content">
+			<div class="content">
+				<div class="columns">
+					<!-- Column onformation -->
+					<div class="column is-2-desktop is-hidden-mobile"></div>
+					<div class="column is-3">
+						<p class="subtitle is-uppercase">Description</p>
+						<p>Je vend mon Iphone 4, l'écran est cassé mais le tactile fonctionne, le bonton home est
+							capricieux. A réparer ou bien pour pièces, prix ferme.</p>
+					</div>
+					<!-- Column specification-->
+					<div class="column is-4">
+						<p class="subtitle is-uppercase">Détails Techniques</p>
+						<table class="has-text-centered">
+							<thead>
+								<tr>
+									<th>marque</th>
+									<th>modèle</th>
+								</tr>
+
+							</thead>
+							<tbody>
+								<tr>
+									<td>Apple</td>
+									<td>Iphone 4</td>
+								</tr>
+							</tbody>
+							<thead>
+								<tr>
+									<th>couleur</th>
+									<th>capacité</th>
+								</tr>
+
+							</thead>
+							<tbody>
+								<tr>
+									<td>Noir</td>
+									<td>64 Go</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!-- Column seller -->
+					<div class="column is-3">
+						<p class="subtitle is-uppercase">Vendeur</p>
+						<span class="tag orange">4/5</span>
+						<p>Jacques POMMIER
+							<br>
+							Gradignan - 33 170</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Card footer-->
+		<footer class="custom-card-footer">
+			<div class="columns is-vcentered">
+				<div class="column is-2 has-text-centered">
+					<p>50€</p>
+				</div>
+				<div class="column is-2 has-text-centered">
+					<a href="{{ path("ads_saved") }}" class="save-ad">
+						<i class="far fa-heart fa-2x"></i>
+					</a>
+				</div>
+				<div class="column is-4 has-text-centered">
+					<a class="button is-outlined is-rounded is-info" href="{{ path("select_repairer") }}">
+						<span>Avec réparation</span>
+						<span class="icon">
+							<i class="fas fa-angle-right"></i>
+						</span>
+					</a>
+				</div>
+				<div class="column is-4 has-text-centered">
+					<a class="button is-outlined is-rounded is-primary"
+						href="{{ path("contact_seller_without_repair") }}">
+						<span>Contacter</span>
+						<span class="icon">
+							<i class="fas fa-angle-right"></i>
+						</span>
+					</a>
+				</div>
+			</div>
+		</footer>
 	</div>
-</div></div>{% endblock %}
+</div>
+</div>
+</div>{% endblock %}
