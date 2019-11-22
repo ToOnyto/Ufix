@@ -43,6 +43,22 @@ $(document).ready(function () {
   });
 });
 
+//Fonction d'envoie de message dans la page messaging
+function sendMessage(){
+  var valueMessage = $("#message-to-send").val();
+  var dt = new Date();
+  var time = dt.getHours() + ":" + dt.getMinutes();
+  if(valueMessage.length != 0 && !isNullOrEmpty(valueMessage)){
+    $("#messages").append('<li class="clearfix"><div class="message-data has-text-right"><span class="message-data-time">'+time+', Today</span>&nbsp; &nbsp;<span class="message-data-name">Olia</span></div><div class="message other-message is-pulled-right">'+valueMessage+'</div></li>');
+    $("#message-to-send").val('');
+  }
+    
+}
+//Fonction pour vérifier que le message ne contient pas uniquement des espaces.
+function isNullOrEmpty(str){
+  return !str||!str.trim();
+}
+
 function readURL(input) {
   if (input.files && input.files[0]) {
       var reader = new FileReader();
@@ -108,3 +124,4 @@ function isDelete4() {
   var selectAds = document.getElementById("ads_delete_4");
   selectAds.classList.add('is-hidden');
 }
+
