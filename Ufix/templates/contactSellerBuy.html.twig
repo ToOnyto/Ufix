@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ parent() }} - Contacter le vendeur
+{% endblock %}
+
+{% block navbar %}
+{{ parent() }}
+<div class="container-is-fluid extended">
+	<p class="title has-text-centered">Contacter le vendeur</p>
+</div>
+<div id="notif" class="notification notif-fixed-top is-hidden">
+	<button class="delete"></button>
+	<p>Message envoyé !</p>
+</div>
+{% endblock %}
+{% block body %}
+<div class="container">
+	<div class="card">
+		<!-- Header -->
+		<div class="card-header p-3t">
+			<div class="has-text-centered">
+				<p class=" title is-size-4">Jacques POMMIER</p>
+				<p class="title is-size-5 has-text-grey">GRADIGNAN - 33170</p>
+			</div>
+		</div>
+		<!-- Content -->
+		<div class="card-content has-text-centered">
+			<div class="content">
+				<form action="">
+					<div class="field margin-contact">
+						<div class="control">
+							<textarea class="textarea min-height-textarea" required>
+Bonjour, 
+									              
+Je suis fortement intéressé par votre offre, est-elle toujours disponible ?
+Si oui, quand et où pouvons-nous nous rencontrer ?
+
+Cordialement,
+Léo POMA
+								</textarea>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<!-- Footer -->
+		<footer class="custom-card-footer">
+			<div class="columns is-vcentered">
+				<div class="column is-6 has-text-centered">
+					<p class="subtitle text-footer">
+						<span class="subtitle text-footer">Iphone 4</span>
+						<br />
+						<span class="subtitle text-footer">Ecran cassé</span>
+					</p>
+				</div>
+				<div class="column is-6 has-text-centered">
+					<a class="button is-outlined is-rounded is-primary" href="{{ path("messaging") }}"
+						onclick="isSend()">
+						<span>Envoyer</span>
+						<span class="icon">
+							<i class="fas fa-angle-right"></i>
+						</span>
+					</a>
+				</div>
+			</div>
+		</footer>
+
+	</div>
+</div>
+{% endblock %}

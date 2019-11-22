@@ -1,0 +1,425 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ parent() }} - Annonces
+{% endblock %}
+
+{% block navbar %}
+{{ parent() }}
+<div class="container-is-fluid extended">
+	<p class="title has-text-centered">Annonces</p>
+</div>
+{% endblock %}
+
+{% block body %}
+<div class="container is-fluid-without-padding">
+	<!-- Top part-->
+	<div class="columns is-centered p-3t">
+		<div class="column is-4" id="search_bar">
+			<article class="panel">
+				<p class="panel-tabs">
+					<a class="is-active">Tous</a>
+					<a>Mobile</a>
+					<a>Ordinateur</a>
+					<a>Tablette</a>
+				</p>
+				<div class="panel-block">
+					<p class="control has-icons-left">
+						<input class="input is-dark" type="text" placeholder="Search" />
+						<span class="icon is-left">
+							<i class="fas fa-search" aria-hidden="true"></i>
+						</span>
+					</p>
+				</div>
+			</article>
+		</div>
+	</div>
+	<!-- Grid of items-->
+	<div class="columns">
+		<div class="column is-10 is-offset-1">
+			<div class="columns is-mobile is-multiline products">
+				{# COLUMN #}
+				<a class="column is-2-desktop is-3-tablet is-6-mobile" href="{{ path('to_repair') }}">
+					<div class="card all-ads">
+						<div class="card-image">
+							<figure class="image">
+								<img src="{{ asset('img/iphone5.png') }}" alt="Iphone 5">
+							</figure>
+						</div>
+						<div class="card-content">
+							<div class="media">
+								<div class="media-content has-text-centered">
+									<p class="title to-repare">Iphone 5</p>
+									<p class="subtitle">Hors service</p>
+									<p class="susbtitle">-- €</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</a>
+				{# COLUMN #}
+				<a class="column is-2-desktop is-3-tablet is-6-mobile" href="{{ path('to_sell') }}">
+					<div class="card all-ads">
+						<div class="card-image">
+							<figure class="image">
+								<img src="{{ asset('img/iphone4.png') }}" alt="Iphone 5">
+							</figure>
+						</div>
+						<div class="card-content">
+							<div class="media">
+								<div class="media-content has-text-centered">
+									<p class="title">Iphone 4</p>
+									<p class="subtitle">Hors service</p>
+									<p class="susbtitle">45.99 €</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</a>
+				{# COLUMN #}
+				<a class="column is-2-desktop is-3-tablet is-6-mobile" href="{{ path('to_sell') }}">
+					<div class="card all-ads">
+						<div class="card-image">
+							<figure class="image">
+								<img src="{{ asset('img/iphone6.png') }}" alt="Iphone 5">
+							</figure>
+						</div>
+						<div class="card-content">
+							<div class="media">
+								<div class="media-content has-text-centered">
+									<p class="title">Iphone 6</p>
+									<p class="subtitle">Lightning foutue</p>
+									<p class="susbtitle">98.00 €</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</a>
+				{# COLUMN #}
+				<a class="column is-2-desktop is-3-tablet is-6-mobile" href="{{ path('to_sell') }}">
+					<div class="card all-ads">
+						<div class="card-image">
+							<figure class="image">
+								<img src="{{ asset('img/ecran-casse.jpg') }}" alt="Iphone 5">
+							</figure>
+						</div>
+						<div class="card-content">
+							<div class="media">
+								<div class="media-content has-text-centered">
+									<p class="title">Iphone 4</p>
+									<p class="subtitle">Ecran cassé</p>
+									<p class="susbtitle">49.99 €</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</a>
+				{# COLUMN #}
+				<a class="column is-2-desktop is-3-tablet is-6-mobile" href="{{ path('to_repair') }}">
+					<div class="card all-ads">
+						<div class="card-image">
+							<figure class="image">
+								<img src="{{ asset('img/iphone5.png') }}" alt="Iphone 5">
+							</figure>
+						</div>
+						<div class="card-content">
+							<div class="media">
+								<div class="media-content has-text-centered">
+									<p class="title to-repare">Iphone 5</p>
+									<p class="subtitle">Hors service</p>
+									<p class="susbtitle">-- €</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</a>
+				{# COLUMN #}
+				<a class="column is-2-desktop is-3-tablet is-6-mobile" href="{{ path('to_sell') }}">
+					<div class="card all-ads">
+						<div class="card-image">
+							<figure class="image">
+								<img src="{{ asset('img/iphone4.png') }}" alt="Iphone 5">
+							</figure>
+						</div>
+						<div class="card-content">
+							<div class="media">
+								<div class="media-content has-text-centered">
+									<p class="title">Iphone 4</p>
+									<p class="subtitle">Hors service</p>
+									<p class="susbtitle">45.99 €</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</a>
+				{# COLUMN #}
+				<a class="column is-2-desktop is-3-tablet is-6-mobile" href="{{ path('to_sell') }}">
+					<div class="card all-ads">
+						<div class="card-image">
+							<figure class="image">
+								<img src="{{ asset('img/iphone6.png') }}" alt="Iphone 5">
+							</figure>
+						</div>
+						<div class="card-content">
+							<div class="media">
+								<div class="media-content has-text-centered">
+									<p class="title">Iphone 6</p>
+									<p class="subtitle">Lightning foutue</p>
+									<p class="susbtitle">98.00 €</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</a>
+				{# COLUMN #}
+				<a class="column is-2-desktop is-3-tablet is-6-mobile" href="{{ path('to_sell') }}">
+					<div class="card all-ads">
+						<div class="card-image">
+							<figure class="image">
+								<img src="{{ asset('img/ecran-casse.jpg') }}" alt="Iphone 5">
+							</figure>
+						</div>
+						<div class="card-content">
+							<div class="media">
+								<div class="media-content has-text-centered">
+									<p class="title">Iphone 4</p>
+									<p class="subtitle">Ecran cassé</p>
+									<p class="susbtitle">49.99 €</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</a>
+				{# COLUMN #}
+				<a class="column is-2-desktop is-3-tablet is-6-mobile" href="{{ path('to_repair') }}">
+					<div class="card all-ads">
+						<div class="card-image">
+							<figure class="image">
+								<img src="{{ asset('img/iphone5.png') }}" alt="Iphone 5">
+							</figure>
+						</div>
+						<div class="card-content">
+							<div class="media">
+								<div class="media-content has-text-centered">
+									<p class="title to-repare">Iphone 5</p>
+									<p class="subtitle">Hors service</p>
+									<p class="susbtitle">-- €</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</a>
+				{# COLUMN #}
+				<a class="column is-2-desktop is-3-tablet is-6-mobile" href="{{ path('to_sell') }}">
+					<div class="card all-ads">
+						<div class="card-image">
+							<figure class="image">
+								<img src="{{ asset('img/iphone4.png') }}" alt="Iphone 5">
+							</figure>
+						</div>
+						<div class="card-content">
+							<div class="media">
+								<div class="media-content has-text-centered">
+									<p class="title">Iphone 4</p>
+									<p class="subtitle">Hors service</p>
+									<p class="susbtitle">45.99 €</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</a>
+				{# COLUMN #}
+				<a class="column is-2-desktop is-3-tablet is-6-mobile" href="{{ path('to_sell') }}">
+					<div class="card all-ads">
+						<div class="card-image">
+							<figure class="image">
+								<img src="{{ asset('img/iphone6.png') }}" alt="Iphone 5">
+							</figure>
+						</div>
+						<div class="card-content">
+							<div class="media">
+								<div class="media-content has-text-centered">
+									<p class="title">Iphone 6</p>
+									<p class="subtitle">Lightning foutue</p>
+									<p class="susbtitle">98.00 €</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</a>
+				{# COLUMN #}
+				<a class="column is-2-desktop is-3-tablet is-6-mobile" href="{{ path('to_sell') }}">
+					<div class="card all-ads">
+						<div class="card-image">
+							<figure class="image">
+								<img src="{{ asset('img/ecran-casse.jpg') }}" alt="Iphone 5">
+							</figure>
+						</div>
+						<div class="card-content">
+							<div class="media">
+								<div class="media-content has-text-centered">
+									<p class="title">Iphone 4</p>
+									<p class="subtitle">Ecran cassé</p>
+									<p class="susbtitle">49.99 €</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</a>
+				{# COLUMN #}
+				<a class="column is-2-desktop is-3-tablet is-6-mobile" href="{{ path('to_repair') }}">
+					<div class="card all-ads">
+						<div class="card-image">
+							<figure class="image">
+								<img src="{{ asset('img/iphone5.png') }}" alt="Iphone 5">
+							</figure>
+						</div>
+						<div class="card-content">
+							<div class="media">
+								<div class="media-content has-text-centered">
+									<p class="title to-repare">Iphone 5</p>
+									<p class="subtitle">Hors service</p>
+									<p class="susbtitle">-- €</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</a>
+				{# COLUMN #}
+				<a class="column is-2-desktop is-3-tablet is-6-mobile" href="{{ path('to_sell') }}">
+					<div class="card all-ads">
+						<div class="card-image">
+							<figure class="image">
+								<img src="{{ asset('img/iphone4.png') }}" alt="Iphone 5">
+							</figure>
+						</div>
+						<div class="card-content">
+							<div class="media">
+								<div class="media-content has-text-centered">
+									<p class="title">Iphone 4</p>
+									<p class="subtitle">Hors service</p>
+									<p class="susbtitle">45.99 €</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</a>
+				{# COLUMN #}
+				<a class="column is-2-desktop is-3-tablet is-6-mobile" href="{{ path('to_sell') }}">
+					<div class="card all-ads">
+						<div class="card-image">
+							<figure class="image">
+								<img src="{{ asset('img/iphone6.png') }}" alt="Iphone 5">
+							</figure>
+						</div>
+						<div class="card-content">
+							<div class="media">
+								<div class="media-content has-text-centered">
+									<p class="title">Iphone 6</p>
+									<p class="subtitle">Lightning foutue</p>
+									<p class="susbtitle">98.00 €</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</a>
+				{# COLUMN #}
+				<a class="column is-2-desktop is-3-tablet is-6-mobile" href="{{ path('to_sell') }}">
+					<div class="card all-ads">
+						<div class="card-image">
+							<figure class="image">
+								<img src="{{ asset('img/ecran-casse.jpg') }}" alt="Iphone 5">
+							</figure>
+						</div>
+						<div class="card-content">
+							<div class="media">
+								<div class="media-content has-text-centered">
+									<p class="title">Iphone 4</p>
+									<p class="subtitle">Ecran cassé</p>
+									<p class="susbtitle">49.99 €</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</a>
+				{# COLUMN #}
+				<a class="column is-2-desktop is-3-tablet is-6-mobile" href="{{ path('to_repair') }}">
+					<div class="card all-ads">
+						<div class="card-image">
+							<figure class="image">
+								<img src="{{ asset('img/iphone5.png') }}" alt="Iphone 5">
+							</figure>
+						</div>
+						<div class="card-content">
+							<div class="media">
+								<div class="media-content has-text-centered">
+									<p class="title to-repare">Iphone 5</p>
+									<p class="subtitle">Hors service</p>
+									<p class="susbtitle">-- €</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</a>
+				{# COLUMN #}
+				<a class="column is-2-desktop is-3-tablet is-6-mobile" href="{{ path('to_sell') }}">
+					<div class="card all-ads">
+						<div class="card-image">
+							<figure class="image">
+								<img src="{{ asset('img/iphone4.png') }}" alt="Iphone 5">
+							</figure>
+						</div>
+						<div class="card-content">
+							<div class="media">
+								<div class="media-content has-text-centered">
+									<p class="title">Iphone 4</p>
+									<p class="subtitle">Hors service</p>
+									<p class="susbtitle">45.99 €</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</a>
+				{# COLUMN #}
+				<a class="column is-2-desktop is-3-tablet is-6-mobile" href="{{ path('to_sell') }}">
+					<div class="card all-ads">
+						<div class="card-image">
+							<figure class="image">
+								<img src="{{ asset('img/iphone6.png') }}" alt="Iphone 5">
+							</figure>
+						</div>
+						<div class="card-content">
+							<div class="media">
+								<div class="media-content has-text-centered">
+									<p class="title">Iphone 6</p>
+									<p class="subtitle">Lightning foutue</p>
+									<p class="susbtitle">98.00 €</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</a>
+				{# COLUMN #}
+				<a class="column is-2-desktop is-3-tablet is-6-mobile" href="{{ path('to_sell') }}">
+					<div class="card all-ads">
+						<div class="card-image">
+							<figure class="image">
+								<img src="{{ asset('img/ecran-casse.jpg') }}" alt="Iphone 5">
+							</figure>
+						</div>
+						<div class="card-content">
+							<div class="media">
+								<div class="media-content has-text-centered">
+									<p class="title">Iphone 4</p>
+									<p class="subtitle">Ecran cassé</p>
+									<p class="susbtitle">49.99 €</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,128 @@
+{% extends 'base.html.twig' %} 
+
+{% block title %}
+	{{ parent() }} - Messagerie
+{% endblock %}
+
+{% block navbar %}
+{{ parent() }}
+<div class="container-is-fluid extended">
+  <p class="title has-text-centered">Messagerie</p>
+</div>
+{% endblock %} {% block aside %}{% endblock %} {% block body %}
+
+<div class="container">
+  <div class="card">
+    <div class="card-content">
+      <div class="content">
+        <div class="columns">
+          <div class="column is-2 is-fullheight contacts is-paddingless">
+          
+            {% for i in 0..6 %}
+              <div class="contact">
+                <div class="columns">
+                  <div class="column">
+                    <div class="columns is-vcentered">
+                      <div class="column">
+                        <p>
+                          <span class="title icon-before-msg">Jacques Pommier</span>
+                          <br/>
+                          <span class="subtitle">Vendeur</span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <hr class="b-1b"/>
+            {% endfor %}
+            
+          </div>
+          <div class="column is-10 is-paddingless chat">
+            <div class="columns has-text-centered">
+              <div class="column is-4 is-offset-4">
+                <p class="title">Jacques Pommier</p>
+                <p class="subtitle">Vendeur</p>
+              </div>
+            </div>
+            <!-- end chat-header -->
+
+            <div class="chat-history">
+              <ul  class="margin-form" id="messages">
+                <li class="clearfix">
+                  <div class="message-data has-text-right">
+                    <span class="message-data-time">10:10 AM, Today</span>
+                    &nbsp; &nbsp;
+                    <span class="message-data-name">Olia</span>
+                  </div>
+                  <div class="message other-message is-pulled-right">
+                      Quisque sagittis blandit nunc, vitae ultricies odio porttitor quis. Vivamus mattis urna orci.
+                  </div>
+                </li>
+
+                <li>
+                  <div class="message-data">
+                    <span class="message-data-name"> Vincent</span>
+                    <span class="message-data-time">10:12 AM, Today</span>
+                  </div>
+                  <div class="message my-message">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut varius, magna id imperdiet fermentum, nunc 
+                      ipsum faucibus libero, non dictum leo felis ut quam. Ut vitae dui laoreet, convallis risus vulputate,
+                  </div>
+                </li>
+
+                <li class="clearfix">
+                  <div class="message-data has-text-right">
+                    <span class="message-data-time">10:14 AM, Today</span>
+                    &nbsp; &nbsp;
+                    <span class="message-data-name">Olia</span>
+                  </div>
+                  <div class="message other-message is-pulled-right">
+                    Vivamus rhoncus cursus ligula vitae tincidunt. Nullam urna ex, congue ac semper nec, varius ac magna. Nulla facilisi. Sed ac leo eget purus blandit sodales nec sed ipsum. Maecenas dignissim ipsum lorem, nec aliquet risus semper eget. Vestibulum sit amet lectus et elit dictum porta. Curabitur ac laoreet neque. Pellentesque lobortis urna id eros 
+                  </div>
+                </li>
+
+                <li>
+                  <div class="message-data">
+                    <span class="message-data-name"> Vincent</span>
+                    <span class="message-data-time">10:20 AM, Today</span>
+                  </div>
+                  <div class="message my-message">
+                      Sed eu ante euismod, sollicitudin libero eu, pretium tortor. Vivamus sit amet velit diam. Nam egestas tincidunt pharetra. Cras efficitur diam scelerisque felis congue, nec 
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <!-- end chat-history -->
+
+            <div class="chat-message clearfix">
+              <textarea
+                name="message-to-send"
+                id="message-to-send"
+                placeholder="Type your message"
+                rows="3"
+              ></textarea>
+
+              <button
+                class="button is-outlined is-rounded is-primary is-pulled-right"
+                id="send-message"
+                onclick="sendMessage()"
+              >
+                <span>Envoyer</span>
+                <span class="icon">
+                  <i class="fas fa-angle-right"></i>
+                </span>
+              </button>
+            </div>
+
+            <!-- end chat-message -->
+
+            <!-- end chat -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

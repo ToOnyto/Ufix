@@ -1,0 +1,145 @@
+{% extends 'base.html.twig' %} 
+
+{% block title %}
+	{{ parent() }} - Déposer une annonce
+{% endblock %}
+
+{% block navbar %}
+{{ parent() }}
+<div class="container-is-fluid extended">
+  <p class="title has-text-centered">Déposer une annonce</p>
+</div>
+<div id="notif" class="notification notif-fixed-top is-hidden">
+  <button class="delete"></button>
+  <p>Annonce publiée !</p>
+</div>
+{% endblock %} {% block body %}
+
+<div class="container">
+  <div class="columns container2 is-multiline is-desktop p-3t">
+    <div class="column is-9-desktop is-12">
+      <!-- Information part (left)  -->
+      <article class="tile is-child ">
+        <p class="title has-text-centered">Informations produit</p>
+        <div class="field">
+          <label class="label">Catégorie</label>
+          <div class="control">
+            <div class="select">
+              <select>
+                <option>Téléphone</option>
+                <option>Tablette</option>
+                <option>Ordinateur</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Nom du produit</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="Iphone 4" />
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Etat du produit</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="Ecran cassé" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Description</label>
+          <div class="control">
+            <textarea class="textarea" placeholder="Je vend mon ..."></textarea>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="control">
+            <div class="field">
+              <input
+                class="is-checkradio is-rtl has-background-color is-white"
+                id="exampleRtlRadioInline1"
+                type="radio"
+                name="exampleRtlRadioInline"
+                checked="checked"
+              />
+              <label for="exampleRtlRadioInline1">Vendre</label>
+              <input
+                class="is-checkradio is-rtl has-background-color is-white"
+                id="exampleRtlRadioInline2"
+                type="radio"
+                name="exampleRtlRadioInline"
+              />
+              <label for="exampleRtlRadioInline2">Réparer</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="field prix m-2b">
+          <label class="label">Prix</label>
+          <div class="control has-icons-right">
+            <input class="input" type="text" placeholder="Prix" />
+            <span class="icon is-small is-right">
+              <i class="fas fa-euro-sign"></i>
+            </span>
+          </div>
+        </div>
+      </article>
+    </div>
+    <!-- Images to upload -->
+    <div
+      class="column is-3-desktop is-8-mobile is-offset-2-mobile"
+    >
+    <p class="title has-text-centered">Images produit</p>
+    {# AVATAR 1 #}
+      <div class="avatar-upload">
+        <div class="avatar-edit">
+          <input type="file" id="imageUpload" accept=".png, .jpg, .jpeg" />
+          <label for="imageUpload"></label>
+        </div>
+        <div class="avatar-preview">
+          <div
+            id="imagePreview">
+          </div>
+        </div>
+      </div>
+    {# AVATAR 2 #}
+    <div class="avatar-upload">
+        <div class="avatar-edit">
+          <input type="file" id="imageUpload2" accept=".png, .jpg, .jpeg" />
+          <label for="imageUpload2"></label>
+        </div>
+        <div class="avatar-preview">
+          <div
+            id="imagePreview2">
+          </div>
+        </div>
+      </div>
+      {# AVATAR 3 #}
+      <div class="avatar-upload">
+          <div class="avatar-edit">
+            <input type="file" id="imageUpload3" accept=".png, .jpg, .jpeg" />
+            <label for="imageUpload3"></label>
+          </div>
+          <div class="avatar-preview">
+            <div
+              id="imagePreview3">
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="column is-half is-offset-one-quarter has-text-centered">
+      <a class="button is-primary is-rounded is-outlined" href="{{ path("home_connected") }}" onclick="isSend()">Publier</a>
+    </div>
+  </div>
+</div>
+<script>
+  const fileInput = document.querySelector("#file-js-example input[type=file]");
+  fileInput.onchange = () => {
+    if (fileInput.files.length > 0) {
+      const fileName = document.querySelector("#file-js-example .file-name");
+      fileName.textContent = fileInput.files[0].name;
+    }
+  };
+</script>
+{% endblock %}

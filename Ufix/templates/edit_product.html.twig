@@ -1,0 +1,173 @@
+{% extends 'base.html.twig' %} 
+
+{% block title %}
+	{{ parent() }} - Mes annonces
+{% endblock %}
+
+{% block navbar %}
+{{ parent() }}
+<div class="container-is-fluid extended">
+  <p class="title has-text-centered">Mes annonces</p>
+</div>
+<div id="notif" class="notification notif-fixed-top is-hidden">
+  <button class="delete"></button>
+  <p>Annonce modifiée !</p>
+</div>
+
+{% endblock %} {% block body %}
+
+<div class="container">
+  <div class="columns">
+    <!--  Left part -->
+    <div class="column is-3-desktop is-half-mobile is-offset-one-quarter-mobile column-edit">
+      <article>
+        <img id="image-new-ad" src="{{ asset('img/ecran-casse.jpg') }}" alt="image annonce 1" />
+        <div class="text-block has-text-centered">
+          <p class="title">Iphone 4</p>
+          <p class="subtitle">Ecran cassé</p>
+        </div>
+        <div class="has-text-centered" id="selected">
+          MODIFIER
+        </div>
+      </article>
+      <article>
+        <img id="image-new-ad" src="{{ asset('img/iphone4.png') }}" alt="image annonce 2" />
+        <div class="text-block has-text-centered">
+          <p class="title">Iphone 4</p>
+          <p class="subtitle">Hors service</p>
+        </div>
+        <div class="has-text-centered">
+          MODIFIER
+        </div>
+      </article>
+      <article>
+        <img id="image-new-ad" src="{{ asset('img/iphone6.png') }}" alt="image annonce 3" />
+        <div class="text-block has-text-centered">
+          <p class="title">Iphone 6</p>
+          <p class="subtitle">Lightning foutue</p>
+        </div>
+        <div class="has-text-centered">
+          MODIFIER
+        </div>
+      </article>
+    </div>
+
+    <!-- Right part -->
+    <div class="column is-9 column-without-p-top">
+      <div class="columns container2 is-multiline is-desktop p-3t">
+        <!-- Informtion part -->
+        <div class="column is-9-desktop is-12">
+          <article class="tile is-child ">
+            <p class="title has-text-centered">Informations produit</p>
+            <div class="field">
+              <label class="label">Catégorie</label>
+              <div class="control">
+                <div class="select">
+                  <select>
+                    <option>Téléphone</option>
+                    <option>Tablette</option>
+                    <option>Ordinateur</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">Nom du produit</label>
+              <div class="control">
+                <input class="input" type="text" value="Iphone 4" required />
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">Etat du produit</label>
+              <div class="control">
+                <input class="input" type="text" value="Ecran cassé" required />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Description</label>
+              <div class="control">
+                <textarea class="textarea" required>
+Je vend mon iphone 4, l'écran est cassé mais le tactile fonctionne, le bouton home est capricieux.
+A réparer ou bien pour pièces, prix ferme. 
+                        </textarea>
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <div class="field">
+                  <input class="is-checkradio is-rtl has-background-color is-white" id="exampleRtlRadioInline1"
+                    type="radio" name="exampleRtlRadioInline" checked="checked" />
+                  <label for="exampleRtlRadioInline1">Vendre</label>
+                  <input class="is-checkradio is-rtl has-background-color is-white" id="exampleRtlRadioInline2"
+                    type="radio" name="exampleRtlRadioInline" />
+                  <label for="exampleRtlRadioInline2">Réparer</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="field prix">
+              <label class="label">Prix</label>
+              <div class="control has-icons-right">
+                <input class="input" type="text" value="49.99" required />
+                <span class="icon is-small is-right">
+                  <i class="fas fa-euro-sign"></i>
+                </span>
+              </div>
+            </div>
+
+          </article>
+        </div>
+        <!-- Images to add -->
+        <div class="column is-3-desktop is-8-mobile is-offset-2-mobile">
+          <p class="title has-text-centered">Images produit</p>
+          {# AVATAR 1 #}
+          <div class="avatar-upload">
+            <div class="avatar-edit">
+              <input type="file" id="imageUpload" accept=".png, .jpg, .jpeg" />
+              <label for="imageUpload"></label>
+            </div>
+            <div class="avatar-preview">
+              <div id="imagePreview" style="background-image: url('{{ asset("img/ecran-casse.jpg") }}');"></div>
+            </div>
+          </div>
+          {# AVATAR 2 #}
+          <div class="avatar-upload">
+            <div class="avatar-edit">
+              <input type="file" id="imageUpload2" accept=".png, .jpg, .jpeg" />
+              <label for="imageUpload2"></label>
+            </div>
+            <div class="avatar-preview">
+              <div id="imagePreview2"></div>
+            </div>
+          </div>
+          {# AVATAR 3 #}
+          <div class="avatar-upload">
+            <div class="avatar-edit">
+              <input type="file" id="imageUpload3" accept=".png, .jpg, .jpeg" />
+              <label for="imageUpload3"></label>
+            </div>
+            <div class="avatar-preview">
+              <div id="imagePreview3"></div>
+            </div>
+          </div>
+        </div>
+        <!-- Submit -->
+        <div class="column is-half is-offset-one-quarter has-text-centered">
+          <a class="button is-primary is-rounded is-outlined" href="{{ path("home_connected") }}" onclick="isSend()">
+            <span>Modifier</span>
+            <span class="icon">
+              <i class="fas fa-angle-right"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+</div>
+
+{% endblock %}

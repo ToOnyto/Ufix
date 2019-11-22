@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ parent() }} - Nous Contacter
+{% endblock %}
+
+{% block navbar %}
+	{{ parent() }}
+	<div class="container-is-fluid extended">
+		<p class="title has-text-centered">Contacter</p>
+	</div>
+	<div id="notif" class="notification notif-fixed-top is-hidden">
+		<button class="delete"></button>
+		<p>Message envoyé !</p>
+	</div>
+{% endblock %}
+
+{% block body %}
+	<div class="container has-text-centered">
+		<div class="columns is-8 is-variable is-vcentered ">
+			<!-- Left part -->
+			<div class="column is-seven  is-centered">
+				<h1 class="title is-1">Contactez-nous</h1>
+				<p class="is-size-4">
+					Nous serons ravis de répondre à vos questions et à vos remarques.
+				</p>
+				<div class="social-media">
+					<a href="https://www.facebook.com/uFixFR/" class="icon">
+						<i class="fab fa-facebook-square fa-3x"></i>
+					</a>
+					<a href="https://twitter.com/UFixFR" class="icon">
+						<i class="fab fa-twitter-square fa-3x"></i>
+					</a>
+				</div>
+			</div>
+			<!-- Form -->
+			<div class="column is-5 has-text-left margin-form">
+				<div class="field">
+					<label class="label">Nom</label>
+					<div class="control">
+						<input class="input is-medium" type="text">
+					</div>
+				</div>
+				<div class="field">
+					<label class="label">Email</label>
+					<div class="control">
+						<input class="input is-medium" type="text">
+					</div>
+				</div>
+				<div class="field">
+					<label class="label">Message</label>
+					<div class="control">
+						<textarea class="textarea is-medium"></textarea>
+					</div>
+				</div>
+				<div class="control has-text-centered">
+					<a class="button is-outlined is-rounded is-primary " href="{{ path("home_page") }}" onclick="isSend()">
+						<span>Envoyer</span>
+						<span class="icon">
+							<i class="fas fa-angle-right"></i>
+						</span>	
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

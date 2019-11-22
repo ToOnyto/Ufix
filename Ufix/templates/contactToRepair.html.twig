@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ parent() }} - Contacter le vendeur
+{% endblock %}
+
+{% block navbar %}
+{{ parent() }}
+<div class="container-is-fluid extended">
+	<p class="title has-text-centered">Contacter le vendeur</p>
+</div>
+<div id="notif" class="notification notif-fixed-top is-hidden">
+	<button class="delete"></button>
+	<p>Message envoyé !</p>
+</div>
+{% endblock %}
+{% block body %}
+<div class="container">
+	<div class="card">
+		<!-- Header -->
+		<div class="card-header p-3t">
+			<div class="has-text-centered">
+				<p class=" title is-size-4">Pascal MOLIPOU</p>
+				<p class="title is-size-5 has-text-grey">PESSAC - 33600</p>
+			</div>
+		</div>
+		<!-- Content -->
+		<div class="card-content has-text-centered">
+			<div class="content">
+				<form action="">
+					<div class="field margin-contact">
+						<div class="control">
+							<textarea class="textarea min-height-textarea" required>
+Bonjour, 
+              
+Je suis en mesure de réparer votre appareil.
+Quand et où pouvons-nous nous donner rendez-vous ?
+
+Cordialement,
+Léo POMA
+								</textarea>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<!-- Footer -->
+		<footer class="custom-card-footer">
+			<div class="columns is-vcentered">
+				<div class="column is-6 has-text-centered">
+					<p class="subtitle text-footer">
+						<span class="subtitle text-footer">Iphone 5</span>
+						<br/>
+						<span class="subtitle text-footer">Hors service</span>
+					</p>
+				</div>
+				<div class="column is-6 has-text-centered">
+					<a class="button is-outlined is-rounded is-info" href="{{ path("messaging") }}" onclick="isSend()">
+						<span>Envoyer</span>
+						<span class="icon">
+							<i class="fas fa-angle-right"></i>
+						</span>	
+					</a>
+				</div>
+			</div>
+		</footer>
+
+	</div>
+</div>
+{% endblock %}
