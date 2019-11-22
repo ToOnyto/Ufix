@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-	{{ parent() }} - Annonce
+{{ parent() }} - Annonce
 {% endblock %}
 
 {% block navbar %}
@@ -25,8 +25,21 @@
 							<p class="subtitle">Ecran cassé</p>
 						</div>
 					</div>
-					<div class="is-color6 is-4">
-						<img src="{{ asset('img/ecran-casse.jpg') }}" alt="Image Iphone 4 écran cassé">
+					{# SLIDER #}
+					<div class="slider">
+						<ul class="js__slider__images slider__images">
+							<li class="slider__images-item"><img class="slider__images-image"
+									src="{{ asset('img/ecran-casse.jpg') }}" alt="Image Iphone 4 écran cassé" /></li>
+							<li class="slider__images-item"><img class="slider__images-image"
+								src="{{ asset('img/iphone-go.jpg') }}" alt="Image Iphone 4 écran cassé" /></li>
+							<li class="slider__images-item"><img class="slider__images-image"
+									src="https://unsplash.it/800/450?image=1026" alt="Image seulement blanche"/></li>
+						</ul>
+						<div class="slider__controls">
+							<span class="slider__control js__slider__control--prev slider__control--prev"><</span>
+							<ol class="js__slider__pagers slider__pagers"></ol>
+							<span class="slider__control js__slider__control--next slider__control--next">></span>
+						</div>
 					</div>
 				</div>
 			</div>
