@@ -126,6 +126,10 @@ body {
 }
 
 @media screen and (min-width: 1024px) {
+  .small-text-area {
+    width: 80%;
+    margin: 0 auto;
+  }
   .notif-fixed-top {
     position: fixed;
     top: 0;
