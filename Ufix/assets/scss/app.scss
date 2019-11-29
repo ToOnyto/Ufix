@@ -82,7 +82,7 @@ body {
 @media screen and (max-width: 1023px) {
   .margin-contact {
     margin: 0 auto !important;
-}
+  }
   .notif-fixed-top {
     position: fixed;
     top: 0;
@@ -194,6 +194,14 @@ body {
 .navbar-center {
   margin: 0 auto;
 }
+
+a.icon-reseaux:hover {
+  background-color: $color2 !important;
+  span.icon:hover {
+    color: $color3;
+  }
+}
+
 .hero-footer {
   background-color: $color2;
   color: $color1;
@@ -509,11 +517,16 @@ article {
   max-height: 47rem;
   min-height: 47rem;
   overflow-y: scroll;
+  border-right: 1px solid $color2;
 
   hr {
     background-color: $color1;
     margin: 0;
   }
+}
+
+.b-1b {
+  border-bottom: 1px solid $color2;
 }
 
 .contact {
@@ -538,6 +551,8 @@ article {
 
     .message-data {
       margin-bottom: 15px;
+      font-size: 12px;
+      font-family: $font-1-light;
     }
 
     .message-data-time {
@@ -548,12 +563,16 @@ article {
     .message {
       color: white;
       padding: 18px 20px;
-      line-height: 26px;
-      font-size: 16px;
+      font-size: 14px;
       border-radius: 7px;
-      margin-bottom: 30px;
-      width: 90%;
+      margin-bottom: 10px;
       position: relative;
+      @media screen and (min-width: 1024px) {
+        width: 60%;
+      }
+      @media screen and (max-width: 1023px) {
+        width: 90%;
+      }
 
       &:after {
         bottom: 100%;
@@ -881,6 +900,9 @@ hr {
 .p-3t {
   padding-top: 3rem !important;
 }
+.m-1t {
+  margin-top: 1rem !important;
+}
 .m-2l {
   margin-left: 2rem !important;
 }
@@ -953,4 +975,132 @@ form.profil {
 }
 .save-ad {
   color: $color3;
+}
+.sign-in-home {
+  padding: 4rem 3rem 4rem 3rem;
+  border-radius: 10px 0 0 10px;
+}
+.sign-up-home {
+  background-color: $color3;
+  padding: 4rem 3rem 4rem 3rem;
+  border-radius: 0 10px 10px 0;
+  color: $color1;
+  .title {
+    color: $color1;
+  }
+  .subtitle {
+    color: $color1;
+  }
+  .input {
+    background-color: $color3;
+    color: $color1;
+  }
+}
+.title .is-height {
+  column-rule: $color1;
+}
+.shadows-effect {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  border-radius: 10px;
+}
+.p-form {
+  padding-top: 0.75rem;
+}
+label.checkbox {
+  a {
+    color: $color2;
+    text-decoration: underline;
+  }
+}
+
+// SLIDER
+.slider {
+  margin: 30px auto 0;
+  padding: 1rem;
+  background: white;
+  max-width: 500px;
+}
+.slider__images-item {
+  img {
+    height: 200px;
+    width: auto;
+    width: 80%;
+    margin: 0 10% 0 10%;
+  }
+}
+.slider__images {
+  opacity: 0;
+  visibility: hidden;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  list-style-type: none;
+  transition: opacity 0.4s ease-in, visibility 0.4s ease-in;
+
+  &.loaded {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &-item {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+
+    .no-js & {
+      &:first-of-type {
+        position: relative;
+      }
+
+      &:not(:first-of-type) {
+        display: none !important;
+      }
+    }
+  }
+
+  &-image {
+    display: block;
+  }
+}
+.slider__controls {
+  margin-top: 15px;
+  user-select: none;
+  text-align: center;
+}
+.slider__control {
+  display: inline-block;
+  color: #829995;
+  cursor: pointer;
+}
+.slider__control--prev {
+  margin-right: 10px;
+}
+.slider__control--next {
+  margin-left: 10px;
+}
+.slider__pagers {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  li {
+    display: inline-block;
+    margin: 0 5px;
+    cursor: pointer;
+    color: #829995;
+    padding: 0 10px;
+
+    &.active {
+      color: #333;
+    }
+  }
+}
+
+.icon-before-msg::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f054";
+  color: $color3;
+  padding-left: 1rem;
 }

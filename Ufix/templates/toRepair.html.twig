@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-Annonce
+{{ parent() }} - Annonce
 {% endblock %}
 
 {% block navbar %}
@@ -24,8 +24,22 @@ Annonce
 							<p class="subtitle">Ecran cassé</p>
 						</div>
 					</div>
-					<div class="is-color6 is-4">
-						<img src="{{ asset('img/iphone5.png') }}" alt="Image Iphone 5">
+					<div class="slider">
+						<ul class="js__slider__images slider__images">
+							<li class="slider__images-item"><img class="slider__images-image"
+									src="{{ asset('img/ecran-casse.jpg') }}" alt="Image Iphone 4 écran cassé" /></li>
+							<li class="slider__images-item"><img class="slider__images-image"
+									src="{{ asset('img/iphone-go.jpg') }}" alt="Image Iphone 4 écran cassé" /></li>
+							<li class="slider__images-item"><img class="slider__images-image"
+									src="https://unsplash.it/800/450?image=1026" alt="Image seulement blanche" /></li>
+						</ul>
+						<div class="slider__controls">
+							<span class="slider__control js__slider__control--prev slider__control--prev">
+								<</span> <ol class="js__slider__pagers slider__pagers">
+									</ol>
+									<span
+										class="slider__control js__slider__control--next slider__control--next">></span>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -104,47 +118,6 @@ Annonce
 				</div>
 			</div>
 		</footer>
-		{# <footer
-				class="custom-card-footer">
-				<!-- For desktop -->
-				<div class="columns is-marginless is-vcentered is-variable is-hidden-mobile">
-					<div class="column is-1">
-						<span class="fa-stack">
-							<i class="fas fa-circle orange-circle fa-2x"></i>
-							<i class="far fa-heart fa-stack-1x fa-inverse"></i>
-						</span>
-					</div>
-					<div class="column is-2 is-offset-8">
-						<a href="{{ path("contact_repair") }}">
-							<button class="button is-outlined is-rounded is-info">
-								<span>Réparer</span>
-								<span class="icon">
-									<i class="fas fa-angle-right"></i>
-								</span>
-							</button>
-						</a>
-					</div>
-				</div>
-				<!-- For mobile -->
-				<div class="columns is-marginless is-vcentered is-variable is-mobile is-hidden-tablet is-hidden-desktop">
-					<div class="column is-2">
-						<span class="fa-stack">
-							<i class="fas fa-circle orange-circle fa-2x"></i>
-							<i class="far fa-heart fa-stack-1x fa-inverse"></i>
-						</span>
-					</div>
-					<div class="column is-4 is-offset-6">
-						
-							<a class="button is-outlined is-rounded is-info" href="{{ path("contact_repair") }}">
-								<span>Réparer</span>
-								<span class="icon">
-									<i class="fas fa-angle-right"></i>
-								</span>
-							</a>
-						
-					</div>
-				</div>
-			</footer> #}
 	</div>
 </div>
 </div>

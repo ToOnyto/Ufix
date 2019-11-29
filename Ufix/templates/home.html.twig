@@ -1,25 +1,39 @@
-{% extends 'base2.html.twig' %} {% block body %}
+{% extends 'base2.html.twig' %}
+
+{% block title %}
+	{{ parent() }} - Accueil
+{% endblock %}
+
+{% block body %}
+<!-- Notification -->
+<div id="notif" class="notification notif-fixed-top is-hidden">
+  <button class="delete"></button>
+  <p>Vous êtes bien inscrit.</p>
+</div>
+
 <section class="hero is-fullheight-with-navbar">
   <div class="hero-body">
     <div class="container">
+      <!-- Top part -->
       <div class="columns is-vcentered p-3t">
-        <div
-          class="column is-5 is-offset-1-desktop is-offset-1-tablet is-offset-1-mobile landing-caption"
-        >
+        <!-- Left part-->
+        <div class="column is-5 is-offset-1-desktop is-offset-1-tablet is-offset-1-mobile landing-caption">
           <h1 class="title is-1 is-bold is-spaced">
             Faites renaître vos appareils de leurs cendres !
           </h1>
           <h2 class="subtitle is-5 is-dark">Et ainsi participer à la réduction de l'empreinte environnementale.</h2>
           <p>
-            <a class="button is-outlined is-primary" href="#">M'incrire</a>
+            <a class="button is-outlined is-primary scroll" href="#third-block">Connexion / Inscription</a>
           </p>
         </div>
+        <!-- Image -->
         <div class="column is-5">
           <img src="{{ asset('img/home.jpg') }}" alt="Image présentation UFix" />
         </div>
       </div>
     </div>
   </div>
+  <!-- Button to link next section -->
   <div class="hero-footer has-background-white">
     <div class="container has-text-centered">
       <a class="scroll" href="#second-block">
@@ -33,12 +47,13 @@
 
 <section id="second-block" class="section is-medium">
   <div class="container">
+    <!-- Presentation top-->
     <div class="title-wrapper has-text-centered">
       <h2 class="title is-4">Grâce à UFix tu peux :</h2>
       <h3 class="subtitle is-6">*tout en préservant l'environnement</h3>
       <div class="divider is-centered"></div>
     </div>
-
+    <!-- Presentation of UFix -->
     <div class="content-wrapper">
       <div class="columns">
         <div class="column is-one-quarter">
@@ -47,15 +62,14 @@
               <h4>Réparer</h4>
             </div>
             <div class="card-icon">
-              <img class="image-home" src="{{ asset('img/icon1.png') }}" alt="Icone réparer"/>
+              <img class="image-home" src="{{ asset('img/icon1.png') }}" alt="Icone réparer" />
             </div>
             <div class="card-text">
-              <p class="small-text-area">Tu souhaites réparer des appareils électroniques tels que des téléphones, ordinateurs ou tablettes ?</p>
+              <p class="small-text-area">Tu souhaites réparer des appareils électroniques tels que des téléphones,
+                ordinateurs ou tablettes ?</p>
             </div>
             <div class="card-action">
-              <a href="{{ asset('home') }}" class="button is-outlined is-primary"
-                >Réparer des appareils</a
-              >
+              <a href="{{ asset('home') }}" class="button is-outlined is-primary">Réparer des appareils</a>
             </div>
           </div>
         </div>
@@ -65,15 +79,14 @@
               <h4>Acheter</h4>
             </div>
             <div class="card-icon">
-              <img class="image-home" src="{{ asset('img/icon2.png') }}" alt="Icone acheter"/>
+              <img class="image-home" src="{{ asset('img/icon2.png') }}" alt="Icone acheter" />
             </div>
             <div class="card-text">
-              <p class="small-text-area">Achète des appareils électroniques usagés mais fonctionnels, à moindre coût.</p>
+              <p class="small-text-area">Achètes des appareils électroniques usagés mais fonctionnels, à moindre coût.
+              </p>
             </div>
             <div class="card-action">
-              <a href="{{ asset('home') }}" class="button is-outlined is-primary"
-                >Acheter un appareil</a
-              >
+              <a href="{{ asset('home') }}" class="button is-outlined is-primary">Acheter un appareil</a>
             </div>
           </div>
         </div>
@@ -83,15 +96,14 @@
               <h4>Vendre</h4>
             </div>
             <div class="card-icon">
-              <img class="image-home" src="{{ asset('img/icon4.png') }}" alt="Icone vendre"/>
+              <img class="image-home" src="{{ asset('img/icon4.png') }}" alt="Icone vendre" />
             </div>
             <div class="card-text">
-              <p class="small-text-area">Vend tes appareils usagés et partcicipe à la réduction de l'empreinte environnementale sur notre planète.</p>
+              <p class="small-text-area">Vends tes appareils usagés et participe à la réduction de l'empreinte
+                environnementale sur notre planète.</p>
             </div>
             <div class="card-action">
-              <a href="{{ asset('newad') }}" class="button is-outlined is-primary"
-                >Vendre un appareil</a
-              >
+              <a href="{{ asset('newad') }}" class="button is-outlined is-primary">Vendre un appareil</a>
             </div>
           </div>
         </div>
@@ -101,16 +113,136 @@
               <h4>Faire réparer</h4>
             </div>
             <div class="card-icon">
-              <img class="image-home" src="{{ asset('img/icon3.png') }}" alt="Icone faire réparer"/>
+              <img class="image-home" src="{{ asset('img/icon3.png') }}" alt="Icone faire réparer" />
             </div>
             <div class="card-text">
-              <p class="small-text-area">Viens faire réparer tes appareils cassés en toute simplicité et de façon responsable.</p>
+              <p class="small-text-area">Viens faire réparer tes appareils cassés en toute simplicité et de façon
+                responsable.</p>
             </div>
             <div class="card-action">
-              <a href="{{ asset('newad') }}" class="button is-outlined is-primary"
-                >Faire réparer son appareil</a
-              >
+              <a href="{{ asset('newad') }}" class="button is-outlined is-primary">Faire réparer son appareil</a>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Inscription and connexion part -->
+<section id="third-block" class="section is-medium">
+  <div class="container">
+    <div class="columns is-vcentered">
+      <div class="column is-8 is-offset-2">
+        <div class="columns shadows-effect">
+          <!-- Connexion -->
+          <div class="column is-4 has-text-centered sign-in-home">
+            <p class="title is-light">Connexion</p>
+            <form method="post" action="" class="form p-form">
+              <div class="field">
+                <p class="control has-icons-left has-icons-right">
+                  <input class="input" type="email" placeholder="Email" required>
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-envelope"></i>
+                  </span>
+                  <span class="icon is-small is-right">
+                    <i class="fas fa-check"></i>
+                  </span>
+                </p>
+              </div>
+              <div class="field m-2b">
+                <p class="control has-icons-left">
+                  <input class="input" type="password" placeholder="Password" required>
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-lock"></i>
+                  </span>
+                </p>
+              </div>
+              <button class="button is-primary is-outlined" href="{{ asset('home') }}" type="submit">Se
+                connecter</button>
+            </form>
+          </div>
+          <!-- Innscription -->
+          <div class="column is-8 has-text-centered sign-up-home">
+            <p class="title has-text-centered">Inscription</p>
+            <form method="post" action="" class="form">
+              <div class="columns">
+                <div class="column is-6">
+                  <div class="field">
+                    <p class="control has-icons-left has-icons-right">
+                      <input class="input" type="text" placeholder="Nom" required>
+                      <span class="icon is-small is-left">
+                        <i class="far fa-user"></i>
+                      </span>
+                    </p>
+                  </div>
+                  <div class="field">
+                    <p class="control has-icons-left has-icons-right">
+                      <input class="input" type="text" placeholder="Prénom" required>
+                      <span class="icon is-small is-left">
+                        <i class="far fa-user"></i>
+                      </span>
+                    </p>
+                  </div>
+                  <div class="field">
+                    <p class="control has-icons-left">
+                      <input class="input" type="email" placeholder="Email" required>
+                      <span class="icon is-small is-left">
+                        <i class="far fa-envelope"></i>
+                      </span>
+                    </p>
+                  </div>
+                  <div class="field">
+                    <p class="control has-icons-left">
+                      <input class="input" type="password" placeholder="Mot de passe" required>
+                      <span class="icon is-small is-left">
+                        <i class="fas fa-lock"></i>
+                      </span>
+                    </p>
+                  </div>
+                </div>
+                <div class="column is-6">
+                  <div class="field">
+                    <p class="control has-icons-left has-icons-right">
+                      <input class="input" type="text" placeholder="Adresse" required>
+                      <span class="icon is-small is-left">
+                        <i class="fas fa-map-marker-alt"></i>
+                      </span>
+                    </p>
+                  </div>
+                  <div class="field">
+                    <p class="control has-icons-left has-icons-right">
+                      <input class="input" type="text" placeholder="Code postale" required>
+                      <span class="icon is-small is-left">
+                        <i class="fas fa-map-marker-alt"></i>
+                      </span>
+                    </p>
+                  </div>
+                  <div class="field">
+                    <p class="control has-icons-left has-icons-right">
+                      <input class="input" type="text" placeholder="Pays" required>
+                      <span class="icon is-small is-left">
+                        <i class="far fa-flag"></i>
+                      </span>
+                    </p>
+                  </div>
+                  <div class="field m-2b">
+                    <p class="control has-icons-left">
+                      <input class="input" type="text" placeholder="Ville" required>
+                      <span class="icon is-small is-left">
+                        <i class="far fa-building"></i>
+                      </span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <label class="checkbox">
+                <input type="checkbox" required>
+                I agree to the <a href="#">terms and conditions</a>
+              </label>
+              <br />
+              <button class="button is-light is-outlined m-1t" href="{{ asset('home') }}"
+                type="submit">M'inscrire</button>
+            </form>
           </div>
         </div>
       </div>

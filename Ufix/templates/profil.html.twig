@@ -1,85 +1,90 @@
-{% extends 'base.html.twig' %} {% block navbar %}
-{{ parent() }}
-<div class="container-is-fluid extended">
-  <p class="title has-text-centered">Profil</p>
-</div>
-<div id="notif" class="notification notif-fixed-top is-hidden">
-    <button class="delete"></button>
-    <p>Profil modifiée !</p>
-  </div>
-{% endblock %} {% block body %}
-<div class="container p-3t">
-  <p class="title is-size-4 has-text-centered">Pascal MOLIPOU</p><br/>
-  <div class="columns">
-    <div class="column is-half is-offset-3">
-      {# AVATAR 1 #}
-      <div class="avatar-upload2">
-        <div class="avatar-edit">
-          <input type="file" id="imageUpload" accept=".png, .jpg, .jpeg" />
-          <label for="imageUpload"></label>
-        </div>
-        <div class="avatar-preview">
-          <div id="imagePreview" style="background-image: url('{{ asset("img/profil-default.jpg") }}');"></div>
-        </div>
-      </div>
-      <form action="" class="profil">
-        <div class="field">
-          <div class="control has-icons-left">
-            <input
-              class="input"
-              type="email"
-              value="pascal.molipou@gmail.com"
-              required
-            />
-            <span class="icon is-small is-left">
-              <i class="fas fa-envelope"></i>
-            </span>
-          </div>
-        </div>
-        
-        <div class="field">
-          <div class="control has-icons-left">
-            <input class="input" type="text" value="12 rue du palier"/>
-            <span class="icon is-small is-left">
-              <i class="fas fa-map-marker"></i>
-            </span>
-          </div>
-        </div>
-        <div class="field">
-          <div class="control has-icons-left">
-            <input class="input" type="text" value="21000"/>
-            <span class="icon is-small is-left">
-              <i class="fas fa-map-marker"></i>
-            </span>
-          </div>
-        </div>
-        <div class="field">
-          <div class="control has-icons-left">
-            <input class="input" type="text" value="Dijon" required/>
-            <span class="icon is-small is-left">
-              <i class="fas fa-city"></i>
-            </span>
-          </div>
-        </div>
-        <div class="field m-2b">
-          <div class="control has-icons-left">
-            <input class="input" type="text" value="France" required/>
-            <span class="icon is-small is-left">
-              <i class="fas fa-globe"></i>
-            </span>
-          </div>
-        </div>
-      
-        <div class="has-text-centered">
-          <a class="button is-outlined is-rounded is-primary" href="{{ path("home_connected") }}" onclick="isSend()">
-            <span>CONFIRMER</span>
-            <span class="icon">
-              <i class="fas fa-angle-right"></i>
-            </span>
-          </a>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ parent() }}
+	- Mon profil
+{% endblock %}
+
+{% block navbar %}
+	{{ parent() }}
+	<div class="container-is-fluid extended">
+		<p class="title has-text-centered">Profil</p>
+	</div>
+	<div id="notif" class="notification notif-fixed-top is-hidden">
+		<button class="delete"></button>
+		<p>Profil modifiée !</p>
+	</div>
+{% endblock %}
+{% block body %}
+	<div class="container p-3t">
+		<p class="title is-size-4 has-text-centered">Pascal MOLIPOU</p><br/>
+		<div class="columns">
+			<div
+				class="column is-half is-offset-3">
+				<!-- Profile avatar -->
+				<div class="avatar-upload2">
+					<div class="avatar-edit">
+						<input type="file" id="imageUpload" accept=".png, .jpg, .jpeg"/>
+						<label for="imageUpload"></label>
+					</div>
+					<div class="avatar-preview">
+						<div id="imagePreview" style="background-image: url('{{ asset(" img/profil-default.jpg") }}');"></div>
+					</div>
+				</div>
+				<!-- Form -->
+				<form action="" class="profil">
+					<div class="field">
+						<div class="control has-icons-left">
+							<input class="input" type="email" value="pascal.molipou@gmail.com" placeholder="Email"/>
+							<span class="icon is-small is-left">
+								<i class="fas fa-envelope"></i>
+							</span>
+						</div>
+					</div>
+
+					<div class="field">
+						<div class="control has-icons-left">
+							<input class="input" type="text" value="12 rue du palier" placeholder="Adresse"/>
+							<span class="icon is-small is-left">
+								<i class="fas fa-map-marker"></i>
+							</span>
+						</div>
+					</div>
+					<div class="field">
+						<div class="control has-icons-left">
+							<input class="input" type="text" value="21000" placeholder="Code postal"/>
+							<span class="icon is-small is-left">
+								<i class="fas fa-map-marker"></i>
+							</span>
+						</div>
+					</div>
+					<div class="field">
+						<div class="control has-icons-left">
+							<input class="input" type="text" value="Dijon" placeholder="Ville"/>
+							<span class="icon is-small is-left">
+								<i class="fas fa-city"></i>
+							</span>
+						</div>
+					</div>
+					<div class="field m-2b">
+						<div class="control has-icons-left">
+							<input class="input" type="text" value="France" placeholder="Pays"/>
+							<span class="icon is-small is-left">
+								<i class="fas fa-globe"></i>
+							</span>
+						</div>
+					</div>
+          <!-- Submit -->
+					<div class="has-text-centered">
+						<a class="button is-outlined is-rounded is-primary" href="{{ path("home_connected") }}" onclick="isSend()">
+							<span>CONFIRMER</span>
+							<span class="icon">
+								<i class="fas fa-angle-right"></i>
+							</span>
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
 {% endblock %}

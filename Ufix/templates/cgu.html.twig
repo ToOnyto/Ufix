@@ -1,5 +1,7 @@
 {% extends 'base.html.twig' %} 
-{% block title %}CGU{% endblock %}
+{% block title %}
+	{{ parent() }} - CGU
+{% endblock %}
 {% block navbar %}
 {{ parent() }}
 <div class="container-is-fluid extended">

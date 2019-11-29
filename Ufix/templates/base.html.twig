@@ -16,7 +16,9 @@
   </head>
   <body>
     <section class="hero">
+      <!-- Page head -->
       <div class="hero-head">
+        <!-- Navbar -->
         {% block navbar %}
         <nav class="navbar" role="navigation" aria-label="main navigation">
           <div class="navbar-brand">
@@ -73,11 +75,12 @@
         {% endblock %}
       </div>
     </section>
-
+    
     <section class="hero is-fullheight-with-navbar">
       <div class="hero-body verticaly-top">
         {% block body %}{% endblock %}
       </div>
+      <!-- Footer -->
       <div class="hero-footer">
         {% block footer %}
         <div class="columns is-vcentered">
@@ -85,7 +88,9 @@
             <p
               class="has-text-left-desktop has-text-centered-mobile has-text-left-tablet"
             >
-              <a href="#" class="is-size-7">Mentions légales</a>
+              <a href="{{ path('legal_mentions') }}" class="is-size-7">Mentions légales</a>
+              |
+              <a href="{{ path('contact') }}" class="is-size-7">Nous contater</a>
               |
               <a href="{{ path('cgu') }}" class="is-size-7">CGU</a>
             </p>
@@ -98,15 +103,16 @@
               class="has-text-right-desktop has-text-centered-mobile is-size-7 has-text-right-tablet"
             >
               Retrouvez-nous sur :
-              <span class="icon is-medium">
-                <i class="fab fa-twitter"></i>
-              </span>
-              <span class="icon is-small">
-                <i class="fab fa-facebook-f"></i>
-              </span>
-              <span class="icon is-medium">
-                <i class="far fa-paper-plane"></i>
-              </span>
+              <a href="https://twitter.com/UFixFR" class="icon-reseaux">
+                <span class="icon is-medium">
+                  <i class="fab fa-twitter"></i>
+                </span>
+              </a>
+              <a href="https://www.facebook.com/uFixFR/" class="icon-reseaux">
+                <span class="icon is-small">
+                  <i class="fab fa-facebook-f"></i>
+                </span>
+              </a>
             </p>
           </div>
         </div>

@@ -1,4 +1,9 @@
 {% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ parent() }} - Contacter le vendeur
+{% endblock %}
+
 {% block navbar %}
 {{ parent() }}
 <div class="container-is-fluid extended">
@@ -12,12 +17,14 @@
 {% block body %}
 <div class="container">
 	<div class="card">
+		<!-- Header -->
 		<div class="card-header p-3t">
 			<div class="has-text-centered">
 				<p class=" title is-size-4">Pascal MOLIPOU</p>
 				<p class="title is-size-5 has-text-grey">PESSAC - 33600</p>
 			</div>
 		</div>
+		<!-- Content -->
 		<div class="card-content has-text-centered">
 			<div class="content">
 				<form action="">
@@ -38,6 +45,7 @@ Léo POMA
 			</div>
 		</div>
 
+		<!-- Footer -->
 		<footer class="custom-card-footer">
 			<div class="columns is-vcentered">
 				<div class="column is-6 has-text-centered">
@@ -57,43 +65,6 @@ Léo POMA
 				</div>
 			</div>
 		</footer>
-		{# <footer class="contact-footer">
-			<div class="columns is-marginless is-vcentered is-variable is-hidden-mobile">
-				<div class="column is-1">
-					<img src="{{ asset('img/iphone5-petit.png') }}" alt="image du téléphone" />
-				</div>
-				<div class="column is-9">
-					<p class="has-text-white">Iphone 5</p>
-					<p class="has-text-grey">Hors service</p>
-				</div>
-				<div class="column">
-					<a class="button is-outlined is-rounded is-info" href="{{ path("messaging") }}">
-						<span>Envoyer</span>
-						<span class="icon">
-							<i class="fas fa-angle-right"></i>
-						</span>
-					</a>
-				</div>
-			</div>
-
-			<div class="columns is-marginless is-vcentered is-variable is-mobile is-hidden-tablet is-hidden-desktop">
-				<div class="column is-2">
-					<img src="{{ asset('img/iphone5-petit.png') }}" alt="image du téléphone" />
-				</div>
-				<div class="column is-6">
-					<p class="has-text-white">Iphone 5</p>
-					<p class="has-text-grey">Hors service</p>
-				</div>
-				<div class="column is-4">
-					<a class="button is-outlined is-rounded is-info" href="{{ path("messaging") }}" onclick="isSend()">
-						<span>Envoyer</span>
-						<span class="icon">
-							<i class="fas fa-angle-right"></i>
-						</span>
-					</a>
-				</div>
-			</div>
-		</footer> #}
 
 	</div>
 </div>

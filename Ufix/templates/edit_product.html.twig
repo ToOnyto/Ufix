@@ -1,4 +1,10 @@
-{% extends 'base.html.twig' %} {% block navbar %}
+{% extends 'base.html.twig' %} 
+
+{% block title %}
+	{{ parent() }} - Mes annonces
+{% endblock %}
+
+{% block navbar %}
 {{ parent() }}
 <div class="container-is-fluid extended">
   <p class="title has-text-centered">Mes annonces</p>
@@ -12,6 +18,7 @@
 
 <div class="container">
   <div class="columns">
+    <!--  Left part -->
     <div class="column is-3-desktop is-half-mobile is-offset-one-quarter-mobile column-edit">
       <article>
         <img id="image-new-ad" src="{{ asset('img/ecran-casse.jpg') }}" alt="image annonce 1" />
@@ -44,8 +51,11 @@
         </div>
       </article>
     </div>
+
+    <!-- Right part -->
     <div class="column is-9 column-without-p-top">
       <div class="columns container2 is-multiline is-desktop p-3t">
+        <!-- Informtion part -->
         <div class="column is-9-desktop is-12">
           <article class="tile is-child ">
             <p class="title has-text-centered">Informations produit</p>
@@ -109,6 +119,7 @@ A réparer ou bien pour pièces, prix ferme.
 
           </article>
         </div>
+        <!-- Images to add -->
         <div class="column is-3-desktop is-8-mobile is-offset-2-mobile">
           <p class="title has-text-centered">Images produit</p>
           {# AVATAR 1 #}
@@ -142,14 +153,15 @@ A réparer ou bien pour pièces, prix ferme.
             </div>
           </div>
         </div>
+        <!-- Submit -->
         <div class="column is-half is-offset-one-quarter has-text-centered">
-            <a class="button is-primary is-rounded is-outlined" href="{{ path("home_connected") }}" onclick="isSend()">
-              <span>Modifier</span>
-              <span class="icon">
-                <i class="fas fa-angle-right"></i>
-              </span>
-            </a>
-          </div>
+          <a class="button is-primary is-rounded is-outlined" href="{{ path("home_connected") }}" onclick="isSend()">
+            <span>Modifier</span>
+            <span class="icon">
+              <i class="fas fa-angle-right"></i>
+            </span>
+          </a>
+        </div>
       </div>
     </div>
   </div>

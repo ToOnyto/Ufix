@@ -1,4 +1,10 @@
-{% extends 'base.html.twig' %} {% block navbar %}
+{% extends 'base.html.twig' %} 
+
+{% block title %}
+	{{ parent() }} - Annonces sauvegardées
+{% endblock %}
+
+{% block navbar %}
 {{ parent() }}
 <div class="container-is-fluid extended">
   <p class="title has-text-centered">Annonces sauvegardées</p>
@@ -8,12 +14,14 @@
   <div class="columns is-centered">
     <div class="column is-half">
       <article class="panel">
+        <!-- Top of card -->
         <p class="panel-tabs">
           <a class="is-active">Tous</a>
           <a>Mobile</a>
           <a>Ordinateur</a>
           <a>Tablette</a>
         </p>
+        <!-- Search -->
         <div class="panel-block">
           <p class="control has-icons-left">
             <input class="input is-dark" type="text" placeholder="Search" />
@@ -22,6 +30,7 @@
             </span>
           </p>
         </div>
+        <!-- Saved items -->
         <div class="panel-block" id="ads_delete_1">
           <div class="columns is-vcentered is-mobile">
             <div class="column is-half is-offset-2-desktop is-offset-1-mobile">

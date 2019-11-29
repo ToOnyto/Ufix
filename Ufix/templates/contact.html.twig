@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-	Contacter
+	{{ parent() }} - Nous Contacter
 {% endblock %}
 
 {% block navbar %}
@@ -9,13 +9,17 @@
 	<div class="container-is-fluid extended">
 		<p class="title has-text-centered">Contacter</p>
 	</div>
+	<div id="notif" class="notification notif-fixed-top is-hidden">
+		<button class="delete"></button>
+		<p>Message envoyé !</p>
+	</div>
 {% endblock %}
 
 {% block body %}
 	<div class="container has-text-centered">
-		<div class="columns is-8 is-variable is-vcentered">
-
-			<div class="column is-seven has-text-left">
+		<div class="columns is-8 is-variable is-vcentered ">
+			<!-- Left part -->
+			<div class="column is-seven  is-centered">
 				<h1 class="title is-1">Contactez-nous</h1>
 				<p class="is-size-4">
 					Nous serons ravis de répondre à vos questions et à vos remarques.
@@ -29,8 +33,8 @@
 					</a>
 				</div>
 			</div>
-			
-			<div class="column is-5 has-text-left">
+			<!-- Form -->
+			<div class="column is-5 has-text-left margin-form">
 				<div class="field">
 					<label class="label">Nom</label>
 					<div class="control">
@@ -49,8 +53,13 @@
 						<textarea class="textarea is-medium"></textarea>
 					</div>
 				</div>
-				<div class="control">
-					<button type="submit" class="button is-fullwidth has-text-weight-medium is-medium is-primary">Envoyer</button>
+				<div class="control has-text-centered">
+					<a class="button is-outlined is-rounded is-primary " href="{{ path("home_page") }}" onclick="isSend()">
+						<span>Envoyer</span>
+						<span class="icon">
+							<i class="fas fa-angle-right"></i>
+						</span>	
+					</a>
 				</div>
 			</div>
 		</div>
