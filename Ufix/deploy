@@ -1,4 +1,4 @@
 #!/bin/sh
 
 
-rsync -av -e 'ssh -p 4854' ./ thomas@185.212.225.127:/var/www/html/ufix --include=public/build --include=public/.htaccess --exclude=vendor --exclude-from=.gitignore --exclude=".*"
+rsync -av -e 'ssh -p 4854' ./ leo@185.212.225.126:/var/www/html/ufix --include=public/build --include=public/.htaccess --exclude=vendor --exclude-from=.gitignore --exclude=".*"
