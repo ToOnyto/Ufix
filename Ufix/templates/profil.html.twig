@@ -5,6 +5,17 @@
 	- Mon profil
 {% endblock %}
 
+{% form_theme modifyUserForm _self %}
+{%- block text_widget -%}
+<input name="{{ full_name }}" class="input" type="text" id="text_{{ value }}" value="{{attr.current}}" placeholder="{{label}}" required> 
+{%- endblock text_widget -%}
+{%- block number_widget -%}
+<input name="{{ full_name }}" class="input" type="number" id="number_{{ value }}" value="{{attr.current}}" placeholder="{{label}}" required> 
+{%- endblock number_widget -%}
+{%- block submit_widget -%}
+<input name="{{ full_name }}" id="submit_{{ value }}" type="submit" value="Valider"/>
+{%- endblock submit_widget -%}
+
 {% block navbar %}
 	{{ parent() }}
 	<div class="container-is-fluid extended">
@@ -17,7 +28,7 @@
 {% endblock %}
 {% block body %}
 	<div class="container p-3t">
-		<p class="title is-size-4 has-text-centered">Pascal MOLIPOU</p><br/>
+		<p class="title is-size-4 has-text-centered">{{ user.firstName }} {{ user.lastName }}</p><br/>
 		<div class="columns">
 			<div
 				class="column is-half is-offset-3">
@@ -32,19 +43,30 @@
 					</div>
 				</div>
 				<!-- Form -->
-				<form action="" class="profil">
+				{# <form action="" class="profil"> #}
+						{{ form_start(modifyUserForm) }}
 					<div class="field">
 						<div class="control has-icons-left">
-							<input class="input" type="email" value="pascal.molipou@gmail.com" placeholder="Email"/>
+								{{ form_widget(modifyUserForm.firstName) }}
+							{# <input class="input" type="email" value="pascal.molipou@gmail.com" placeholder="Email"/> #}
 							<span class="icon is-small is-left">
 								<i class="fas fa-envelope"></i>
 							</span>
 						</div>
 					</div>
-
+					<div class="field">
+							<div class="control has-icons-left">
+									{{ form_widget(modifyUserForm.lastName) }}
+								{# <input class="input" type="email" value="pascal.molipou@gmail.com" placeholder="Email"/> #}
+								<span class="icon is-small is-left">
+									<i class="fas fa-envelope"></i>
+								</span>
+							</div>
+						</div>
 					<div class="field">
 						<div class="control has-icons-left">
-							<input class="input" type="text" value="12 rue du palier" placeholder="Adresse"/>
+								{{ form_widget(modifyUserForm.adress) }}
+							{# <input class="input" type="text" value="12 rue du palier" placeholder="Adresse"/> #}
 							<span class="icon is-small is-left">
 								<i class="fas fa-map-marker"></i>
 							</span>
@@ -52,7 +74,8 @@
 					</div>
 					<div class="field">
 						<div class="control has-icons-left">
-							<input class="input" type="text" value="21000" placeholder="Code postal"/>
+								{{ form_widget(modifyUserForm.postCode) }}
+							{# <input class="input" type="text" value="21000" placeholder="Code postal"/> #}
 							<span class="icon is-small is-left">
 								<i class="fas fa-map-marker"></i>
 							</span>
@@ -60,7 +83,8 @@
 					</div>
 					<div class="field">
 						<div class="control has-icons-left">
-							<input class="input" type="text" value="Dijon" placeholder="Ville"/>
+								{{ form_widget(modifyUserForm.city) }}
+							{# <input class="input" type="text" value="Dijon" placeholder="Ville"/> #}
 							<span class="icon is-small is-left">
 								<i class="fas fa-city"></i>
 							</span>
@@ -68,22 +92,17 @@
 					</div>
 					<div class="field m-2b">
 						<div class="control has-icons-left">
-							<input class="input" type="text" value="France" placeholder="Pays"/>
+								{{ form_widget(modifyUserForm.country) }}
+							{# <input class="input" type="text" value="France" placeholder="Pays"/> #}
 							<span class="icon is-small is-left">
 								<i class="fas fa-globe"></i>
 							</span>
 						</div>
 					</div>
           <!-- Submit -->
-					<div class="has-text-centered">
-						<a class="button is-outlined is-rounded is-primary" href="{{ path("home_connected") }}" onclick="isSend()">
-							<span>CONFIRMER</span>
-							<span class="icon">
-								<i class="fas fa-angle-right"></i>
-							</span>
-						</a>
-					</div>
-				</form>
+		  {{ form_end(modifyUserForm) }}
+					
+				{# </form> #}
 			</div>
 		</div>
 	</div>

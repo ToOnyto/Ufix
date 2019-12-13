@@ -18,6 +18,8 @@ use Symfony\Component\Security\Csrf\CsrfToken;
 use Symfony\Component\Security\Csrf\CsrfTokenManagerInterface;
 use Symfony\Component\Security\Guard\Authenticator\AbstractFormLoginAuthenticator;
 use Symfony\Component\Security\Http\Util\TargetPathTrait;
+use Symfony\Component\HttpFoundation\Session\Session;
+
 
 class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
 {
@@ -27,6 +29,7 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
     private $urlGenerator;
     private $csrfTokenManager;
     private $passwordEncoder;
+    // private $session;
 
     public function __construct(EntityManagerInterface $entityManager, UrlGeneratorInterface $urlGenerator, CsrfTokenManagerInterface $csrfTokenManager, UserPasswordEncoderInterface $passwordEncoder)
     {
@@ -34,6 +37,7 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
         $this->urlGenerator = $urlGenerator;
         $this->csrfTokenManager = $csrfTokenManager;
         $this->passwordEncoder = $passwordEncoder;
+        // $this->session = $session;
     }
 
     public function supports(Request $request)
@@ -84,11 +88,16 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
 
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, $providerKey)
     {
+        // $session = new Session();
+        // $session->start();
+        // $session->getFlashBag()->add('email', $request->request->get('email'));
+    //    dump($request->request->get('email'));
+    //     die;
         if ($targetPath = $this->getTargetPath($request->getSession(), $providerKey)) {
             return new RedirectResponse($targetPath);
         }
 
-        return new RedirectResponse($this->urlGenerator->generate('home_page'));
+        return new RedirectResponse($this->urlGenerator->generate('new_ad'));
         // throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
     }
 

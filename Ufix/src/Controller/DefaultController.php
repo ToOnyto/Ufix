@@ -8,10 +8,12 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Symfony\Component\HttpFoundation\Response;
 use App\Form\Type\NewUserType;
+use App\Form\Type\ModifyUserType;
 use App\Entity\User;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
-
-
+use Symfony\Component\HttpFoundation\Session\Session;
+use Symfony\Component\Security\Core\Security;
+use Doctrine\ORM\EntityManagerInterface;
 
 
 
@@ -27,6 +29,8 @@ class DefaultController extends AbstractController
     {
         // dump($request);
         // die;
+        
+        
         $this->passwordEncoder = $passwordEncoder;
         
         $newUserForm = $this->createForm(NewUserType::class);
@@ -38,8 +42,8 @@ class DefaultController extends AbstractController
             $em = $this->getDoctrine()->getManager();
             $data = $newUserForm->getData();
             $newUser = new User();
-                           dump($data);
-                           die;
+                        //    dump($data);
+                        //    die;
             $newUser->setFirstName($data['firstName']);
             $newUser->setLastName($data['lastName']);
             $newUser->setEmail($data['email']);
@@ -49,6 +53,8 @@ class DefaultController extends AbstractController
             $newUser->setPostCode($data['postCode']);
             $newUser->setCountry($data['country']);
             $newUser->setCity($data['city']);
+            
+
             
             $em->persist($newUser);
             $em->flush();
@@ -61,6 +67,7 @@ class DefaultController extends AbstractController
         $error = $authenticationUtils->getLastAuthenticationError();
         // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
+       
 
         return $this->render('home.html.twig', [
         'last_username' => $lastUsername, 
@@ -94,15 +101,52 @@ class DefaultController extends AbstractController
      */
     public function newAd()
     {
+        // dump($security->getUser());
+        // die;
         return $this->render('new_ad.html.twig');
     }
 
     /**
      * @Route("/profil", name="profil_page")
      */
-    public function showProfilPage()
+    public function showProfilPage(Request $request, Security $security)
     {
-        return $this->render('profil.html.twig');
+        $user = $security->getUser();
+        // dump($user->getFirstName());
+        // die;
+
+        $modifyUserForm = $this->createForm(ModifyUserType::class, $user);
+        $modifyUserForm->handleRequest($request);
+
+        if ($modifyUserForm->isSubmitted() && $modifyUserForm->isValid()) {
+            // dump("ouais");
+            // die;
+            $em = $this->getDoctrine()->getManager();
+            $data = $modifyUserForm->getData();
+            $modifiedUser = $security->getUser();
+                        //    dump($data);
+                        //    die;
+            $modifiedUser->setFirstName($data->getFirstName());
+            $modifiedUser->setLastName($data->getLastName());
+            $modifiedUser->setAdress($data->getAdress());
+            $modifiedUser->setPostCode($data->getPostCode());
+            $modifiedUser->setCountry($data->getCountry());
+            $modifiedUser->setCity($data->getCity());
+            
+
+            
+            $em->persist($modifiedUser);
+            $em->flush();
+
+
+            return $this->redirectToRoute('profil_page');
+        } 
+
+
+        return $this->render('profil.html.twig', [
+            'user' => $user,
+            'modifyUserForm' => $modifyUserForm->createView()
+        ]);
     }
 
     /**
