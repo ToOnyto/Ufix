@@ -20,7 +20,7 @@
       <div class="hero-head">
         <!-- Navbar -->
         {% block navbar %}
-        <nav class="navbar" role="navigation" aria-label="main navigation">
+        <nav class="navbar" aria-label="main navigation">
           <div class="navbar-brand">
             <a class="navbar-item" href="{{ path('home_page') }}">
               <img src="{{ asset('img/logo_white.png') }}" alt="Logo UFix"/>
@@ -122,11 +122,9 @@
 
     {% block javascripts %}
     <script
-      type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.js"
     ></script>
     <script
-      type="text/javascript"
       src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"
     ></script>
     <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
