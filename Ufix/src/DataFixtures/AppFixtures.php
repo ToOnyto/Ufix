@@ -27,6 +27,12 @@ public function __construct(UserPasswordEncoderInterface $passwordEncoder)
         $user->setEmail("leo@gmail.com");
         $user->setPassword($this->passwordEncoder->encodePassword($user, 'leo'));
         $user->setRoles(['ROLE_CLASSIC']);
+        $user->setFirstName("firstName");
+        $user->setLastName("lastName");
+        $user->setAdress("adress");
+        $user->setPostCode(00000);
+        $user->setCountry("country");
+        $user->setCity("city");
         $manager->persist($user);
 
         $manager->flush();
