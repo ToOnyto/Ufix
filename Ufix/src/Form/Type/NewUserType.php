@@ -51,7 +51,7 @@ class NewUserType extends AbstractType
                     'label'    => "I agree to the terms and conditions",
                     'required' => true,
                 ])
-                // ->add('submit', SubmitType::class)
+                ->add('submit', SubmitType::class)
             ;
         }
 
