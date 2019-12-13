@@ -1,0 +1,4 @@
+#!/bin/sh
+
+
+rsync -av --rsync-path="sudo rsync" -e 'ssh -p 4854' ./ leo@185.212.225.126:/var/www/html/ufix --include=public/build --include=public/.htaccess --exclude=vendor --exclude=node_modules  --exclude=".*"

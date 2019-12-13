@@ -1104,3 +1104,13 @@ label.checkbox {
   color: $color3;
   padding-left: 1rem;
 }
+
+.input_number_without_arrows {
+  input[type=number]::-webkit-inner-spin-button, 
+  input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+}
+
+
