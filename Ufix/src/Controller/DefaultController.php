@@ -8,7 +8,10 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Symfony\Component\HttpFoundation\Response;
 use App\Form\Type\NewUserType;
+use App\Form\Type\ContactType;
 use App\Entity\User;
+use App\Entity\Contact;
+use App\Notification\ContactNotification;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 /**
@@ -189,12 +192,27 @@ class DefaultController extends AbstractController
     {
         return $this->render('cgu.html.twig');
     }
+    
     /**
      * @Route("/contact", name="contact")
      */
-    public function showContact()
+    public function showContact( Request $request, ContactNotification $notification): Response
     {
-        return $this->render('contact.html.twig');
+        $contact = new Contact();
+        $form = $this->createForm( ContactType::class, $contact);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()){
+
+            $notification->notify($contact);
+
+            $this->addFlash('success', 'Email sent');
+            return $this->redirectToRoute('home_page');
+        }
+
+        return $this->render('contact.html.twig', [
+            'form' => $form->createView()
+        ]);
     }
 
     /**

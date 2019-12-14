@@ -35,6 +35,35 @@
 			</div>
 			<!-- Form -->
 			<div class="column is-5 has-text-left margin-form">
+				{{ form_start(form) }}
+
+				
+				<div class="field">
+					<label class="label">Nom</label>
+					<div class="control">
+						{{ form_row(form.name) }}
+					</div>
+				</div>  
+				<div class="field">
+					<label class="label">Email</label>
+					<div class="control">
+							{{ form_row(form.email) }}
+					</div>
+				</div>
+				{{ form_rest(form) }}
+				<div class="control has-text-centered">
+                    <button>Envoyer</button>
+					{#<a class="button is-outlined is-rounded is-primary " href="{{ path("home_page") }}" onclick="isSend()">
+						<span>Envoyer</span>
+						<span class="icon">
+							<i class="fas fa-angle-right"></i>
+						</span>	
+					</a>#}
+				</div> 
+				{{ form_end(form) }}
+			</div>
+
+			{# <div class="column is-5 has-text-left margin-form">
 				<div class="field">
 					<label class="label">Nom</label>
 					<div class="control">
@@ -61,7 +90,7 @@
 						</span>	
 					</a>
 				</div>
-			</div>
+			</div> #}
 		</div>
 	</div>
 {% endblock %}
