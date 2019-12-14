@@ -4,6 +4,26 @@
 	{{ parent() }} - Déposer une annonce
 {% endblock %}
 
+{% form_theme newAdForm _self %}
+{%- block text_widget -%}
+<input name="{{ full_name }}" class="input" type="text" id="text_{{ value }}" placeholder="{{label}}" required> 
+{%- endblock text_widget -%}
+{%- block password_widget -%}
+<input name="{{ full_name }}" class="input" type="password" id="password_{{ value }}" placeholder="{{label}}" required> 
+{%- endblock password_widget -%}
+{%- block email_widget -%}
+<input name="{{ full_name }}" class="input" type="email" id="email_{{ value }}" placeholder="{{label}}" required> 
+{%- endblock email_widget -%}
+{%- block number_widget -%}
+<input name="{{ full_name }}" class="input" type="number" id="number_{{ value }}" placeholder="{{label}}" required> 
+{%- endblock number_widget -%}
+{%- block textarea_widget -%}
+<textarea name="{{ full_name }}" class="textarea" type="textarea" id="number_{{ value }}" placeholder="{{label}}" required></textarea> 
+{%- endblock textarea_widget -%}
+{%- block submit_widget -%}
+<input class="button is-primary is-outlined" name="{{ full_name }}" id="submit_{{ value }}" type="submit" value="Valider"/>
+{%- endblock submit_widget -%}
+
 {% block navbar %}
 {{ parent() }}
 <div class="container-is-fluid extended">
@@ -21,42 +41,42 @@
       <!-- Information part (left)  -->
       <article class="tile is-child ">
         <p class="title has-text-centered">Informations produit</p>
+        {{ form_start(newAdForm) }}
         <div class="field">
           <label class="label">Catégorie</label>
           <div class="control">
-            <div class="select">
-              <select>
-                <option>Téléphone</option>
-                <option>Tablette</option>
-                <option>Ordinateur</option>
-              </select>
-            </div>
+            {{ form_widget(newAdForm.category) }}
           </div>
         </div>
         <div class="field">
           <label class="label">Nom du produit</label>
           <div class="control">
-            <input class="input" type="text" placeholder="Iphone 4" />
+              {{ form_widget(newAdForm.name) }}
+            {# <input class="input" type="text" placeholder="Iphone 4" /> #}
           </div>
         </div>
         <div class="field">
           <label class="label">Etat du produit</label>
           <div class="control">
-            <input class="input" type="text" placeholder="Ecran cassé" />
+              {{ form_widget(newAdForm.breakState) }}
+            {# <input class="input" type="text" placeholder="Ecran cassé" /> #}
           </div>
         </div>
 
         <div class="field">
           <label class="label">Description</label>
           <div class="control">
-            <textarea class="textarea" placeholder="Je vend mon ..."></textarea>
+              {{ form_widget(newAdForm.description) }}
+            {# <textarea class="textarea" placeholder="Je vend mon ..."></textarea> #}
           </div>
         </div>
 
         <div class="field">
           <div class="control">
             <div class="field">
-              <input
+                {{ form_widget(newAdForm.purpose) }}
+              
+              {# <input
                 class="is-checkradio is-rtl has-background-color is-white"
                 id="exampleRtlRadioInline1"
                 type="radio"
@@ -70,7 +90,7 @@
                 type="radio"
                 name="exampleRtlRadioInline"
               />
-              <label for="exampleRtlRadioInline2">Réparer</label>
+              <label for="exampleRtlRadioInline2">Réparer</label> #}
             </div>
           </div>
         </div>
@@ -78,7 +98,8 @@
         <div class="field prix m-2b">
           <label class="label">Prix</label>
           <div class="control has-icons-right">
-            <input class="input" type="text" placeholder="Prix" />
+              {{ form_widget(newAdForm.price) }}
+            {# <input class="input" type="text" placeholder="Prix" /> #}
             <span class="icon is-small is-right">
               <i class="fas fa-euro-sign"></i>
             </span>
@@ -129,7 +150,9 @@
         </div>
     </div>
     <div class="column is-half is-offset-one-quarter has-text-centered">
-      <a class="button is-primary is-rounded is-outlined" href="{{ path("home_connected") }}" onclick="isSend()">Publier</a>
+        {{ form_widget(newAdForm.submit) }}
+      {# <a class="button is-primary is-rounded is-outlined" href="{{ path("home_connected") }}" onclick="isSend()">Publier</a> #}
+      {{ form_end(newAdForm) }}
     </div>
   </div>
 </div>

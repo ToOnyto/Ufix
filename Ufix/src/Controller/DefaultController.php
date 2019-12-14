@@ -8,8 +8,10 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Symfony\Component\HttpFoundation\Response;
 use App\Form\Type\NewUserType;
+use App\Form\Type\NewAdType;
 use App\Form\Type\ModifyUserType;
 use App\Entity\User;
+use App\Entity\Product;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Security\Core\Security;
@@ -99,11 +101,41 @@ class DefaultController extends AbstractController
     /**
      * @Route("/newad", name="new_ad")
      */
-    public function newAd()
+    public function newAd(Request $request)
     {
         // dump($security->getUser());
         // die;
-        return $this->render('new_ad.html.twig');
+        $newAdForm = $this->createForm(NewAdType::class);
+        $newAdForm->handleRequest($request);
+        
+        if ($newAdForm->isSubmitted() && $newAdForm->isValid()) {
+            // dump("ouais");
+            // die;
+            $em = $this->getDoctrine()->getManager();
+            $data = $newAdForm->getData();
+            $newProduct = new Product();
+                        //    dump($data['category']);
+                        //    die;
+            $newProduct->setCategory($data['category']);
+            $newProduct->setName($data['name']);
+            $newProduct->setbreakState($data['breakState']);
+            $newProduct->setPrice($data['price']);
+            $newProduct->setDescription($data['description']);
+            $newProduct->setPurpose($data['purpose']);
+        
+            $em->persist($newProduct);
+            $em->flush();
+
+
+            return $this->redirectToRoute('new_ad');
+        } 
+
+      
+        return $this->render('new_ad.html.twig', [
+            'newAdForm' => $newAdForm->createView(),
+
+
+        ]);
     }
 
     /**
