@@ -42,6 +42,10 @@
 # Composer PHAR
 /composer.phar
 
+# Env
+.env
+.env.local
+
 # Backup entities generated with doctrine:generate:entities command
 **/Entity/*~
 
@@ -146,5 +150,7 @@ fabric.properties
 # Markdown Navigator plugin
 .idea/**/markdown-navigator.xml
 .idea/**/markdown-navigator/
+
+
 
 # End of https://www.gitignore.io/api/phpstorm
