@@ -149,6 +149,8 @@
 		</div>
 	</div>
 </section>
+
+	{% if not app.user %}
 <!-- Inscription and connexion part -->
 <section id="third-block" class="section is-medium">
 	<div class="container">
@@ -300,4 +302,7 @@
 			</div>
 		</div>
 	</div>
-</section>{% endblock %}
+</section>
+	{% elseif app.user %}
+	{% endif %}
+{% endblock %}
