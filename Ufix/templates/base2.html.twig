@@ -55,11 +55,19 @@
 
             <div class="navbar-end">
               <div class="navbar-item">
-                <a class="navbar-item" href="{{ path('profil_page') }}">
-                  <span class="icon is-medium">
-                    <i class="far fa-user is-size-6"></i>
-                  </span>
-                </a>
+                {% if not app.user %}
+                  <a class="navbar-item" href="{{ path('profil_page') }}">
+                <span class="icon is-medium">
+                  <i class="far fa-user is-size-6"></i>
+                </span>
+                  </a>
+                {% elseif app.user %}
+                  <a class="navbar-item" href="{{ path('profil_page') }}">
+                <span class="icon is-medium">
+                  <i class="fas fa-sign-out-alt is-size-6"></i>
+                </span>
+                  </a>
+                {% endif %}
                 <a class="navbar-item" href="{{ path('messaging') }}">
                   <span
                     class="icon is-small-desktop is-medium-mobile is-medium-tablet"
