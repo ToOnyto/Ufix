@@ -94,7 +94,7 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/home", name="home_connected")
+     * @Route("/annonces", name="annonces")
      */
     public function showConnectedHomePage()
     {
