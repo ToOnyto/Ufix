@@ -46,6 +46,27 @@ class Product
      */
     private $purpose;
 
+    /**
+     * @var User
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="products" , cascade={"persist"})
+     */
+    private $user;
+
+       /**
+     * @return User
+     */
+    public function getUser(): User
+    {
+        return $this->user;
+    }
+    /**
+     * @param User $user
+     */
+    public function setUser(User $user): void
+    {
+        $this->user = $user;
+    }
+
     public function getId(): ?int
     {
         return $this->id;

@@ -58,6 +58,7 @@ class DefaultController extends AbstractController
             $newUser->setCountry($data['country']);
             $newUser->setCity($data['city']);
             
+            
 
             
             $em->persist($newUser);
@@ -110,8 +111,9 @@ class DefaultController extends AbstractController
     /**
      * @Route("/classic/newad", name="new_ad")
      */
-    public function newAd(Request $request)
+    public function newAd(Request $request, Security $security)
     {
+        $user = $security->getUser();
         // dump($security->getUser());
         // die;
         $newAdForm = $this->createForm(NewAdType::class);
@@ -125,13 +127,18 @@ class DefaultController extends AbstractController
             $newProduct = new Product();
                         //    dump($data['category']);
                         //    die;
+            
             $newProduct->setCategory($data['category']);
             $newProduct->setName($data['name']);
             $newProduct->setbreakState($data['breakState']);
             $newProduct->setPrice($data['price']);
             $newProduct->setDescription($data['description']);
             $newProduct->setPurpose($data['purpose']);
-        
+            $newProduct->setUser($user);
+            
+            $user->addProduct($newProduct);
+
+            $em->persist($user);
             $em->persist($newProduct);
             $em->flush();
 

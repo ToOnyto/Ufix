@@ -4,6 +4,26 @@
 	{{ parent() }} - Nous Contacter
 {% endblock %}
 
+{% form_theme form _self %}
+{%- block text_widget -%}
+<input name="{{ full_name }}" class="input" type="text" id="text_{{ value }}" placeholder="{{label}}" required> 
+{%- endblock text_widget -%}
+{%- block password_widget -%}
+<input name="{{ full_name }}" class="input" type="password" id="password_{{ value }}" placeholder="{{label}}" required> 
+{%- endblock password_widget -%}
+{%- block email_widget -%}
+<input name="{{ full_name }}" class="input" type="email" id="email_{{ value }}" placeholder="{{label}}" required> 
+{%- endblock email_widget -%}
+{%- block number_widget -%}
+<input name="{{ full_name }}" class="input" type="number" id="number_{{ value }}" placeholder="{{label}}" required> 
+{%- endblock number_widget -%}
+{%- block textarea_widget -%}
+<textarea name="{{ full_name }}" class="textarea" type="textarea" id="number_{{ value }}" placeholder="{{label}}" required></textarea> 
+{%- endblock textarea_widget -%}
+{%- block submit_widget -%}
+<input class="button is-primary is-outlined" name="{{ full_name }}" id="submit_{{ value }}" type="submit" value="Valider"/>
+{%- endblock submit_widget -%}
+
 {% block navbar %}
 	{{ parent() }}
 	<div class="container-is-fluid extended">
@@ -41,13 +61,13 @@
 				<div class="field">
 					<label class="label">Nom</label>
 					<div class="control">
-						{{ form_row(form.name) }}
+						{{ form_widget(form.name) }}
 					</div>
 				</div>  
 				<div class="field">
 					<label class="label">Email</label>
 					<div class="control">
-							{{ form_row(form.email) }}
+							{{ form_widget(form.email) }}
 					</div>
 				</div>
 				{{ form_rest(form) }}

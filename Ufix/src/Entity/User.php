@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Doctrine\Common\Collections\ArrayCollection;
+
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
@@ -64,6 +66,42 @@ class User implements UserInterface
      * @ORM\Column(type="string", length=255)
      */
     private $city;
+
+      /**
+     * @var ArrayCollection
+     * @ORM\Column(type="array")
+     * @ORM\OneToMany(targetEntity="App\Entity\Product", mappedBy="user", cascade={"persist"})
+     *
+     */
+    private $products;
+
+    public function __construct()
+    {
+        $this->products = new ArrayCollection();
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getProducts()
+    {
+        return $this->products;
+    }
+    /**
+     * @param ArrayCollection $responses
+     */
+    public function setProducts($products)
+    {
+        $this->products = $products;
+    }
+    public function addProduct(Product $product)
+    {
+        if (!$this->products->contains($product)) {
+            $this->products->add($product);
+            return true;
+        }
+        return false;
+    }
 
     public function getId(): ?int
     {
