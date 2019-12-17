@@ -8,6 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Symfony\Component\HttpFoundation\Response;
 use App\Form\Type\NewUserType;
+
 use App\Form\Type\NewAdType;
 use App\Form\Type\ModifyUserType;
 use App\Entity\User;
@@ -16,8 +17,9 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Security\Core\Security;
 use Doctrine\ORM\EntityManagerInterface;
-
-
+use App\Form\Type\ContactType;
+use App\Entity\Contact;
+use App\Notification\ContactNotification;
 
 /**
  * @Route("/")
@@ -99,7 +101,7 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/newad", name="new_ad")
+     * @Route("classic/newad", name="new_ad")
      */
     public function newAd(Request $request)
     {
@@ -139,7 +141,7 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/profil", name="profil_page")
+     * @Route("classic/profil", name="profil_page")
      */
     public function showProfilPage(Request $request, Security $security)
     {
@@ -182,7 +184,7 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/repair", name="to_repair")
+     * @Route("classic/repair", name="to_repair")
      */
     public function showRepairPage()
     {
@@ -190,7 +192,7 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/sell", name="to_sell")
+     * @Route("classic/sell", name="to_sell")
      */
     public function showSellPage()
     {
@@ -198,7 +200,7 @@ class DefaultController extends AbstractController
     }
 
     /** 
-     * @Route("/adsSaved", name="ads_saved")
+     * @Route("classic/adsSaved", name="ads_saved")
      */
     public function showAdsSaved()
     {
@@ -206,7 +208,7 @@ class DefaultController extends AbstractController
     }
 
     /** 
-     * @Route("/selectRepairer", name="select_repairer")
+     * @Route("classic/selectRepairer", name="select_repairer")
      */
     public function showSelectRepairer()
     {
@@ -214,7 +216,7 @@ class DefaultController extends AbstractController
     }
 
     /** 
-     * @Route("/contact/toRepair", name="contact_repair")
+     * @Route("repairer/contact/toRepair", name="contact_repair")
      */
     public function showContactRepair()
     {
@@ -222,7 +224,7 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/contact/seller/buy", name="contact_seller_without_repair")
+     * @Route("classic/contact/seller/buy", name="contact_seller_without_repair")
      */
     public function showContactSellerBuy()
     {
@@ -230,7 +232,7 @@ class DefaultController extends AbstractController
     }
 
     /** 
-     * @Route("/contact/seller/repair", name="contact_seller_with_repair")
+     * @Route("classic/contact/seller/repair", name="contact_seller_with_repair")
      */
     public function showContactSellerWithRepair()
     {
@@ -238,7 +240,7 @@ class DefaultController extends AbstractController
     }
 
     /** 
-     * @Route("/contact/seller/repair-2", name="contact_seller_with_repair2")
+     * @Route("classic/contact/seller/repair-2", name="contact_seller_with_repair2")
      */
     public function showContactSellerWithRepair2()
     {
@@ -247,7 +249,7 @@ class DefaultController extends AbstractController
 
 
     /** 
-     * @Route("/messaging", name="messaging")
+     * @Route("classic/messaging", name="messaging")
      */
     public function showMessaging()
     {
@@ -255,7 +257,7 @@ class DefaultController extends AbstractController
     }
 
     /** 
-     * @Route("/edit-product", name="edit_product")
+     * @Route("classic/edit-product", name="edit_product")
      */
     public function showEditProduct()
     {
@@ -269,12 +271,27 @@ class DefaultController extends AbstractController
     {
         return $this->render('cgu.html.twig');
     }
+    
     /**
-     * @Route("/contacter", name="contact")
+     * @Route("/contact", name="contact")
      */
-    public function showContact()
+    public function showContact( Request $request, ContactNotification $notification): Response
     {
-        return $this->render('contact.html.twig');
+        $contact = new Contact();
+        $form = $this->createForm( ContactType::class, $contact);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()){
+
+            $notification->notify($contact);
+
+            $this->addFlash('success', 'Email sent');
+            return $this->redirectToRoute('home_page');
+        }
+
+        return $this->render('contact.html.twig', [
+            'form' => $form->createView()
+        ]);
     }
 
     /**

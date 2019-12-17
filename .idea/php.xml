@@ -112,4 +112,8 @@
       <path value="$PROJECT_DIR$/Ufix/vendor/fig/link-util" />
     </include_path>
   </component>
+<<<<<<< HEAD
+=======
+  <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />
+>>>>>>> tony
 </project>

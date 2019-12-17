@@ -137,7 +137,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Ufix" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -169,6 +169,7 @@
       <workItem from="1576321962680" duration="251000" />
       <workItem from="1576322275748" duration="2485000" />
       <workItem from="1576336478394" duration="7663000" />
+      <workItem from="1576602952204" duration="89000" />
     </task>
     <servers />
   </component>
@@ -176,6 +177,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="778" y="311" width="424" height="491" key="FileChooserDialogImpl" timestamp="1576603038562">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="778" y="311" width="424" height="491" key="FileChooserDialogImpl/70.27.1850.1053@70.27.1850.1053" timestamp="1576603038562" />
     <state x="651" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1576322279228">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
