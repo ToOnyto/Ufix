@@ -91,15 +91,22 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/admin/home", name="home_connected")
+     * @Route("/home", name="home_connected")
      */
     public function showConnectedHomePage()
     {
-        return $this->render('home_connected.html.twig');
+
+        $repository = $this->getDoctrine()->getRepository(Product::class);
+        $products = $repository->findAll();
+
+
+        return $this->render('home_connected.html.twig', [
+            'products' => $products
+        ]);
     }
 
     /**
-     * @Route("/newad", name="new_ad")
+     * @Route("/classic/newad", name="new_ad")
      */
     public function newAd(Request $request)
     {
