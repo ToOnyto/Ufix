@@ -136,7 +136,7 @@ class DefaultController extends AbstractController
             $newProduct->setDescription($data['description']);
             $newProduct->setPurpose($data['purpose']);
             $newProduct->setUser($user);
-            
+
             $user->addProduct($newProduct);
 
             $em->persist($user);
@@ -199,11 +199,13 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("classic/repair", name="to_repair")
+     * @Route("classic/repair/{id}", name="to_repair", defaults={"id": 1})
      */
-    public function showRepairPage()
+    public function showRepairPage(Product $product)
     {
-        return $this->render('toRepair.html.twig');
+        return $this->render('toRepair.html.twig', [
+            'product' => $product
+        ]);
     }
 
     /**

@@ -20,8 +20,8 @@
 				<div class="column is-half is-offset-one-quarter has-text-centered column-without-p-top">
 					<div class="columns">
 						<div class="column">
-							<p class="title to-repare">Iphone 5</p>
-							<p class="subtitle">Ecran cassé</p>
+							<p class="title to-repare">{{product.name}}</p>
+							<p class="subtitle">{{product.breakState}}</p>
 						</div>
 					</div>
 					<div class="slider">
@@ -53,8 +53,7 @@
 					<div class="column is-2-desktop is-hidden-mobile"></div>
 					<div class="column is-3">
 						<p class="subtitle is-uppercase">Description</p>
-						<p>Iphone 5 avec un problème matériel, le téléphone s'allume et se charge mais reste bloqué sur
-							l'écran de recherche du serveur d'activation d'Apple</p>
+						<p>{{product.description}}</p>
 					</div>
 					<!-- Column specification-->
 					<div class="column is-4">
@@ -92,9 +91,9 @@
 					<div class="column is-3">
 						<p class="subtitle is-uppercase">Vendeur</p>
 						<span class="tag orange">4/5</span>
-						<p>Pascal MOLIPOU
+						<p>{{product.user.firstName}} {{product.user.lastName}}
 							<br>
-							Pessac - 33 600</p>
+							{{product.user.adress}} - {{product.user.postCode}}</p>
 					</div>
 				</div>
 			</div>
