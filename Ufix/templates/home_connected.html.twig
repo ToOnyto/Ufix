@@ -41,7 +41,7 @@
 			<div class="column is-10 is-offset-1">
 				<div class="columns is-mobile is-multiline products">
 					{% for product in products %}
-						<a class="column is-2-desktop is-3-tablet is-6-mobile" href="{{ path('to_repair') }}">
+						<a class="column is-2-desktop is-3-tablet is-6-mobile" href="{{ path('to_repair', { 'id': product.id}) }}">
 							<div class="card all-ads">
 								<div class="card-image">
 									<figure class="image">
