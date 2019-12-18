@@ -1,25 +1,26 @@
 {% extends 'base2.html.twig' %}
 
 {% block title %}
-	{{ parent() }}
-	- Accueil
+{{ parent() }}
+- Accueil
 {% endblock %}
 
 {% form_theme newUserForm _self %}
 {%- block text_widget -%}
-<input name="{{ full_name }}" class="input" type="text" id="text_{{ value }}" placeholder="{{label}}" required> 
+<input name="{{ full_name }}" class="input" type="text" id="text_{{ value }}" placeholder="{{label}}" required>
 {%- endblock text_widget -%}
 {%- block password_widget -%}
-<input name="{{ full_name }}" class="input" type="password" id="password_{{ value }}" placeholder="{{label}}" required> 
+<input name="{{ full_name }}" class="input" type="password" id="password_{{ value }}" placeholder="{{label}}" required>
 {%- endblock password_widget -%}
 {%- block email_widget -%}
-<input name="{{ full_name }}" class="input" type="email" id="email_{{ value }}" placeholder="{{label}}" required> 
+<input name="{{ full_name }}" class="input" type="email" id="email_{{ value }}" placeholder="{{label}}" required>
 {%- endblock email_widget -%}
 {%- block number_widget -%}
-<input name="{{ full_name }}" class="input" type="number" id="number_{{ value }}" placeholder="{{label}}" required> 
+<input name="{{ full_name }}" class="input" type="number" id="number_{{ value }}" placeholder="{{label}}" required>
 {%- endblock number_widget -%}
 {%- block submit_widget -%}
-<input class="button is-light is-outlined" name="{{ full_name }}" id="submit_{{ value }}" type="submit" value="Valider"/>
+<input class="button is-light is-outlined" name="{{ full_name }}" id="submit_{{ value }}" type="submit"
+	value="Valider" />
 {%- endblock submit_widget -%}
 
 {% block body %}
@@ -31,24 +32,23 @@
 
 <section class="hero is-fullheight-with-navbar">
 	<div class="hero-body">
-		<div
-			class="container">
+		<div class="container">
 			<!-- Top part -->
-			<div
-				class="columns is-vcentered p-3t">
+			<div class="columns is-vcentered p-3t">
 				<!-- Left part-->
 				<div class="column is-5 is-offset-1-desktop is-offset-1-tablet is-offset-1-mobile landing-caption">
 					<h1 class="title is-1 is-bold is-spaced">
 						Faites renaître vos appareils de leurs cendres !
 					</h1>
-					<h2 class="subtitle is-5 is-dark">Et ainsi participer à la réduction de l'empreinte environnementale.</h2>
+					<h2 class="subtitle is-5 is-dark">Et ainsi participer à la réduction de l'empreinte
+						environnementale.</h2>
 					<p>
 						<a class="button is-outlined is-primary scroll" href="#third-block">Connexion / Inscription</a>
 					</p>
 				</div>
 				<!-- Image -->
 				<div class="column is-5">
-					<img src="{{ asset('img/home.jpg') }}" alt="Image présentation UFix"/>
+					<img src="{{ asset('img/home.jpg') }}" alt="Image présentation UFix" />
 				</div>
 			</div>
 		</div>
@@ -66,8 +66,7 @@
 </section>
 
 <section id="second-block" class="section is-medium">
-	<div
-		class="container">
+	<div class="container">
 		<!-- Presentation top-->
 		<div class="title-wrapper has-text-centered">
 			<h2 class="title is-4">Grâce à UFix tu peux :</h2>
@@ -83,14 +82,16 @@
 							<h4>Réparer</h4>
 						</div>
 						<div class="card-icon">
-							<img class="image-home" src="{{ asset('img/icon1.png') }}" alt="Icone réparer"/>
+							<img class="image-home" src="{{ asset('img/icon1.png') }}" alt="Icone réparer" />
 						</div>
 						<div class="card-text">
-							<p class="small-text-area">Tu souhaites réparer des appareils électroniques tels que des téléphones,
-																																																				                ordinateurs ou tablettes ?</p>
+							<p class="small-text-area">Tu souhaites réparer des appareils électroniques tels que des
+								téléphones,
+								ordinateurs ou tablettes ?</p>
 						</div>
 						<div class="card-action">
-							<a href="{{ path('annonces') }}" class="button is-outlined is-primary">Réparer des appareils</a>
+							<a href="{{ path('annonces') }}" class="button is-outlined is-primary">Réparer des
+								appareils</a>
 						</div>
 					</div>
 				</div>
@@ -100,14 +101,16 @@
 							<h4>Acheter</h4>
 						</div>
 						<div class="card-icon">
-							<img class="image-home" src="{{ asset('img/icon2.png') }}" alt="Icone acheter"/>
+							<img class="image-home" src="{{ asset('img/icon2.png') }}" alt="Icone acheter" />
 						</div>
 						<div class="card-text">
-							<p class="small-text-area">Achètes des appareils électroniques usagés mais fonctionnels, à moindre coût.
+							<p class="small-text-area">Achètes des appareils électroniques usagés mais fonctionnels, à
+								moindre coût.
 							</p>
 						</div>
 						<div class="card-action">
-							<a href="{{ path('annonces') }}" class="button is-outlined is-primary">Acheter un appareil</a>
+							<a href="{{ path('annonces') }}" class="button is-outlined is-primary">Acheter un
+								appareil</a>
 						</div>
 					</div>
 				</div>
@@ -117,11 +120,12 @@
 							<h4>Vendre</h4>
 						</div>
 						<div class="card-icon">
-							<img class="image-home" src="{{ asset('img/icon4.png') }}" alt="Icone vendre"/>
+							<img class="image-home" src="{{ asset('img/icon4.png') }}" alt="Icone vendre" />
 						</div>
 						<div class="card-text">
-							<p class="small-text-area">Vends tes appareils usagés et participe à la réduction de l'empreinte
-																																																				                environnementale sur notre planète.</p>
+							<p class="small-text-area">Vends tes appareils usagés et participe à la réduction de
+								l'empreinte
+								environnementale sur notre planète.</p>
 						</div>
 						<div class="card-action">
 							<a href="{{ path('new_ad') }}" class="button is-outlined is-primary">Vendre un appareil</a>
@@ -134,14 +138,16 @@
 							<h4>Faire réparer</h4>
 						</div>
 						<div class="card-icon">
-							<img class="image-home" src="{{ asset('img/icon3.png') }}" alt="Icone faire réparer"/>
+							<img class="image-home" src="{{ asset('img/icon3.png') }}" alt="Icone faire réparer" />
 						</div>
 						<div class="card-text">
-							<p class="small-text-area">Viens faire réparer tes appareils cassés en toute simplicité et de façon
-																																																				                responsable.</p>
+							<p class="small-text-area">Viens faire réparer tes appareils cassés en toute simplicité et
+								de façon
+								responsable.</p>
 						</div>
 						<div class="card-action">
-							<a href="{{ asset('newad') }}" class="button is-outlined is-primary">Faire réparer son appareil</a>
+							<a href="{{ asset('newad') }}" class="button is-outlined is-primary">Faire réparer son
+								appareil</a>
 						</div>
 					</div>
 				</div>
@@ -150,33 +156,70 @@
 	</div>
 </section>
 
-	{% if not app.user %}
+{% if not app.user %}
 <!-- Inscription and connexion part -->
 <section id="third-block" class="section is-medium">
 	<div class="container">
+		<!-- <div class="container has-text-centered">
+			<div class="column is-4 is-offset-4">
+				<h3 class="title has-text-black">Login</h3>
+				<hr class="login-hr">
+				<div class="box">
+					<figure class="avatar">
+						<img src="{{ asset('img/logo_black.png') }}" alt="Logo UFix" />
+					</figure>
+					<form>
+						<div class="field">
+							<div class="control">
+								<input class="input is-large" type="email" placeholder="Your Email" autofocus="">
+							</div>
+						</div>
+
+						<div class="field">
+							<div class="control">
+								<input class="input is-large" type="password" placeholder="Your Password">
+							</div>
+						</div>
+						<div class="field">
+							<label class="checkbox">
+								<input type="checkbox">
+								Remember me
+							</label>
+						</div>
+						<button class="button is-block is-info is-large is-fullwidth">Login <i class="fa fa-sign-in"
+								aria-hidden="true"></i></button>
+					</form>
+				</div>
+				<p class="has-text-grey">
+					<a href="../">Sign Up</a> &nbsp;·&nbsp;
+					<a href="../">Forgot Password</a> &nbsp;·&nbsp;
+					<a href="../">Need Help?</a>
+				</p>
+			</div>
+		</div> -->
 		<div class="columns is-vcentered">
 			<div class="column is-8 is-offset-2">
-				<div
-					class="columns shadows-effect">
+				<div class="columns shadows-effect">
 					<!-- Connexion -->
 					<div class="column is-4 has-text-centered sign-in-home">
 						<p class="title is-light">Connexion</p>
 						<form method="post" action="" class="form p-form">
 							{% if error %}
-								<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+							<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}
+							</div>
 							{% endif %}
 
 							{% if app.user %}
-								<div class="mb-3">
-									You are logged in as
-									{{ app.user.username }},
-									<a href="{{ path('app_logout') }}">Logout</a>
-								</div>
+							<div class="mb-3">
+								You are logged in as
+								{{ app.user.username }},
+								<a href="{{ path('app_logout') }}">Logout</a>
+							</div>
 							{% endif %}
 							<div class="field">
 								<p class="control has-icons-left has-icons-right">
-									<input
-									type="email" value="{{ last_username }}" name="email" placeholder="Email" id="inputEmail" class="form-control input" required autofocus>
+									<input type="email" value="{{ last_username }}" name="email" placeholder="Email"
+										id="inputEmail" class="form-control input" required autofocus>
 									{# <input class="input" type="email" placeholder="Email" required> #}
 									<span class="icon is-small is-left">
 										<i class="fas fa-envelope"></i>
@@ -188,8 +231,8 @@
 							</div>
 							<div class="field m-2b">
 								<p class="control has-icons-left">
-									<input
-									type="password" name="password" id="inputPassword" class="form-control input" placeholder="Password" required>
+									<input type="password" name="password" id="inputPassword" class="form-control input"
+										placeholder="Password" required>
 									{# <input class="input" type="password" placeholder="Password" required> #}
 									<span class="icon is-small is-left">
 										<i class="fas fa-lock"></i>
@@ -197,105 +240,106 @@
 								</p>
 							</div>
 							<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-							<button class="button is-primary is-outlined" href="{{ asset('home') }}" type="submit">Se connecter</button>
+							<button class="button is-primary is-outlined" href="{{ asset('home') }}" type="submit">Se
+								connecter</button>
 						</form>
 					</div>
 					<!-- Innscription -->
 					<div class="column is-8 has-text-centered sign-up-home">
 						<p class="title has-text-centered">Inscription</p>
 						{# <form method="post" action="" class="form"> #}
-							{{ form_start(newUserForm) }}
-							<div class="columns">
-								<div class="column is-6">
-									<div class="field">
-										<p class="control has-icons-left has-icons-right">
-											{{ form_widget(newUserForm.firstName) }}
-											{# <input class="input" type="text" placeholder="Nom" required> #}
-											<span class="icon is-small is-left">
-												<i class="far fa-user"></i>
-											</span>
-										</p>
-									</div>
-									<div class="field">
-										<p class="control has-icons-left has-icons-right">
-												{{ form_widget(newUserForm.lastName) }}
-											{# <input class="input" type="text" placeholder="Prénom" required> #}
-											<span class="icon is-small is-left">
-												<i class="far fa-user"></i>
-											</span>
-										</p>
-									</div>
-									<div class="field">
-										<p class="control has-icons-left">
-												{{ form_widget(newUserForm.email) }}
-											{# <input class="input" type="email" placeholder="Email" required> #}
-											<span class="icon is-small is-left">
-												<i class="far fa-envelope"></i>
-											</span>
-										</p>
-									</div>
-									<div class="field">
-										<p class="control has-icons-left">
-												{{ form_widget(newUserForm.password) }}
-											{# <input class="input" type="password" placeholder="Mot de passe" required> #}
-											<span class="icon is-small is-left">
-												<i class="fas fa-lock"></i>
-											</span>
-										</p>
-									</div>
+						{{ form_start(newUserForm) }}
+						<div class="columns">
+							<div class="column is-6">
+								<div class="field">
+									<p class="control has-icons-left has-icons-right">
+										{{ form_widget(newUserForm.firstName) }}
+										{# <input class="input" type="text" placeholder="Nom" required> #}
+										<span class="icon is-small is-left">
+											<i class="far fa-user"></i>
+										</span>
+									</p>
 								</div>
-								<div class="column is-6">
-									<div class="field">
-										<p class="control has-icons-left has-icons-right">
-												{{ form_widget(newUserForm.adress) }}
-											{# <input class="input" type="text" placeholder="Adresse" required> #}
-											<span class="icon is-small is-left">
-												<i class="fas fa-map-marker-alt"></i>
-											</span>
-										</p>
-									</div>
-									<div class="field">
-										<p class="control has-icons-left has-icons-right input_number_without_arrows">
-												{{ form_widget(newUserForm.postCode) }}
-											{# <input class="input" type="text" placeholder="Code postale" required> #}
-											<span class="icon is-small is-left">
-												<i class="fas fa-map-marker-alt"></i>
-											</span>
-										</p>
-									</div>
-									<div class="field">
-										<p class="control has-icons-left has-icons-right">
-												{{ form_widget(newUserForm.country) }}
-											{# <input class="input" type="text" placeholder="Pays" required> #}
-											<span class="icon is-small is-left">
-												<i class="far fa-flag"></i>
-											</span>
-										</p>
-									</div>
-									<div class="field m-2b">
-										<p class="control has-icons-left">
-												{{ form_widget(newUserForm.city) }}
-											{# <input class="input" type="text" placeholder="Ville" required> #}
-											<span class="icon is-small is-left">
-												<i class="far fa-building"></i>
-											</span>
-										</p>
-									</div>
+								<div class="field">
+									<p class="control has-icons-left has-icons-right">
+										{{ form_widget(newUserForm.lastName) }}
+										{# <input class="input" type="text" placeholder="Prénom" required> #}
+										<span class="icon is-small is-left">
+											<i class="far fa-user"></i>
+										</span>
+									</p>
+								</div>
+								<div class="field">
+									<p class="control has-icons-left">
+										{{ form_widget(newUserForm.email) }}
+										{# <input class="input" type="email" placeholder="Email" required> #}
+										<span class="icon is-small is-left">
+											<i class="far fa-envelope"></i>
+										</span>
+									</p>
+								</div>
+								<div class="field">
+									<p class="control has-icons-left">
+										{{ form_widget(newUserForm.password) }}
+										{# <input class="input" type="password" placeholder="Mot de passe" required> #}
+										<span class="icon is-small is-left">
+											<i class="fas fa-lock"></i>
+										</span>
+									</p>
 								</div>
 							</div>
-							<label class="checkbox">
-									{{ form_widget(newUserForm.agree) }}
-								{# <input type="checkbox" required> #}
-								I agree to the
-								<a href="#">terms and conditions</a>
-							</label>
-							<br/>
-							{# {{ form_row(newUserForm.submit, { 'label': 'Submit me' }) }} #}
-							{# <input type="submit" value="Valider"/> #}
-							{# {{form_}} #}
-							{# <input  class="button is-light is-outlined m-1t" type="submit" value="S'inscrire"/> #}
-							{# <button class="button is-light is-outlined m-1t" href="{{ asset('home') }}" type="submit">M'inscrire</button> #}
-							{{ form_end(newUserForm) }}
+							<div class="column is-6">
+								<div class="field">
+									<p class="control has-icons-left has-icons-right">
+										{{ form_widget(newUserForm.adress) }}
+										{# <input class="input" type="text" placeholder="Adresse" required> #}
+										<span class="icon is-small is-left">
+											<i class="fas fa-map-marker-alt"></i>
+										</span>
+									</p>
+								</div>
+								<div class="field">
+									<p class="control has-icons-left has-icons-right input_number_without_arrows">
+										{{ form_widget(newUserForm.postCode) }}
+										{# <input class="input" type="text" placeholder="Code postale" required> #}
+										<span class="icon is-small is-left">
+											<i class="fas fa-map-marker-alt"></i>
+										</span>
+									</p>
+								</div>
+								<div class="field">
+									<p class="control has-icons-left has-icons-right">
+										{{ form_widget(newUserForm.country) }}
+										{# <input class="input" type="text" placeholder="Pays" required> #}
+										<span class="icon is-small is-left">
+											<i class="far fa-flag"></i>
+										</span>
+									</p>
+								</div>
+								<div class="field m-2b">
+									<p class="control has-icons-left">
+										{{ form_widget(newUserForm.city) }}
+										{# <input class="input" type="text" placeholder="Ville" required> #}
+										<span class="icon is-small is-left">
+											<i class="far fa-building"></i>
+										</span>
+									</p>
+								</div>
+							</div>
+						</div>
+						<label class="checkbox">
+							{{ form_widget(newUserForm.agree) }}
+							{# <input type="checkbox" required> #}
+							I agree to the
+							<a href="#">terms and conditions</a>
+						</label>
+						<br />
+						{# {{ form_row(newUserForm.submit, { 'label': 'Submit me' }) }} #}
+						{# <input type="submit" value="Valider"/> #}
+						{# {{form_}} #}
+						{# <input  class="button is-light is-outlined m-1t" type="submit" value="S'inscrire"/> #}
+						{# <button class="button is-light is-outlined m-1t" href="{{ asset('home') }}" type="submit">M'inscrire</button> #}
+						{{ form_end(newUserForm) }}
 						{# </form> #}
 					</div>
 				</div>
@@ -303,6 +347,6 @@
 		</div>
 	</div>
 </section>
-	{% elseif app.user %}
-	{% endif %}
+{% elseif app.user %}
+{% endif %}
 {% endblock %}
