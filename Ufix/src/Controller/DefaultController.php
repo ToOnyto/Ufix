@@ -12,7 +12,8 @@ use App\Form\Type\NewUserType;
 use App\Form\Type\NewAdType;
 use App\Form\Type\ModifyUserType;
 use App\Entity\User;
-use App\Entity\Product;
+// use App\Entity\Product;
+use App\Entity\Ad;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Security\Core\Security;
@@ -100,17 +101,17 @@ class DefaultController extends AbstractController
     public function showConnectedHomePage()
     {
 
-        $repository = $this->getDoctrine()->getRepository(Product::class);
-        $products = $repository->findAll();
+        $repository = $this->getDoctrine()->getRepository(Ad::class);
+        $ads = $repository->findAll();
 
 
         return $this->render('home_connected.html.twig', [
-            'products' => $products
+            'ads' => $ads
         ]);
     }
 
     /**
-     * @Route("/classic/newad", name="new_ad")
+     * @Route("/newad", name="new_ad")
      */
     public function newAd(Request $request, Security $security)
     {
@@ -125,22 +126,22 @@ class DefaultController extends AbstractController
             // die;
             $em = $this->getDoctrine()->getManager();
             $data = $newAdForm->getData();
-            $newProduct = new Product();
+            $newAd = new Ad();
                         //    dump($data['category']);
                         //    die;
             
-            $newProduct->setCategory($data['category']);
-            $newProduct->setName($data['name']);
-            $newProduct->setbreakState($data['breakState']);
-            $newProduct->setPrice($data['price']);
-            $newProduct->setDescription($data['description']);
-            $newProduct->setPurpose($data['purpose']);
-            $newProduct->setUser($user);
+            $newAd->setProductCategory($data['category']);
+            $newAd->setProductName($data['name']);
+            $newAd->setProductBreakDescription($data['breakState']);
+            $newAd->setProductPrice($data['price']);
+            $newAd->setAdDescription($data['description']);
+            $newAd->setAdType($data['purpose']);
+            $newAd->setOwner($user);
 
-            $user->addProduct($newProduct);
+            $user->addOwnedAd($newAd);
 
             $em->persist($user);
-            $em->persist($newProduct);
+            $em->persist($newAd);
             $em->flush();
 
 
@@ -156,7 +157,7 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("classic/profil", name="profil_page")
+     * @Route("/profil", name="profil_page")
      */
     public function showProfilPage(Request $request, Security $security)
     {
@@ -199,17 +200,17 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("classic/repair/{id}", name="to_repair", defaults={"id": 1})
+     * @Route("/repair/{id}", name="to_repair", defaults={"id": 1})
      */
-    public function showRepairPage(Product $product)
+    public function showRepairPage(Ad $ad)
     {
         return $this->render('toRepair.html.twig', [
-            'product' => $product
+            'ad' => $ad
         ]);
     }
 
     /**
-     * @Route("classic/sell", name="to_sell")
+     * @Route("/sell", name="to_sell")
      */
     public function showSellPage()
     {
@@ -217,7 +218,7 @@ class DefaultController extends AbstractController
     }
 
     /** 
-     * @Route("classic/adsSaved", name="ads_saved")
+     * @Route("/adsSaved", name="ads_saved")
      */
     public function showAdsSaved()
     {
@@ -225,7 +226,7 @@ class DefaultController extends AbstractController
     }
 
     /** 
-     * @Route("classic/selectRepairer", name="select_repairer")
+     * @Route("/selectRepairer", name="select_repairer")
      */
     public function showSelectRepairer()
     {
@@ -241,7 +242,7 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("classic/contact/seller/buy", name="contact_seller_without_repair")
+     * @Route("/contact/seller/buy", name="contact_seller_without_repair")
      */
     public function showContactSellerBuy()
     {
@@ -249,7 +250,7 @@ class DefaultController extends AbstractController
     }
 
     /** 
-     * @Route("classic/contact/seller/repair", name="contact_seller_with_repair")
+     * @Route("/contact/seller/repair", name="contact_seller_with_repair")
      */
     public function showContactSellerWithRepair()
     {
@@ -257,7 +258,7 @@ class DefaultController extends AbstractController
     }
 
     /** 
-     * @Route("classic/contact/seller/repair-2", name="contact_seller_with_repair2")
+     * @Route("/contact/seller/repair-2", name="contact_seller_with_repair2")
      */
     public function showContactSellerWithRepair2()
     {
@@ -266,7 +267,7 @@ class DefaultController extends AbstractController
 
 
     /** 
-     * @Route("classic/messaging", name="messaging")
+     * @Route("/messaging", name="messaging")
      */
     public function showMessaging()
     {
@@ -274,7 +275,7 @@ class DefaultController extends AbstractController
     }
 
     /** 
-     * @Route("classic/edit-product", name="edit_product")
+     * @Route("/edit-product", name="edit_product")
      */
     public function showEditProduct()
     {

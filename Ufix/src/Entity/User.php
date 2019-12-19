@@ -25,7 +25,6 @@ class User implements UserInterface
     private $email;
 
 
-
     /**
      * @ORM\Column(type="json")
      */
@@ -67,37 +66,69 @@ class User implements UserInterface
      */
     private $city;
 
-      /**
+    /**
      * @var ArrayCollection
      * @ORM\Column(type="array")
-     * @ORM\OneToMany(targetEntity="App\Entity\Product", mappedBy="user", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="App\Entity\Ad", mappedBy="owner", cascade={"persist"})
      *
      */
-    private $products;
+    private $ownedAds;
+
+    /**
+     * @var ArrayCollection
+     * @ORM\Column(type="array")
+     * @ORM\OneToMany(targetEntity="App\Entity\Ad", mappedBy="repairer", cascade={"persist"})
+     *
+     */
+    private $repairedAds;
 
     public function __construct()
     {
-        $this->products = new ArrayCollection();
+        $this->ownedAds = new ArrayCollection();
+        $this->repairedAds = new ArrayCollection();
     }
 
     /**
      * @return ArrayCollection
      */
-    public function getProducts()
+    public function getOwnedAds()
     {
-        return $this->products;
+        return $this->ownedAds;
     }
     /**
-     * @param ArrayCollection $responses
+     * @param ArrayCollection $ownedAds
      */
-    public function setProducts($products)
+    public function setOwnedAds($ownedAds)
     {
-        $this->products = $products;
+        $this->ownedAds = $ownedAds;
     }
-    public function addProduct(Product $product)
+    public function addOwnedAd(Ad $ad)
     {
-        if (!$this->products->contains($product)) {
-            $this->products->add($product);
+        if (!$this->ownedAds->contains($ad)) {
+            $this->ownedAds->add($ad);
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getRepairedAds()
+    {
+        return $this->ownedAds;
+    }
+    /**
+     * @param ArrayCollection $repairedAds
+     */
+    public function setRepairedAds($repairedAds)
+    {
+        $this->repairedAds = $repairedAds;
+    }
+    public function addRepairedAd(Ad $ad)
+    {
+        if (!$this->repairedAds->contains($ad)) {
+            $this->repairedAds->add($ad);
             return true;
         }
         return false;

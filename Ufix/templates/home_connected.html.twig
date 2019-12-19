@@ -40,8 +40,8 @@
 		<div class="columns">
 			<div class="column is-10 is-offset-1">
 				<div class="columns is-mobile is-multiline products">
-					{% for product in products %}
-						<a class="column is-2-desktop is-3-tablet is-6-mobile" href="{{ path('to_repair', { 'id': product.id}) }}">
+					{% for ad in ads %}
+						<a class="column is-2-desktop is-3-tablet is-6-mobile" href="{{ path('to_repair', { 'id': ad.id}) }}">
 							<div class="card all-ads">
 								<div class="card-image">
 									<figure class="image">
@@ -51,10 +51,10 @@
 								<div class="card-content">
 									<div class="media">
 										<div class="media-content has-text-centered">
-											<p class="title to-repare">{{product.name}}</p>
-											<p class="subtitle">{{product.breakState}}</p>
-											<p class="susbtitle">{{product.price}} €</p>
-											<p class="susbtitle">{{product.user.email}} €</p>
+											<p class="title to-repare">{{ad.productName}}</p>
+											<p class="subtitle">{{ad.productBreakDescription}}</p>
+											<p class="susbtitle">{{ad.productPrice}} €</p>
+											<p class="susbtitle">{{ad.owner.email}}</p>
 										</div>
 									</div>
 								</div>

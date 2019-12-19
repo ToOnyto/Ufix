@@ -20,8 +20,8 @@
 				<div class="column is-half is-offset-one-quarter has-text-centered column-without-p-top">
 					<div class="columns">
 						<div class="column">
-							<p class="title to-repare">{{product.name}}</p>
-							<p class="subtitle">{{product.breakState}}</p>
+							<p class="title to-repare">{{ad.productName}}</p>
+							<p class="subtitle">{{ad.productBreakDescription}}</p>
 						</div>
 					</div>
 					<div class="slider">
@@ -35,7 +35,7 @@
 						</ul>
 						<div class="slider__controls">
 							<span class="slider__control js__slider__control--prev slider__control--prev">
-								<</span> <ol class="js__slider__pagers slider__pagers">
+								</span> <ol class="js__slider__pagers slider__pagers">
 									</ol>
 									<span
 										class="slider__control js__slider__control--next slider__control--next">></span>
@@ -53,7 +53,7 @@
 					<div class="column is-2-desktop is-hidden-mobile"></div>
 					<div class="column is-3">
 						<p class="subtitle is-uppercase">Description</p>
-						<p>{{product.description}}</p>
+						<p>{{ad.adDescription}}</p>
 					</div>
 					<!-- Column specification-->
 					<div class="column is-4">
@@ -89,11 +89,11 @@
 					</div>
 					<!-- Column seller -->
 					<div class="column is-3">
-						<p class="subtitle is-uppercase">Vendeur</p>
+						<p class="subtitle is-uppercase">Propriétaire</p>
 						<span class="tag orange">4/5</span>
-						<p>{{product.user.firstName}} {{product.user.lastName}}
+						<p>{{ad.owner.firstName}} {{ad.owner.lastName}}
 							<br>
-							{{product.user.adress}} - {{product.user.postCode}}</p>
+							{{ad.owner.adress}} - {{ad.owner.postCode}}</p>
 					</div>
 				</div>
 			</div>
