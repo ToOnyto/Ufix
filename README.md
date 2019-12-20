@@ -9,7 +9,6 @@ Dev :
 
 Prod :
 * yarn run encore production --progress
-* 
 
 ## Initialize database
 *Changer vos infos dans .env à la ligne DATABASE_URL
