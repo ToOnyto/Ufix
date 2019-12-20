@@ -9,6 +9,16 @@ Dev :
 
 Prod :
 * yarn run encore production --progress
+* 
+
+## Initialize database
+*Changer vos infos dans .env à la ligne DATABASE_URL
+*php bin/console doctrine:database:create
+*php bin/console doctrine make:migration
+*php bin/console doctrine:migrations:migrate
+*php bin/console doctrine fixtures:load
+    ->ajoute les données initiales dans la BDD
+*Si migrations:migrate ne marche pas, supprimer les tables de la bdd SAUF la table migration_versions
 
 ## Naming of commits 
 
