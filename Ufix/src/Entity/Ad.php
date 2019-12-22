@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use App\Enum\AdType;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\AdRepository")
@@ -47,7 +48,7 @@ class Ad
      */
     private $adDescription;
 
-    
+
     /**
      * @var User
      * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="ownedAds" , cascade={"persist"})
@@ -68,11 +69,42 @@ class Ad
 
     // private $states;
 
+    /**
+     * @var ArrayCollection
+     * @ORM\Column(type="array")
+     * @ORM\OneToMany(targetEntity="App\Entity\RepairProposition", mappedBy="ad", cascade={"persist"})
+     *
+     */
+    private $repairPropositions;
+
     function __construct()
     {
         // $this->adType = AdType::REPAIR_AND_GET_BACK;
+        $this->repairPropositions = new ArrayCollection();
     }
-   
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getRepairPropositions()
+    {
+        return $this->repairPropositions;
+    }
+    /**
+     * @param ArrayCollection $repairPropositions
+     */
+    public function setRepairPropositions($repairPropositions)
+    {
+        $this->repairPropositions = $repairPropositions;
+    }
+    public function addRepairProposition(RepairProposition $repairProposition)
+    {
+        if (!$this->repairPropositions->contains($repairProposition)) {
+            $this->repairPropositions->add($repairProposition);
+            return true;
+        }
+        return false;
+    }
 
     public function getId(): ?int
     {

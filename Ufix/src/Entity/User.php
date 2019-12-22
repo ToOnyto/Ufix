@@ -82,10 +82,19 @@ class User implements UserInterface
      */
     private $repairedAds;
 
+    /**
+     * @var ArrayCollection
+     * @ORM\Column(type="array")
+     * @ORM\OneToMany(targetEntity="App\Entity\RepairProposition", mappedBy="proposer", cascade={"persist"})
+     *
+     */
+    private $repairPropositions;
+
     public function __construct()
     {
         $this->ownedAds = new ArrayCollection();
         $this->repairedAds = new ArrayCollection();
+        $this->repairPropositions = new ArrayCollection();
     }
 
     /**
@@ -129,6 +138,29 @@ class User implements UserInterface
     {
         if (!$this->repairedAds->contains($ad)) {
             $this->repairedAds->add($ad);
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getRepairPropositions()
+    {
+        return $this->repairPropositions;
+    }
+    /**
+     * @param ArrayCollection $repairPropositions
+     */
+    public function setRepairPropositions($repairPropositions)
+    {
+        $this->repairPropositions = $repairPropositions;
+    }
+    public function addRepairProposition(RepairProposition $repairProposition)
+    {
+        if (!$this->repairPropositions->contains($repairProposition)) {
+            $this->repairPropositions->add($repairProposition);
             return true;
         }
         return false;

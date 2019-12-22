@@ -11,9 +11,11 @@ use App\Form\Type\NewUserType;
 
 use App\Form\Type\NewAdType;
 use App\Form\Type\ModifyUserType;
+use App\Form\Type\NewRepairPropositionType;
 use App\Entity\User;
 // use App\Entity\Product;
 use App\Entity\Ad;
+use App\Entity\RepairProposition;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Security\Core\Security;
@@ -226,11 +228,50 @@ class DefaultController extends AbstractController
     }
 
     /** 
-     * @Route("/selectRepairer", name="select_repairer")
+     * @Route("/annonces/details/{id}/new-repair-proposition", name="new_repair_proposition")
      */
-    public function showSelectRepairer()
+    public function showNewRepairProposition(Request $request, Security $security, Ad $ad)
     {
-        return $this->render('select_repairer.html.twig');
+        $user = $security->getUser();
+        // dump($security->getUser());
+        // die;
+        $newRepairPropositionForm = $this->createForm(NewRepairPropositionType::class);
+        $newRepairPropositionForm->handleRequest($request);
+        
+        if ($newRepairPropositionForm->isSubmitted() && $newRepairPropositionForm->isValid()) {
+            // dump("ouais");
+            // die;
+            $em = $this->getDoctrine()->getManager();
+            $data = $newRepairPropositionForm->getData();
+            $newRepairProposition = new RepairProposition();
+                        //    dump($data['category']);
+                        //    die;
+            
+            $newRepairProposition->setPrice($data['price']);
+            $newRepairProposition->setDescription($data['description']);
+            $newRepairProposition->setAd($ad);
+            $newRepairProposition->setProposer($user);
+
+            $user->addRepairProposition($newRepairProposition);
+            $ad->addRepairProposition($newRepairProposition);
+
+            $em->persist($user);
+            $em->persist($newRepairProposition);
+            $em->persist($ad);
+            $em->flush();
+
+
+            return $this->render('newRepairProposition.html.twig', [
+                'ad' => $ad,
+                'newRepairPropositionForm' => $newRepairPropositionForm->createView()
+            ]);
+        } 
+
+        return $this->render('newRepairProposition.html.twig', [
+            'ad' => $ad,
+            'newRepairPropositionForm' => $newRepairPropositionForm->createView()
+
+        ]);
     }
 
     /** 

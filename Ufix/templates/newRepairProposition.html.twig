@@ -4,10 +4,30 @@
 	{{ parent() }} - Sélection du réparateur
 {% endblock %}
 
+{% form_theme newRepairPropositionForm _self %}
+{%- block text_widget -%}
+<input name="{{ full_name }}" class="input" type="text" id="text_{{ value }}" placeholder="{{label}}" required> 
+{%- endblock text_widget -%}
+{%- block password_widget -%}
+<input name="{{ full_name }}" class="input" type="password" id="password_{{ value }}" placeholder="{{label}}" required> 
+{%- endblock password_widget -%}
+{%- block email_widget -%}
+<input name="{{ full_name }}" class="input" type="email" id="email_{{ value }}" placeholder="{{label}}" required> 
+{%- endblock email_widget -%}
+{%- block number_widget -%}
+<input name="{{ full_name }}" class="input" type="number" id="number_{{ value }}" placeholder="{{label}}" required> 
+{%- endblock number_widget -%}
+{%- block textarea_widget -%}
+<textarea name="{{ full_name }}" class="textarea" type="textarea" id="number_{{ value }}" placeholder="{{label}}" required></textarea> 
+{%- endblock textarea_widget -%}
+{%- block submit_widget -%}
+<input class="button is-primary is-outlined" name="{{ full_name }}" id="submit_{{ value }}" type="submit" value="Valider"/>
+{%- endblock submit_widget -%}
+
 {% block navbar %}
 {{ parent() }}
 <div class="container-is-fluid extended">
-	<p class="title has-text-centered">Sélection du réparateur</p>
+	<p class="title has-text-centered">Proposition de réparation</p>
 </div>
 {% endblock %}
 
@@ -24,8 +44,8 @@
 								<img id="image-new-ad" src="{{ asset('img/ecran-casse.jpg') }}" alt="image produit">
 							</div>
 							<div class="column is-6">
-								<p class="title">Iphone 4</p>
-								<p class="subtitle">Ecran cassé</p>
+								<p class="title">{{ad.productName}}</p>
+								<p class="subtitle">{{ad.productBreakDescription}}</p>
 							</div>
 						</div>
 					</div>
@@ -35,18 +55,18 @@
 					<!-- Left column -->
 					<div class="column is-half ">
 						<div class="container-is-fluid extended">
-							<p class="title has-text-centered">Sélectionner un réparateur</p>
+							<p class="title has-text-centered">Propositions existantes</p>
 						</div>
 						<div class="is-scrollable">
-							{% for i in 0..19 %}
+							{% for repairProposition in ad.repairPropositions %}
 							<a class="repairer is-fullwidth" href="{{ path("contact_seller_with_repair2") }}">
 								<div class="columns is-vcentered">
 									<div class="column is-6">
 										<p>
-											<span class="subtitle">Jacques Boulon</span>
+											<span class="subtitle">{{repairProposition.proposer.firstName}} {{repairProposition.proposer.lastName}}</span>
 											<br>
 											<span>
-												33600 PESSAC</span>
+												{{repairProposition.proposer.postCode}} {{repairProposition.proposer.city}}</span>
 										</p>
 									</div>
 									<div class="column is-3 has-text-centered">
@@ -56,7 +76,7 @@
 										</div>
 									</div>
 									<div class="column is-3 has-text-centered">
-										<p class="subtitle">15.00€</p>
+										<p class="subtitle">{{repairProposition.price}}</p>
 									</div>
 								</div>
 							</a>
@@ -72,17 +92,30 @@
 						<div class="columns is-margin-top">
 							<div class="column is-6 is-offset-3">
 								<div class="columns has-text-centered">
+										{{ form_start(newRepairPropositionForm) }}
 									<div class="column is-half">
 										<div class="field">
 											<div class="control">
-												<input class="input" type="text" placeholder="Votre prix">
+													{{ form_widget(newRepairPropositionForm.price) }}
+												<!-- <input class="input" type="text" placeholder="Votre prix"> -->
 											</div>
 										</div>
 									</div>
 									<div class="column is-half">
-										<a href="{{ path("contact_repair") }}">
+											<div class="field">
+												<div class="control">
+														{{ form_widget(newRepairPropositionForm.description) }}
+													<!-- <input class="input" type="text" placeholder="Votre prix"> -->
+												</div>
+											</div>
+										</div>
+									<div class="column is-half">
+											{{ form_widget(newRepairPropositionForm.submit) }}
+											{# <a class="button is-primary is-rounded is-outlined" href="{{ path("home_connected") }}" onclick="isSend()">Publier</a> #}
+											{{ form_end(newRepairPropositionForm) }}
+										<!-- <a href="{{ path("contact_repair") }}">
 											<button class="button is-outlined is-rounded is-info">Soumettre</button>
-										</a>
+										</a> -->
 									</div>
 								</div>
 							</div>
