@@ -8,6 +8,7 @@ doctrine:
         #server_version: '5.7'
         driver: 'pdo_mysql'
         server_version: 'mariadb-10.2.23'
+        
 
         # Only needed for MySQL (ignored otherwise)
         charset: utf8mb4

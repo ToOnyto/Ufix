@@ -51,7 +51,7 @@ class Ad
 
     /**
      * @var User
-     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="ownedAds" , cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="ownedAds" )
      */
     private $owner;
 
@@ -70,7 +70,7 @@ class Ad
     // private $states;
 
     /**
-     * @var ArrayCollection
+     * 
      * @ORM\Column(type="array")
      * @ORM\OneToMany(targetEntity="App\Entity\RepairProposition", mappedBy="ad", cascade={"persist"})
      *
@@ -80,30 +80,28 @@ class Ad
     function __construct()
     {
         // $this->adType = AdType::REPAIR_AND_GET_BACK;
-        $this->repairPropositions = new ArrayCollection();
+        // $this->repairPropositions = new ArrayCollection();
     }
 
-    /**
-     * @return ArrayCollection
-     */
+
     public function getRepairPropositions()
     {
         return $this->repairPropositions;
     }
-    /**
-     * @param ArrayCollection $repairPropositions
-     */
+
     public function setRepairPropositions($repairPropositions)
     {
         $this->repairPropositions = $repairPropositions;
     }
     public function addRepairProposition(RepairProposition $repairProposition)
     {
-        if (!$this->repairPropositions->contains($repairProposition)) {
-            $this->repairPropositions->add($repairProposition);
-            return true;
-        }
-        return false;
+
+        $this->repairPropositions[] = $repairProposition;
+        // if (!$this->repairPropositions->contains($repairProposition)) {
+        //     $this->repairPropositions->add($repairProposition);
+        //     return true;
+        // }
+        return true;
     }
 
     public function getId(): ?int

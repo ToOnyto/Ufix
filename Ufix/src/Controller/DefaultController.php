@@ -118,8 +118,16 @@ class DefaultController extends AbstractController
     public function newAd(Request $request, Security $security)
     {
         $user = $security->getUser();
-        // dump($security->getUser());
+        // dump($user);
         // die;
+        // $user->setFirstName("Jacques");
+        
+        // $repository = $this->getDoctrine()->getRepository(User::class);
+        // $user = $repository->findOneBy(array('id' => $userOnSession->getId()));
+        // $repository->findBy();
+        // dump($user->getId());
+        // die;
+        
         $newAdForm = $this->createForm(NewAdType::class);
         $newAdForm->handleRequest($request);
         
@@ -141,12 +149,17 @@ class DefaultController extends AbstractController
             $newAd->setOwner($user);
 
             $user->addOwnedAd($newAd);
+            $user->setFirstName("Dolan");
+            // dump($user->getOwnedAds());
+            // die;
 
-            $em->persist($user);
+           
             $em->persist($newAd);
+            $em->persist($user);
             $em->flush();
 
-
+            // dump($user);
+            // die;
             return $this->redirectToRoute('new_ad');
         } 
 
@@ -228,7 +241,7 @@ class DefaultController extends AbstractController
     }
 
     /** 
-     * @Route("/annonces/details/{id}/new-repair-proposition", name="new_repair_proposition")
+     * @Route("/annonce/details/{id}/new-repair-proposition", name="new_repair_proposition")
      */
     public function showNewRepairProposition(Request $request, Security $security, Ad $ad)
     {
@@ -252,12 +265,13 @@ class DefaultController extends AbstractController
             $newRepairProposition->setAd($ad);
             $newRepairProposition->setProposer($user);
 
-            $user->addRepairProposition($newRepairProposition);
             $ad->addRepairProposition($newRepairProposition);
 
+            $user->addRepairProposition($newRepairProposition);
+
             $em->persist($user);
-            $em->persist($newRepairProposition);
             $em->persist($ad);
+            $em->persist($newRepairProposition);
             $em->flush();
 
 
@@ -266,10 +280,26 @@ class DefaultController extends AbstractController
                 'newRepairPropositionForm' => $newRepairPropositionForm->createView()
             ]);
         } 
-
+        // dump($user->getOwnedAds());
+        // die;
         return $this->render('newRepairProposition.html.twig', [
             'ad' => $ad,
             'newRepairPropositionForm' => $newRepairPropositionForm->createView()
+
+        ]);
+    }
+
+    
+     /** 
+     * @Route("/annonce/details/repair-proposition/details/{id}", name="repair_proposition_details")
+     */
+    public function showRepairPropositionDetails(RepairProposition $repairProposition)
+    {
+        
+        // $user->setFirstName("billy");
+        
+        return $this->render('repairPropositionDetails.html.twig', [
+            'repairProposition' => $repairProposition
 
         ]);
     }

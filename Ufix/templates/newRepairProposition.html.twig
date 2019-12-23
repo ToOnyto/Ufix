@@ -59,7 +59,7 @@
 						</div>
 						<div class="is-scrollable">
 							{% for repairProposition in ad.repairPropositions %}
-							<a class="repairer is-fullwidth" href="{{ path("contact_seller_with_repair2") }}">
+							<a class="repairer is-fullwidth" href="{{ path('repair_proposition_details', { 'id': repairProposition.id}) }}">
 								<div class="columns is-vcentered">
 									<div class="column is-6">
 										<p>

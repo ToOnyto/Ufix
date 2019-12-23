@@ -67,15 +67,13 @@ class User implements UserInterface
     private $city;
 
     /**
-     * @var ArrayCollection
      * @ORM\Column(type="array")
      * @ORM\OneToMany(targetEntity="App\Entity\Ad", mappedBy="owner", cascade={"persist"})
-     *
      */
     private $ownedAds;
 
     /**
-     * @var ArrayCollection
+     * 
      * @ORM\Column(type="array")
      * @ORM\OneToMany(targetEntity="App\Entity\Ad", mappedBy="repairer", cascade={"persist"})
      *
@@ -83,7 +81,7 @@ class User implements UserInterface
     private $repairedAds;
 
     /**
-     * @var ArrayCollection
+     * 
      * @ORM\Column(type="array")
      * @ORM\OneToMany(targetEntity="App\Entity\RepairProposition", mappedBy="proposer", cascade={"persist"})
      *
@@ -92,78 +90,70 @@ class User implements UserInterface
 
     public function __construct()
     {
-        $this->ownedAds = new ArrayCollection();
-        $this->repairedAds = new ArrayCollection();
-        $this->repairPropositions = new ArrayCollection();
+        // $this->ownedAds = new ArrayCollection();
+        // $this->repairedAds = new ArrayCollection();
+        // $this->repairPropositions = new ArrayCollection();
     }
 
-    /**
-     * @return ArrayCollection
-     */
+  
     public function getOwnedAds()
     {
         return $this->ownedAds;
     }
-    /**
-     * @param ArrayCollection $ownedAds
-     */
+ 
     public function setOwnedAds($ownedAds)
     {
         $this->ownedAds = $ownedAds;
     }
     public function addOwnedAd(Ad $ad)
     {
-        if (!$this->ownedAds->contains($ad)) {
-            $this->ownedAds->add($ad);
-            return true;
-        }
-        return false;
+
+        $this->ownedAds[] = $ad;
+        // if (!$this->ownedAds->contains($ad)) {
+        //     $this->ownedAds->add($ad);
+        //     return true;
+        // }
+        return true;
     }
 
-    /**
-     * @return ArrayCollection
-     */
     public function getRepairedAds()
     {
         return $this->ownedAds;
     }
-    /**
-     * @param ArrayCollection $repairedAds
-     */
+
     public function setRepairedAds($repairedAds)
     {
         $this->repairedAds = $repairedAds;
     }
     public function addRepairedAd(Ad $ad)
     {
-        if (!$this->repairedAds->contains($ad)) {
-            $this->repairedAds->add($ad);
-            return true;
-        }
-        return false;
+        $this->repairedAds[] = $ad;
+        // if (!$this->repairedAds->contains($ad)) {
+        //     $this->repairedAds->add($ad);
+        //     return true;
+        // }
+        return true;
     }
 
-    /**
-     * @return ArrayCollection
-     */
+    
     public function getRepairPropositions()
     {
         return $this->repairPropositions;
     }
-    /**
-     * @param ArrayCollection $repairPropositions
-     */
+   
     public function setRepairPropositions($repairPropositions)
     {
         $this->repairPropositions = $repairPropositions;
     }
     public function addRepairProposition(RepairProposition $repairProposition)
     {
-        if (!$this->repairPropositions->contains($repairProposition)) {
-            $this->repairPropositions->add($repairProposition);
-            return true;
-        }
-        return false;
+
+        $this->repairPropositions[] = $repairProposition;
+        // if (!$this->repairPropositions->contains($repairProposition)) {
+        //     $this->repairPropositions->add($repairProposition);
+        //     return true;
+        // }
+        return true;
     }
 
     public function getId(): ?int

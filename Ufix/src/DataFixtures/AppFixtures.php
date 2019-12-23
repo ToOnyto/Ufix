@@ -5,7 +5,7 @@ namespace App\DataFixtures;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 use App\Entity\User;
-use App\Entity\Product;
+use App\Entity\Ad;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 
@@ -14,10 +14,10 @@ class AppFixtures extends Fixture
 
     private $passwordEncoder;
 
-public function __construct(UserPasswordEncoderInterface $passwordEncoder)
-{
-   $this->passwordEncoder = $passwordEncoder;
-}
+    public function __construct(UserPasswordEncoderInterface $passwordEncoder)
+    {
+        $this->passwordEncoder = $passwordEncoder;
+    }
 
     public function load(ObjectManager $manager)
     {
@@ -36,6 +36,20 @@ public function __construct(UserPasswordEncoderInterface $passwordEncoder)
         $user->setCity("Bordeaux");
         $manager->persist($user);
 
+        $newAd = new Ad();
+        $newAd->setProductCategory(1);
+        $newAd->setProductName("Honor 7x");
+        $newAd->setProductBreakDescription("lé flingué");
+        $newAd->setProductPrice(83);
+        $newAd->setAdDescription("jlé flingué réparé le plz");
+        $newAd->setAdType(1);
+        $newAd->setOwner($user);
+
+        $user->addOwnedAd($newAd);
+        $manager->persist($newAd);
+        $manager->persist($user);
+        
+
         $user = new User();
         $user->setEmail("thomas@gmail.com");
         $user->setPassword($this->passwordEncoder->encodePassword($user, 'thomas'));
@@ -47,6 +61,7 @@ public function __construct(UserPasswordEncoderInterface $passwordEncoder)
         $user->setCountry("Suède");
         $user->setCity("Kattegat");
         $manager->persist($user);
+
 
         // $product = new Product();
         // $product->setCategory(0);
@@ -67,7 +82,7 @@ public function __construct(UserPasswordEncoderInterface $passwordEncoder)
         // $product->setPurpose(0);
         // $product->setUser($user);
         // $manager->persist($product);
-        
+
         // $product = new Product();
         // $product->setCategory(0);
         // $product->setName('Ouiqo');

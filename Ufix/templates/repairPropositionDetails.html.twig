@@ -1,0 +1,109 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ parent() }} - Sélection du réparateur
+{% endblock %}
+
+
+
+{% block navbar %}
+{{ parent() }}
+<div class="container-is-fluid extended">
+	<p class="title has-text-centered">Proposition de réparation</p>
+</div>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+	<div class="card">
+		<div class="card-content">
+			<div class="content">
+				<!-- Top of content page -->
+				<div class="columns">
+					<div class="column is-4 is-offset-4">
+						<div class="columns">
+							<div class="column is-6 has-text-centered">
+								<img id="image-new-ad" src="{{ asset('img/ecran-casse.jpg') }}" alt="image produit">
+							</div>
+							<div class="column is-6">
+								<p class="title">{{repairProposition.ad.productName}}</p>
+								<p class="subtitle">{{repairProposition.ad.productBreakDescription}}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Content -->
+				<div class="columns">
+					<!-- Left column -->
+					<div class="column is-half ">
+						<div class="container-is-fluid extended">
+							<p class="title has-text-centered">Proposition de réparation</p>
+						</div>
+						<div class="is-scrollable">
+							<a class="repairer is-fullwidth" href="{{ path("contact_seller_with_repair2") }}">
+								<div class="columns is-vcentered">
+									<div class="column is-6">
+										<p>
+											<span class="subtitle">{{repairProposition.proposer.firstName}} {{repairProposition.proposer.lastName}}</span>
+											<br>
+											<span>
+												{{repairProposition.proposer.postCode}} {{repairProposition.proposer.city}}</span>
+										</p>
+									</div>
+									<div class="column is-3 has-text-centered">
+										<div class="rate">
+											<i class="star">
+												4.3</i>
+										</div>
+									</div>
+									<div class="column is-3 has-text-centered">
+										<p class="subtitle">{{repairProposition.price}}</p>
+                                    </div>
+                                    <div class="column is-3 has-text-centered">
+										<p class="subtitle">{{repairProposition.description}}</p>
+									</div>
+								</div>
+							</a>
+							<hr>
+						</div>
+					</div>
+					
+					
+
+				</div>
+			</div>
+		</div>
+
+		<!-- Bottom of the page -->
+		<footer class="custom-card-footer">
+			<div class="columns is-vcentered">
+				<div class="column is-4 has-text-centered">
+					<p>
+						<span class="subtitle text-footer">49.99€</span>
+						<span class="subtitle text-footer">
+							produit</span>
+					</p>
+					<p class="subtitle text-footer">
+						<span class="subtitle text-footer">16.50€</span>
+						<span class="subtitle text-footer">
+							réparation</span>
+					</p>
+				</div>
+				<div class="column is-4 has-text-centered">
+					<p class="title text-footer">66.49€</p>
+				</div>
+				<div class="column is-4 has-text-centered">
+					<a class="button is-outlined is-rounded is-info" href="{{ path("contact_seller_with_repair") }}">
+						<span>Contacter le réparateur et le vendeur</span>
+						<span class="icon">
+							<i class="fas fa-angle-right"></i>
+						</span>
+					</a>
+				</div>
+			</div>
+		</footer>
+	</div>
+</div>
+
+
+{% endblock %}

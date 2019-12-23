@@ -29,13 +29,13 @@ class RepairProposition
 
     /**
      * @var Ad
-     * @ORM\ManyToOne(targetEntity="App\Entity\Ad", inversedBy="repairPropositions" , cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="App\Entity\Ad", inversedBy="repairPropositions" )
      */
     private $ad;
 
     /**
      * @var User
-     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="repairPropositions" , cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="repairPropositions" )
      */
     private $proposer; //le réparateur qui a fait une proposition de réparation
 
@@ -86,9 +86,9 @@ class RepairProposition
     /**
      * @return Ad
      */
-    public function getAd(): User
+    public function getAd(): Ad
     {
-        return $this->proposer;
+        return $this->ad;
     }
     /**
      * @param Ad $ad
