@@ -241,7 +241,7 @@ class DefaultController extends AbstractController
     }
 
     /** 
-     * @Route("/annonce/details/{id}/new-repair-proposition", name="new_repair_proposition")
+     * @Route("/new-repair-proposition/{id}", name="new_repair_proposition")
      */
     public function showNewRepairProposition(Request $request, Security $security, Ad $ad)
     {
@@ -293,15 +293,25 @@ class DefaultController extends AbstractController
      /** 
      * @Route("/annonce/details/repair-proposition/details/{id}", name="repair_proposition_details")
      */
-    public function showRepairPropositionDetails(RepairProposition $repairProposition)
+    public function showRepairPropositionDetails(RepairProposition $repairProposition, Security $security)
     {
-        
+        $user = $security->getUser();
         // $user->setFirstName("billy");
-        
-        return $this->render('repairPropositionDetails.html.twig', [
-            'repairProposition' => $repairProposition
+        // dump($user);
+        // dump($repairProposition);
+        // die;
+        if($user == $repairProposition->getAd()->getOwner()) {
+            return $this->render('repairPropositionDetailsOwnerSide.html.twig', [
+                'repairProposition' => $repairProposition
+    
+            ]);
+        } else if ($user == $repairProposition->getProposer()) {
+            return $this->render('repairPropositionDetailsProposerSide.html.twig', [
+                'repairProposition' => $repairProposition
+    
+            ]);
+        }
 
-        ]);
     }
 
     /** 

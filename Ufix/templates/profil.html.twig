@@ -28,83 +28,114 @@
 {% endblock %}
 {% block body %}
 	<div class="container p-3t">
-		<p class="title is-size-4 has-text-centered">{{ user.firstName }} {{ user.lastName }}</p><br/>
-		<div class="columns">
-			<div
-				class="column is-half is-offset-3">
-				<!-- Profile avatar -->
-				<div class="avatar-upload2">
-					<div class="avatar-edit">
-						<input type="file" id="imageUpload" accept=".png, .jpg, .jpeg"/>
-						<label for="imageUpload"></label>
-					</div>
-					<div class="avatar-preview">
-						<div id="imagePreview" style="background-image: url('{{ asset(" img/profil-default.jpg") }}');"></div>
-					</div>
-				</div>
-				<!-- Form -->
-				{# <form action="" class="profil"> #}
-						{{ form_start(modifyUserForm) }}
-					<div class="field">
-						<div class="control has-icons-left">
-								{{ form_widget(modifyUserForm.firstName) }}
-							{# <input class="input" type="email" value="pascal.molipou@gmail.com" placeholder="Email"/> #}
-							<span class="icon is-small is-left">
-								<i class="fas fa-envelope"></i>
-							</span>
+				
+				<div class="columns">
+						<div class="column is-3">
+								<a class="button is-info" href="{{ path("contact_seller_with_repair") }}">
+										<span>Mes annonces</span>
+										<span class="icon">
+											<i class="fas fa-angle-right"></i>
+										</span>
+									</a>
+									<br>
+									<a class="button is-info" href="{{ path("contact_seller_with_repair") }}">
+											<span>Mes achats</span>
+											<span class="icon">
+												<i class="fas fa-angle-right"></i>
+											</span>
+										</a>
+									<br>
+									<a class="button is-info" href="{{ path("contact_seller_with_repair") }}">
+											<span>Mes Réparations</span>
+											<span class="icon">
+												<i class="fas fa-angle-right"></i>
+											</span>
+										</a>
+										<br>
+										<a class="button is-info" href="{{ path("contact_seller_with_repair") }}">
+												<span>Mes propositions de réparation</span>
+												<span class="icon">
+													<i class="fas fa-angle-right"></i>
+												</span>
+											</a>
 						</div>
-					</div>
-					<div class="field">
-							<div class="control has-icons-left">
-									{{ form_widget(modifyUserForm.lastName) }}
-								{# <input class="input" type="email" value="pascal.molipou@gmail.com" placeholder="Email"/> #}
-								<span class="icon is-small is-left">
-									<i class="fas fa-envelope"></i>
-								</span>
+					<div
+						class="column is-half">
+						<!-- Profile avatar -->
+						<p class="title is-size-4 has-text-centered">{{ user.firstName }} {{ user.lastName }}</p><br/>
+						<div class="avatar-upload2">
+							<div class="avatar-edit">
+								<input type="file" id="imageUpload" accept=".png, .jpg, .jpeg"/>
+								<label for="imageUpload"></label>
+							</div>
+							<div class="avatar-preview">
+								<div id="imagePreview" style="background-image: url('{{ asset(" img/profil-default.jpg") }}');"></div>
 							</div>
 						</div>
-					<div class="field">
-						<div class="control has-icons-left">
-								{{ form_widget(modifyUserForm.adress) }}
-							{# <input class="input" type="text" value="12 rue du palier" placeholder="Adresse"/> #}
-							<span class="icon is-small is-left">
-								<i class="fas fa-map-marker"></i>
-							</span>
-						</div>
+						<!-- Form -->
+						{# <form action="" class="profil"> #}
+								{{ form_start(modifyUserForm) }}
+							<div class="field">
+								<div class="control has-icons-left">
+										{{ form_widget(modifyUserForm.firstName) }}
+									{# <input class="input" type="email" value="pascal.molipou@gmail.com" placeholder="Email"/> #}
+									<span class="icon is-small is-left">
+										<i class="fas fa-envelope"></i>
+									</span>
+								</div>
+							</div>
+							<div class="field">
+									<div class="control has-icons-left">
+											{{ form_widget(modifyUserForm.lastName) }}
+										{# <input class="input" type="email" value="pascal.molipou@gmail.com" placeholder="Email"/> #}
+										<span class="icon is-small is-left">
+											<i class="fas fa-envelope"></i>
+										</span>
+									</div>
+								</div>
+							<div class="field">
+								<div class="control has-icons-left">
+										{{ form_widget(modifyUserForm.adress) }}
+									{# <input class="input" type="text" value="12 rue du palier" placeholder="Adresse"/> #}
+									<span class="icon is-small is-left">
+										<i class="fas fa-map-marker"></i>
+									</span>
+								</div>
+							</div>
+							<div class="field">
+								<div class="control has-icons-left">
+										{{ form_widget(modifyUserForm.postCode) }}
+									{# <input class="input" type="text" value="21000" placeholder="Code postal"/> #}
+									<span class="icon is-small is-left">
+										<i class="fas fa-map-marker"></i>
+									</span>
+								</div>
+							</div>
+							<div class="field">
+								<div class="control has-icons-left">
+										{{ form_widget(modifyUserForm.city) }}
+									{# <input class="input" type="text" value="Dijon" placeholder="Ville"/> #}
+									<span class="icon is-small is-left">
+										<i class="fas fa-city"></i>
+									</span>
+								</div>
+							</div>
+							<div class="field m-2b">
+								<div class="control has-icons-left">
+										{{ form_widget(modifyUserForm.country) }}
+									{# <input class="input" type="text" value="France" placeholder="Pays"/> #}
+									<span class="icon is-small is-left">
+										<i class="fas fa-globe"></i>
+									</span>
+								</div>
+							</div>
+				  <!-- Submit -->
+				  {{ form_widget(modifyUserForm.submit) }}
+				  {{ form_end(modifyUserForm) }}
+							
+						{# </form> #}
 					</div>
-					<div class="field">
-						<div class="control has-icons-left">
-								{{ form_widget(modifyUserForm.postCode) }}
-							{# <input class="input" type="text" value="21000" placeholder="Code postal"/> #}
-							<span class="icon is-small is-left">
-								<i class="fas fa-map-marker"></i>
-							</span>
-						</div>
-					</div>
-					<div class="field">
-						<div class="control has-icons-left">
-								{{ form_widget(modifyUserForm.city) }}
-							{# <input class="input" type="text" value="Dijon" placeholder="Ville"/> #}
-							<span class="icon is-small is-left">
-								<i class="fas fa-city"></i>
-							</span>
-						</div>
-					</div>
-					<div class="field m-2b">
-						<div class="control has-icons-left">
-								{{ form_widget(modifyUserForm.country) }}
-							{# <input class="input" type="text" value="France" placeholder="Pays"/> #}
-							<span class="icon is-small is-left">
-								<i class="fas fa-globe"></i>
-							</span>
-						</div>
-					</div>
-		  <!-- Submit -->
-		  {{ form_widget(modifyUserForm.submit) }}
-		  {{ form_end(modifyUserForm) }}
-					
-				{# </form> #}
-			</div>
-		</div>
+				</div>
+			
 	</div>
 {% endblock %}

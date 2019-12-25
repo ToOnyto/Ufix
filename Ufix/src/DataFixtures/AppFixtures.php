@@ -51,10 +51,10 @@ class AppFixtures extends Fixture
         
 
         $user = new User();
-        $user->setEmail("thomas@gmail.com");
-        $user->setPassword($this->passwordEncoder->encodePassword($user, 'thomas'));
+        $user->setEmail("kevin@gmail.com");
+        $user->setPassword($this->passwordEncoder->encodePassword($user, 'kevin'));
         $user->setRoles(['ROLE_CLASSIC']);
-        $user->setFirstName("thomas");
+        $user->setFirstName("kevin");
         $user->setLastName("deasington");
         $user->setAdress("Lieu-dit du cambodge");
         $user->setPostCode(63333);
