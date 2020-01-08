@@ -67,7 +67,15 @@ class Ad
     //  */
     // private $buyer;
 
+    // /**
+    //  * @ORM\Column(type="array")
+    //  */
     // private $states;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $currentState;
 
     /**
      * 
@@ -79,6 +87,16 @@ class Ad
 
     function __construct()
     {
+        $this->states = [
+            0 => "Annonce déposée, attente de proposition de réparation",
+            1 => "Attente d'une validation de proposition de réparation",
+            2 => "Attente du paiement de la réparation",
+            3 => "Attente de la notification d'envoi du produit au réparateur",
+            4 => "Attente de la confirmation de réception du produit et de la réparation en cours",
+            5 => "Attente de la notification de retour du produit au propriétaire",
+            6 => "Attente de la confirmation de récéption du produit réparé"
+        ];
+        $this->currentState = 0;
         // $this->adType = AdType::REPAIR_AND_GET_BACK;
         // $this->repairPropositions = new ArrayCollection();
     }
@@ -209,5 +227,17 @@ class Ad
     public function setRepairer(User $repairer): void
     {
         $this->repairer = $repairer;
+    }
+
+    public function getCurrentState(): ?int
+    {
+        return $this->currentState;
+    }
+
+    public function setCurrentState($currentState): self
+    {
+        $this->currentState = $currentState;
+
+        return $this;
     }
 }

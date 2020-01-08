@@ -36,18 +36,18 @@ class AppFixtures extends Fixture
         $user->setCity("Bordeaux");
         $manager->persist($user);
 
-        $newAd = new Ad();
-        $newAd->setProductCategory(1);
-        $newAd->setProductName("Honor 7x");
-        $newAd->setProductBreakDescription("lé flingué");
-        $newAd->setProductPrice(83);
-        $newAd->setAdDescription("jlé flingué réparé le plz");
-        $newAd->setAdType(1);
-        $newAd->setOwner($user);
+        // $newAd = new Ad();
+        // $newAd->setProductCategory(1);
+        // $newAd->setProductName("Honor 7x");
+        // $newAd->setProductBreakDescription("lé flingué");
+        // $newAd->setProductPrice(83);
+        // $newAd->setAdDescription("jlé flingué réparé le plz");
+        // $newAd->setAdType(1);
+        // $newAd->setOwner($user);
 
-        $user->addOwnedAd($newAd);
-        $manager->persist($newAd);
-        $manager->persist($user);
+        // $user->addOwnedAd($newAd);
+        // $manager->persist($newAd);
+        // $manager->persist($user);
         
 
         $user = new User();

@@ -1,0 +1,185 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ parent() }}
+	- Annonce
+{% endblock %}
+
+{% block navbar %}
+	{{ parent() }}
+	<div class="container-is-fluid extended">
+		<p class="title has-text-centered">Détails de l'annonce</p>
+	</div>
+{% endblock %}
+
+
+{% block body %}
+	<div class="container">
+		<div
+			class="card">
+			<!-- Card header-->
+			<div class="card-header p-3t">
+				<div class="columns">
+					<div class="column is-half is-offset-one-quarter has-text-centered column-without-p-top">
+						<div class="columns">
+							<div class="column">
+								<p class="title to-repare">{{ad.productName}}</p>
+								<p class="subtitle">{{ad.productBreakDescription}}</p>
+							</div>
+						</div>
+						<div class="slider">
+							<ul class="js__slider__images slider__images">
+								<li class="slider__images-item"><img class="slider__images-image" src="{{ asset('img/ecran-casse.jpg') }}" alt="Image Iphone 4 écran cassé"/></li>
+								<li class="slider__images-item"><img class="slider__images-image" src="{{ asset('img/iphone-go.jpg') }}" alt="Image Iphone 4 écran cassé"/></li>
+								<li class="slider__images-item"><img class="slider__images-image" src="https://unsplash.it/800/450?image=1026" alt="Image seulement blanche"/></li>
+							</ul>
+							<div class="slider__controls">
+								<span class="slider__control js__slider__control--prev slider__control--prev"></span>
+								<ol class="js__slider__pagers slider__pagers"></ol>
+								<span class="slider__control js__slider__control--next slider__control--next">></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<hr
+			class="is-hidden-mobile"/>
+			<!-- Content -->
+			<div class="card-content">
+				<div class="content">
+					<div
+						class="columns">
+						<!-- Column onformation -->
+						<div class="column is-2-desktop is-hidden-mobile"></div>
+						<div class="column is-3">
+							<p class="subtitle is-uppercase">Description</p>
+							<p>{{ad.adDescription}}</p>
+						</div>
+						<!-- Column specification-->
+						<div class="column is-4">
+							<p class="subtitle is-uppercase">Détails Techniques</p>
+							<table class="has-text-centered">
+								<thead>
+									<tr>
+										<th>marque</th>
+										<th>modèle</th>
+									</tr>
+
+								</thead>
+								<tbody>
+									<tr>
+										<td>Apple</td>
+										<td>Iphone 5</td>
+									</tr>
+								</tbody>
+								<thead>
+									<tr>
+										<th>couleur</th>
+										<th>capacité</th>
+									</tr>
+
+								</thead>
+								<tbody>
+									<tr>
+										<td>Blanc</td>
+										<td>64 Go</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!-- Column seller -->
+						<div class="column is-3">
+							<p class="subtitle is-uppercase">Propriétaire</p>
+							<span class="tag orange">4/5</span>
+							<p>{{ad.owner.firstName}}
+								{{ad.owner.lastName}}
+								<br>
+								{{ad.owner.adress}}
+								-
+								{{ad.owner.postCode}}</p>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<hr class="is-hidden-mobile"/>
+			<div>
+                    {# 0 => "Annonce déposée, attente de proposition de réparation",
+                    1 => "Attente d'une validation de proposition de réparation",
+                    2 => "Attente du paiement de la réparation",
+                    3 => "Attente de la notification d'envoi du produit au réparateur",
+                    4 => "Attente de la confirmation de réception du produit et de la réparation en cours",
+                    5 => "Attente de la notification de retour du produit au propriétaire",
+                    6 => "Attente de la confirmation de récéption du produit réparé" #}
+				<p class="title has-text-centered">Etat de l'annonce</p>
+				{% if ad.currentState == 0 %}
+                    <p class="subtitle has-text-centered">Annonce déposée, en attente de propositions de réparation</p>
+				{% elseif ad.currentState == 1 %} {# un réparateur fait une proposition#}
+					<p class="subtitle has-text-centered">Vous avez des propositions de réparation en attente</p>
+					{% for repairProposition in ad.repairPropositions %}
+								<div class="columns is-vcentered">
+									<div class="column is-6">
+										<p>
+											<span class="subtitle">{{repairProposition.proposer.firstName}} {{repairProposition.proposer.lastName}}</span>
+											<br>
+											<span>
+												{{repairProposition.proposer.postCode}} {{repairProposition.proposer.city}}</span>
+										</p>
+									</div>
+									<div class="column is-3 has-text-centered">
+										<div class="rate">
+											<i class="star">
+												4.3</i>
+										</div>
+									</div>
+									<div class="column is-3 has-text-centered">
+										<p class="subtitle">{{repairProposition.price}}</p>
+									</div>
+								</div>
+							<hr>
+							{% endfor %}
+                {% elseif ad.currentState == 2 %}{# le propriétaire accepte une proposition #}
+                    <p class="subtitle has-text-centered">Vous avez accepté une proposition de réparation, veuillez procéder au paiement pour passer à l'étape suivante</p>
+                {% elseif ad.currentState == 3 %} {# le propriétaire paie la réparation #}
+                    <p class="subtitle has-text-centered">Paiement enregistré ! Veuillez notifier lorsque vous aurez envoyé le produit au réparateur</p>
+                {% elseif ad.currentState == 4 %} {# le propriétaire informe qu'il a envoyé son produit #}
+                    <p class="subtitle has-text-centered">Vous recevrez une notification lorsque le réparateur aura reçu votre produit</p>
+                {% elseif ad.currentState == 5 %} {# le réparateur confirme la réception du produit #}
+                    <p class="subtitle has-text-centered">Le réparateur a bien reçu votre produit et s'occupe de le réparer !</p>
+                {% elseif ad.currentState == 6 %} {# le réparateur informe qu'il a renvoyé le produit réparé au propriétaire #}
+                    <p class="subtitle has-text-centered">Le réparateur a fini de réparer votre produit et vous l'a envoyé</p>
+                {% elseif ad.currentState == 7 %} {# le propriétaire confirme la réception du produit et sa réparation #}
+                    <p class="subtitle has-text-centered">Produit réparé !</p>
+				{% endif %}
+				
+			</div>
+
+
+			<!-- Card footer -->
+			<footer class="custom-card-footer">
+				<div class="columns is-vcentered">
+					<div class="column is-half has-text-centered">
+						<a class="button is-rounded is-info" href="{{ path('new_repair_proposition', {'id': ad.id}) }}">
+							<span>1</span>
+						</a>
+						<a class="button is-outlined is-rounded is-primary" href="{{ path('new_repair_proposition', {'id': ad.id}) }}">
+							<span>2</span>
+						</a>
+						<a class="button is-outlined is-rounded is-primary" href="{{ path('new_repair_proposition', {'id': ad.id}) }}">
+							<span>3</span>
+						</a>
+						<a class="button is-outlined is-rounded is-primary" href="{{ path('new_repair_proposition', {'id': ad.id}) }}">
+							<span>4</span>
+						</a>
+						<a class="button is-outlined is-rounded is-primary" href="{{ path('new_repair_proposition', {'id': ad.id}) }}">
+							<span>5</span>
+						</a>
+						<a class="button is-outlined is-rounded is-primary" href="{{ path('new_repair_proposition', {'id': ad.id}) }}">
+							<span>6</span>
+						</a>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</div>
+</div></div>{% endblock %}

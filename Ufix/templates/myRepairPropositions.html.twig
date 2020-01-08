@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ parent() }}
+	- Annonces
+{% endblock %}
+
+{% block navbar %}
+	{{ parent() }}
+	<div class="container-is-fluid extended">
+		<p class="title has-text-centered">Mes Annonces</p>
+	</div>
+{% endblock %}
+
+{% block body %}
+	<div
+		class="container is-fluid-without-padding">
+
+		<!-- Grid of items-->
+		<div class="columns">
+			<div class="column is-10 is-offset-1">
+				<div class="columns is-mobile is-multiline products">
+					{% for repairProposition in repairPropositions %}
+						<a class="column is-2-desktop is-3-tablet is-6-mobile" href="{{ path('my_repair_proposition_details', {'id': repairProposition.id}) }}">
+							<div class="card all-ads">
+								<div class="card-image">
+									<figure class="image">
+										<img src="{{ asset('img/iphone5.png') }}" alt="Iphone 5">
+									</figure>
+								</div>
+								<div class="card-content">
+									<div class="media">
+										<div class="media-content has-text-centered">
+											<p class="title to-repare">{{repairProposition.ad.productName}}</p>
+											<p class="subtitle">{{repairProposition.ad.productBreakDescription}}</p>
+											<p class="susbtitle">{{repairProposition.ad.productPrice}} €</p>
+											<p class="susbtitle">{{repairProposition.ad.owner.email}}</p>
+                                        </div>
+                                       
+                                        
+									</div>
+                                </div>
+                                <div class="media-content has-text-centered">
+                                    <p class="title">Informations sur la proposition de réparation</p>
+                                    <p class="susbtitle"> prix : {{repairProposition.price}}</p>
+                                    <p class="susbtitle"> description : {{repairProposition.description}}</p>
+                                    </div>
+							</div>
+						</a>
+
+					
+
+					{% endfor %}
+					{# COLUMN #}
+					
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

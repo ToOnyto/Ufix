@@ -214,6 +214,56 @@ class DefaultController extends AbstractController
         ]);
     }
 
+
+    /**
+     * @Route("/my-ads", name="my_ads")
+     */
+    public function showMyAds(Security $security)
+    {
+        
+        $ads = $security->getUser()->getOwnedAds();
+        // dump($security->getUser());
+        // die;
+        return $this->render('myAds.html.twig', [
+            'ads' => $ads
+        ]);
+    }
+
+    /**
+     * @Route("/my-ads/details/{id}", name="my_ads_details")
+     */
+    public function showMyAdsDetails(Security $security, Ad $ad)
+    {
+        $ads = $security->getUser()->getOwnedAds();
+        return $this->render('myAdsDetails.html.twig', [
+            'ad' => $ad
+        ]);
+    }
+
+        /**
+     * @Route("/my-repair-propositions", name="my_repair_propositions")
+     */
+    public function showMyRepairPropositions(Security $security)
+    {
+        
+        $repairPropositions = $security->getUser()->getRepairPropositions();
+        // dump($security->getUser());
+        // die;
+        return $this->render('myRepairPropositions.html.twig', [
+            'repairPropositions' => $repairPropositions
+        ]);
+    }
+
+    /**
+     * @Route("/my-repair-propositions/details/{id}", name="my_repair_proposition_details")
+     */
+    public function showMyRepairPropositionDetails(Security $security, RepairProposition $repairProposition)
+    {
+        return $this->render('myRepairPropositionDetails.html.twig', [
+            'repairProposition' => $repairProposition
+        ]);
+    }
+
     /**
      * @Route("/repair/{id}", name="to_repair", defaults={"id": 1})
      */
@@ -266,6 +316,7 @@ class DefaultController extends AbstractController
             $newRepairProposition->setProposer($user);
 
             $ad->addRepairProposition($newRepairProposition);
+            $ad->setCurrentState(1);
 
             $user->addRepairProposition($newRepairProposition);
 

@@ -26,6 +26,11 @@ class RepairProposition
      */
     private $description;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $currentState;
+
 
     /**
      * @var Ad
@@ -38,6 +43,11 @@ class RepairProposition
      * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="repairPropositions" )
      */
     private $proposer; //le réparateur qui a fait une proposition de réparation
+
+    public function __construct()
+    {
+        $this->currentState = 0;
+    }
 
     public function getId(): ?int
     {
@@ -52,6 +62,18 @@ class RepairProposition
     public function setPrice(int $price): self
     {
         $this->price = $price;
+
+        return $this;
+    }
+
+    public function getCurrentState(): ?int
+    {
+        return $this->currentState;
+    }
+
+    public function setCurrentState(int $currentState): self
+    {
+        $this->currentState = $currentState;
 
         return $this;
     }
